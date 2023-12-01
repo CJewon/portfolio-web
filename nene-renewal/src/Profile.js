@@ -7,7 +7,7 @@ export default function () {
             <img src="#" alt="내 이미지" />
         </div>
         <div>
-            <p>WELCOME TO MY PORTFOLIO</p>
+            <h1>WELCOME TO MY PORTFOLIO</h1>
             <p>안녕하세요! 끊임없이 도전하고, 나아가 프론트엔드 개발자가 되고 싶은 신입 웹 퍼블리셔 최제원입니다!</p>
         </div>
         <div>
