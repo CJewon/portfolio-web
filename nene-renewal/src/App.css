@@ -8,7 +8,9 @@ p,h1 {
   white-space: pre-line;
 }
 
-
+section {
+  background-color: #6F6D6D;
+}
 
 a {
   text-decoration-line: none;
@@ -27,8 +29,24 @@ header ul {
   gap: 42px;
 }
 
+header li {
+  width: 100px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 header a {
+
   color: #F5F5F5;
+  font-size: 20px;
+  
+}
+
+.profile-section {
+  width: 100%;
+  height: calc(100vh - 126px);
 }
 
 .profile-container {
@@ -48,6 +66,16 @@ header a {
   width: 531px;
 }
 
-h1 {
+.my-profile > h1 {
+  line-height: 1.2;
+  font-size: 64px;
+  color: #F5F5F5;
+  padding-bottom: 80px;
+}
+
+
+.my-profile > p {
   line-height: 1.5;
 }
+
+
