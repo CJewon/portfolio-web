@@ -122,6 +122,7 @@ header a {
   width: 136px;
   height: 136px;
   border-radius: 45px;
+  z-index: 1;
 }
 
 .click-button > a {
