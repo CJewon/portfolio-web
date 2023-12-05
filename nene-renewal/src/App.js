@@ -6,8 +6,8 @@ import Explain from './Explain';
 import End from './End';
 
 
+import './Reset.css';
 import './App.css';
-import './Reset.css'
 
 
 function App() {
