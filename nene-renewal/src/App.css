@@ -36,6 +36,7 @@ h1, h2, a {
 
 section {
   background-color: #6F6D6D;
+  padding-bottom: 112px;
 }
 
 a {
@@ -73,6 +74,7 @@ header a {
 .profile-section {
   width: 100%;
   height: calc(100vh - 126px);
+  /* padding-bottom : 100px */
 }
 
 .profile-container {
@@ -80,16 +82,15 @@ header a {
   padding-left: 309px;
   padding-right: 309px;
   display: flex;
-  justify-content: space-between;
 }
 
 .profile-image {
-  width: 531px;
+  width: 50%;
   height: 429px;
 }
 
 .my-profile {
-  width: 531px;
+  width: 50%;
 }
 
 .my-profile > h1 {
@@ -102,6 +103,8 @@ header a {
 
 .my-profile > p {
   line-height: 1.5;
+  font-size: 20px;
+  font-family: 'IAMAPLAYER';
 }
 
 .copyright {
@@ -110,6 +113,7 @@ header a {
  justify-content: center;
  align-items: center;
  padding-top: 200px;
+ color: #A09696;
 }
 
 .click-button {
@@ -133,6 +137,78 @@ header a {
   text-align: center;
 }
 
+.renewal-container {
+  padding: 0 309px;
+}
 
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
 
+h2 {
+  font-size: 48px;
+  color: #F5F5F5;
+  padding-left: 90px;
+}
+
+h3 {
+  color: #F0DA14;
+}
+
+.question-container {
+  padding-left: 100px;
+}
+
+.overview-size {
+  width: 450px;
+ padding-top: 80px; 
+}
+
+.overview-size li {
+  padding-bottom: 200px;
+}
+
+.overview-size li h3 {
+  width: 531px;
+  font-size: 24px;
+  font-weight: 500;
+  padding-bottom: 80px;
+}
+
+.overview-size li p {
+  width: 531px;
+  color: #F5F5F5;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.color-rect {
+  width: 100px;
+  height: 100px;
+}
+
+.rect1 {
+background-color: #4F4C4C;
+}
+
+.rect2{
+background-color: #B6B3B2;
+}
+
+.rect3{
+  background-color: #DBD8D8;
+}
+
+.rect4{
+  background-color: #B19028;
+}
+
+.rect5{
+  background-color: #F7BB00;
+}
+
+.rect6{
+  background-color: #2b2b2b;
+}
 
