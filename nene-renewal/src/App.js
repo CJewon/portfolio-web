@@ -71,27 +71,27 @@ function App() {
                 <div className="color-rect rect2"></div>
                 <div className="color-rect rect3"></div>
                 <div className="color-rect rect4"></div>
-                <div className="color-name">
+              </li>
+              <div className="color-name">
                   <p>#4F4C4C</p>
                   <p>#B6B3B2</p>
                   <p>#DBD8D8</p>
                   <p>#B19028</p>
-                </div>
-              </li>
+              </div>
               <li>
                 <p>메인컬러</p>
                 <div className="color-rect rect5"></div>
-                <div className="color-name">
-                  <p>#F7BB00</p>
-                </div>
               </li>
+              <div className="color-name">
+                  <p>#F7BB00</p>
+              </div>
               <li>
                 <p>footer-color</p>
                 <div className="color-rect rect6"></div>
-                <div className="color-name">
-                  <p>#2b2b2b</p>
-                </div>
               </li>
+              <div className="color-name">
+                  <p>#2b2b2b</p>
+              </div>
             </ul>
         </div>
         </div>
