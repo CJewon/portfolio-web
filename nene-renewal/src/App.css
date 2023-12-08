@@ -11,6 +11,16 @@
  font-family: 'Noto Sans KR', sans-serif;
 }
 
+.sticky-section {
+  position: relative;
+}
+
+.sticky-section {
+  position: sticky;
+  top: 48px;
+  /* background-color: white; */
+  z-index: 100;
+}
 
 
 header {

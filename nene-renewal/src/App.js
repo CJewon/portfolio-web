@@ -17,7 +17,7 @@ function App() {
         </ul>
       </div>
       </header>
-      <div className="sticky-section">
+      
       <section className='profile-section'>
         <div className="profile-container">
             <div className='profile-image'>
@@ -38,10 +38,14 @@ function App() {
             </a>
         </div>
     </section>
-      <section className='overview-section'>
-      <div className='renewal-container'>
-      <h2>1. OVERVIEW</h2>
-        <div className="flex-container">
+      <div className="sticky-section">
+        <img src="/img/NeneRenewal.png" alt="#" />
+      </div>
+      <div className="contents-contaienr">
+        <section className='overview-section'>
+        <div className='renewal-container'>
+         <h2>1. OVERVIEW</h2>
+         <div className="flex-container">
           <div className='question-container overview-size'>
                     <ul>
                       <li>
@@ -53,14 +57,13 @@ function App() {
                         <p>A : Best 치킨광고 2번을 대신해서 new-menu, popular-menu, recommended-menu 라는 3개의 메뉴홍보 컨텐츠를 만들어주었고, 그 밑으로 동네가계위치를 알려주는 section, 네네관련 SNS 홍보글 및 관련 SNS글을 나타내주는 section, 마무리로 footer 부분으로 작업을 해줌으로써 무분별하게 정렬되어 있는 컨텐츠들을 일정한 규칙으로 정렬을 해주었습니다.</p>
                       </li>
                     </ul>
-          </div>
-            <img src="/img/NeneRenewal.png" alt="#" />
+           </div>
         </div>
-      </div>
-      </section>
-      <section className='design-section'>
-      <div className='renewal-container'>
-      <h2>2. Design</h2>
+       </div>
+       </section>
+       <section className='design-section'>
+        <div className='renewal-container'>
+        <h2>2. Design</h2>
         <div className="flex-container">
 
           <div className='design-explain-container'>
@@ -99,9 +102,9 @@ function App() {
                   <h3>Q : 어떤 원칙을 가지고 디자인을 했나요?</h3>
                   <p>A : 불규칙적으로 나열되어 있는 컨텐츠를 정리해준다는 느낌으로 전체적으로 디자인을 해주었습니다. 컬러는 네네치킨에서 사용하는 메인컬러를 최대한 사용하고자 노력했습니다.</p>
         </div>
-      </div>
-      </section>
-      <section className='explain-section'>
+       </div>
+       </section>
+       <section className='explain-section'>
             <div className='renewal-container'>
             <h2>3. EXPLAIN</h2>
               <div className="flex-container">
@@ -118,10 +121,10 @@ function App() {
                   </div>
               </div>
             </div>
-      </section>
-      <section className='end-section'>
-      <div className='renewal-container'>
-      <h2>4. END</h2>
+       </section>
+       <section className='end-section'>
+       <div className='renewal-container'>
+       <h2>4. END</h2>
         <div className="flex-container">
           <div className='question-container'>
                     <ul>
@@ -136,10 +139,10 @@ function App() {
                     </ul>
           </div>
         </div>
-      </div>
-      </section>
-      </div>
-      <section className='takeaway-section'>
+        </div>
+       </section>
+        </div>
+        <section className='takeaway-section'>
         <div className="flex-container">
           <h3>마무리하며...</h3>
           <p>리뉴얼 작업을 하면서 코드작업하는 시간보다 공부하는 시간이 좀 더 길었던 것 같습니다. 그 만큼 작업하면서 전보다 발전했다라는것을 느낄수있어서 좋았습니다. 앞으로도 열심히 발전하는 개발자가 되겠습니다. </p>
