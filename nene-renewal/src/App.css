@@ -11,8 +11,9 @@
  font-family: 'Noto Sans KR', sans-serif;
 }
 
-
-
+body {
+  background-color: #6F6D6D;
+}
 
 header {
   width: 100%;
@@ -138,9 +139,7 @@ header a {
   text-align: center;
 }
 
-.renewal-container {
-  padding: 0 309px;
-}
+
 
 .flex-container {
   display: flex;
@@ -242,3 +241,16 @@ background-color: #B6B3B2;
   padding-top: 48px;
 }
 
+.sticky-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 309px;
+  position: relative;
+}
+
+.sticky-img {
+  background-color: #6F6D6D;
+  position: sticky;
+  top: 48px;
+  height: fit-content;
+}
