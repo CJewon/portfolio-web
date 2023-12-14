@@ -1,23 +1,27 @@
 import './Reset.css';
 import './App.css';
 
+
 function App() {
 
+  
+
+  
 
   return (
     <body className="App">
       <header>
       <div className='header-menu-container'>
         <ul>
-            <li><a href="#">WELCOME</a></li>
-            <li><a href="#">OVERVIEW</a></li>
-            <li><a href="#">DESIGN</a></li>
-            <li><a href="#">EXPLAIN</a></li>
-            <li><a href="#">END</a></li>
+            <li><a href="#wel">WELCOME</a></li>
+            <li><a href="#ovs">OVERVIEW</a></li>
+            <li><a href="#des">DESIGN</a></li>
+            <li><a href="#exp">EXPLAIN</a></li>
+            <li><a href="#end">END</a></li>
         </ul>
       </div>
       </header>
-      <section className='profile-section'>
+      <section className='profile-section' id='wel'>
         <div className="profile-container">
             <div className='profile-image'>
                 <img src="/img/ProfileImg.png" alt="내 이미지" />
@@ -32,14 +36,14 @@ function App() {
             <p>CHOIJEWONⓒ 2023 PORTFOLIO</p>
         </div>
         <div className='click-button'>
-            <a href="#">
+            <a href="https://cjewon.github.io/2023-project/main.html" target='_blank' rel='noopener noreferrer'>
                 <p>사이트{'\n'}보러가기</p>
             </a>
         </div>
     </section>
       <div className="sticky-section">
         <div className="contents-container">
-          <section className='overview-section'>
+          <section className='overview-section' id='ovs'>
             <div className='renewal-container'>
             <h2>1. OVERVIEW</h2>
               <div className="flex-container">
@@ -58,7 +62,7 @@ function App() {
               </div>
             </div>
           </section>
-          <section className='design-section'>
+          <section className='design-section' id='des'>
             <div className='renewal-container'>
             <h2>2. Design</h2>
               <div className="flex-container">
@@ -100,7 +104,7 @@ function App() {
               </div>
             </div>
           </section>
-          <section className='explain-section'>
+          <section className='explain-section' id='exp'>
                 <div className='renewal-container'>
                 <h2>3. EXPLAIN</h2>
                   <div className="flex-container">
@@ -112,13 +116,10 @@ function App() {
                             카카오 맵 api를 활용해 검색한 정보(위치, 주소, 번호, 가게이름 등등)을 가지고 온 후, 필요한 정보들만 추출해서 만들었습니다. 다만 검색어에 따라 검색의 전체목록의 갯수가 매번 달라지므로 슬라이드 형식으로 만들어주었으며, 제가 현재 만든 부분은 구월동을 기본 검색값으로 설정을 해주었습니다. </p>
                         <p> 네네관련 facebook과 instagram에 올라오는 글들을 보여주는 네네 갤러리 section과 footer section 입니다. 네네 갤러리 section은 홍보를 주 목적으로 만든 section입니다.</p>
                       </div>
-                      <div className='focus-container'>
-                          
-                      </div>
                   </div>
                 </div>
           </section>
-          <section className='end-section'>
+          <section className='end-section' id='end'>
             <div className='renewal-container'>
             <h2>4. END</h2>
               <div className="flex-container">
@@ -139,7 +140,9 @@ function App() {
           </section>  
          </div>
          <div className="sticky-img">
-          <img src="/img/NeneRenewal.png" alt="#" />
+          <img src="/img/renewal-1.png" alt="#" />
+          <img src="/img/renewal-2.png" alt="#" />
+          <img src="/img/renewal-3.png" alt="#" />
          </div>
       </div>
       <section className='takeaway-section'>

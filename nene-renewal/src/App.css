@@ -256,6 +256,8 @@ background-color: #B6B3B2;
   position: sticky;
   top: 0;
   height: fit-content;
+  display: flex;
+  flex-direction: column;
 }
 
 
