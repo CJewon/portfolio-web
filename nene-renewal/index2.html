@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Code Highlighting Example</title>
+
+  <!-- Prism CSS Theme 추가 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css">
+
+  <!-- 사용자 정의 스타일 추가 -->
+  <style>
+   /* 기존 Prism 스타일 */
+:not(pre)>code[class*=language-], pre[class*=language-] {
+    background: #f5f2f0;
+}
+
+code[class*=language-], pre[class*=language-] {
+    color: #000;
+    background: 0 0;
+    text-shadow: none; /* text-shadow를 제거합니다 */
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 1em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+pre {
+    background: #1e1e1e;
+}
+
+/* 수정된 스타일 추가 */
+:not(pre)>code[class*=language-], pre[class*=language-] {
+    background: #282c34; /* 수정된 배경색으로 변경 */
+}
+
+  </style>
+</head>
+<body>
+
+  <pre><code class="language-javascript">
+    function 슬라이드위치업데이트(){
+        menuContainerUl.style.transform = `translateX(-${100 *index}vw)`
+      }
+    
+      function 차움직이기(도착지점){
+        console.log(neneCar)
+        neneCar.style.left= `${도착지점}%`;
+    
+          if(네네카이전좌표 < 도착지점) {
+            neneCar.setAttribute('src',"./nene/img/rightnenecar.png")
+          }else {
+            neneCar.setAttribute('src',"./nene/img/leftnenecar.png")
+            // 왼쪽방향 이미지로 교체
+          }
+    
+          setTimeout(() => {
+            // 이동 끝난 후 정면으로 교체
+            neneCar.setAttribute('src',"./nene/img/네네캐릭터.png")
+          }, 1000);
+          네네카이전좌표=도착지점;
+      }
+    
+      let slideState = true;
+    
+      function slideControl() {
+        if(slideState) {
+          slideState === false;
+           // 해당 슬라이드 위치로 이등하기
+          slideState === true;
+        }
+      }
+  </code></pre>
+
+  <!-- Prism JS 추가 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+
+</body>
+</html>
