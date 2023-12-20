@@ -55,7 +55,7 @@ function App() {
 
   useEffect(() => {
     Prism.highlightAll(); // Prism을 사용하여 코드 하이라이팅 적용
-  }, [Position]); // useEffect를 사용하여 컴포넌트가 마운트될 때만 실행
+  }, [StyledPre]); // useEffect를 사용하여 컴포넌트가 마운트될 때만 실행
 
 
   
