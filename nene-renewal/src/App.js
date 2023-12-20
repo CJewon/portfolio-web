@@ -27,8 +27,8 @@ const PrismCode = styled.code`
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
-  
-  /* 특정 토큰에 대한 스타일 */
+
+  /* Prism이 생성하는 클래스에 대한 스타일 */
   .token.comment {
     color: #5c6370;
   }
@@ -39,7 +39,7 @@ const PrismCode = styled.code`
 `;
 
 const StyledPre = styled.pre`
-  background: #282c34; /* 기존 pre 배경색으로 변경 */
+  background: #282c34;
   margin: 0;
   padding: 16px;
   overflow: auto;
@@ -48,6 +48,9 @@ const StyledPre = styled.pre`
   width: 642px;
 `;
 
+// 이하 코드는 그대로 유지
+
+
 
 function App() {
 
@@ -55,7 +58,7 @@ function App() {
 
   useEffect(() => {
     Prism.highlightAll(); // Prism을 사용하여 코드 하이라이팅 적용
-  }, [StyledPre]); // useEffect를 사용하여 컴포넌트가 마운트될 때만 실행
+  }, [Position]); // useEffect를 사용하여 컴포넌트가 마운트될 때만 실행
 
 
   
