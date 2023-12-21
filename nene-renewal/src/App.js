@@ -7,7 +7,7 @@ import Prism from 'prismjs';
 
 import 'prismjs/themes/prism.css'; // Prism 테마 추가
 import 'prismjs/components/prism-javascript'; // 사용할 언어 추가
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 
 
@@ -28,14 +28,17 @@ const PrismCode = styled.code`
   -ms-hyphens: none;
   hyphens: none;
 
-  /* Prism이 생성하는 클래스에 대한 스타일 */
-  .token.comment {
-    color: #5c6370;
-  }
+  /* Prism 클래스에 대한 스타일 */
+  ${props => props.theme && css`
+    .token.comment {
+      color: #5c6370;
+    }
 
-  .token.function {
-    color: #61afef;
-  }
+    .token.function {
+      color: #61afef;
+    }
+    /* 다른 Prism 클래스에 대한 스타일 추가 */
+  `}
 `;
 
 const StyledPre = styled.pre`
@@ -165,19 +168,19 @@ function App() {
                   <div className="flex-container">
                       <div className='explain-container'>
                         <h3>1&#41; menu-section</h3>
-                        <StyledPre><PrismCode >{`${codes.firstSection}`}</PrismCode></StyledPre>
+                        <StyledPre><PrismCode >{codes.firstSection}</PrismCode></StyledPre>
                         <p> 전체적인 슬라이드를 움직여주는 함수와 슬라이드의 위치를 알려주는 네네카를 움직이는 함수입니다. 네네카가 움직일때마다 좌우로 움직이는 효과를 나타내주기 위해서 이미지를 변경하여 사용해주었습니다. 또한 인터랙션이 끝난 후, 원래 상태로 돌아와야하기 때문에 setTimeout을 이용하여 원래 이미지로 되돌려주는 코드를 작성해주었습니다. </p>
-                        <StyledPre><PrismCode >{`${codes.secondSection}`}</PrismCode></StyledPre>
+                        <StyledPre><PrismCode >{codes.secondSection}</PrismCode></StyledPre>
                         <p> 슬라이드 버튼을 만들어주는 코드입니다. html 말고 js로 코드를 작성하여 버튼을 생성하였는데 위 방식을 사용한 이유는 new-menu, popular-menu, recommended-menu 3개의 section이 있고 3개의 section에 버튼을 한번에 만들어 주기 위해 위와 같은 방식을 사용해주었습니다. </p>
                         
                         <h3>2&#41; 근처매장</h3>
-                        <StyledPre><PrismCode >{`${codes.thirdSection}`}</PrismCode></StyledPre>
+                        <StyledPre><PrismCode >{codes.thirdSection}</PrismCode></StyledPre>
                         <p>new-menu, popular-menu, recommended-menu에 들어가는 메뉴들의 정보들을 json파일에 넣어서 사용하기 위해 fetch 함수로 비동기적처리를 함께 해주었습니다.</p>
-                        <StyledPre><PrismCode >{`${codes.fourthSection}`}</PrismCode></StyledPre>
+                        <StyledPre><PrismCode >{codes.fourthSection}</PrismCode></StyledPre>
                         <p>makeContent라는 함수입니다. 위 함수는 fetch함수로 가지고 온 데이터들을 활용하여 메뉴들의 정보를 나타내주는 함수입니다. 위와 같은 방식으로 작성한 이유는 new-menu, popular-menu, recommended-menu 3개의 section에 들어가는 메뉴의 정보들을 한번에 컨트롤 할 수 있으며, 수정 및 보완을 하는데 있어서 이점이 있다고 생각합니다.</p>
-                        <StyledPre><PrismCode >{`${codes.fifthSection}`}</PrismCode></StyledPre>
+                        <StyledPre><PrismCode >{codes.fifthSection}</PrismCode></StyledPre>
                         <p>Kakao map Api를 사용하기 위해 일부 코드를 가지고 왔습니다. 카카오맵 기능중 검색했을때 나타나는 리스트들을 정렬하는 부분을 사용하기 위해서 가지고 왔으며, 사용목적인 네네치킨을 기본 검색값으로 설정을 변경해주었습니다. </p>
-                        <StyledPre><PrismCode >{`${codes.sixthSection}`}</PrismCode></StyledPre>
+                        <StyledPre><PrismCode >{codes.sixthSection}</PrismCode></StyledPre>
                         <p>placeSearchCB라는 함수입니다. 위 함수는 카카오맵 api에서 사용중인 함수인데 이 부분을 제가 사용하고 싶은대로 응용하여 수정해주었습니다. displayPlaces(data)가 데이터를 가지고 온다라는 사실을 확인하였고, 데이터중 일부인 place_name, phone, address_name을 사용하였습니다. 
  검색 리스트형식을 슬라이드 형식으로 표현해주었으며, 검색리스트가 4개이상 나타나게 된다면 옆으로 누르기 버튼을 생성하여 리스트들을 보여주게 만들었습니다.</p>
                         
