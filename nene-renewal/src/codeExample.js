@@ -1,6 +1,5 @@
 export const codes = {
-    firstSection: `
-    function 슬라이드위치업데이트(){
+    firstSection: `    function 슬라이드위치업데이트(){
         menuContainerUl.style.transform = \`translateX(-\${100 *index}vw)\`;
         
         function 차움직이기(도착지점){
@@ -32,8 +31,7 @@ export const codes = {
         }
         `,
 
-        secondSection:`
-        // 슬라이드 버튼 만들기
+        secondSection:`        // 슬라이드 버튼 만들기
 for(let i = 0 ; i < menuContainerUl.childElementCount ; i ++) {
     const aButton = document.createElement('a');
     aButton.setAttribute('href','#');
@@ -71,8 +69,7 @@ for(let i = 0 ; i < menuContainerUl.childElementCount ; i ++) {
     
     }`,
 
-    thirdSection : `
-    async function menuTitle(){// json 사용할때 기본형태 !! *** 데이터베이스 불러오기
+    thirdSection : `    async function menuTitle(){// json 사용할때 기본형태 !! *** 데이터베이스 불러오기
         let dbContainer = [];
         fetch('json/new.json')
         .then(res => res.json())
@@ -96,8 +93,7 @@ for(let i = 0 ; i < menuContainerUl.childElementCount ; i ++) {
         })
     `,
 
-    fourthSection : `
-    function makeContent(){
+    fourthSection : `    function makeContent(){
 
         const conName = ['new_menu_con','popular_menu_con','recommended_menu_con']
         const menuConUl = document.getElementsByClassName('menu_con_ul');
@@ -178,8 +174,7 @@ for(let i = 0 ; i < menuContainerUl.childElementCount ; i ++) {
         }}
     `,
 
-    fifthSection : `
-    var markers = [];
+    fifthSection : `    var markers = [];
 
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div
     mapOption = {
@@ -199,8 +194,7 @@ for(let i = 0 ; i < menuContainerUl.childElementCount ; i ++) {
     ps.keywordSearch( "구월동 네네치킨", placesSearchCB); // 구월동 네네치킨이라는 검색어를 기본값으로 설정하고 검색한다.
     `,
 
-    sixthSection : `
-    function placesSearchCB(data, status, pagination) {
+    sixthSection : `    function placesSearchCB(data, status, pagination) {
         if (status === kakao.maps.services.Status.OK) {
         
         // // 정상적으로 검색이 완료됐으면
