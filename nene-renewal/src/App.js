@@ -190,7 +190,7 @@ function App() {
             </div>
           </section>  
          </div>
-         <Opacity ></Opacity>
+         <Opacity sectionRefs={sectionRefs[0]}></Opacity>
          {/* <div className="sticky-img" ref={stickyImgRef}> */}
           {/* <img src="/img/renewal-1.png" alt="#" /> */}
           {/* <img src="/img/renewal-2.png" alt="#" /> */}
