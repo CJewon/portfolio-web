@@ -1,55 +1,14 @@
 import './Reset.css';
 import './App.css';
-// import '/prism.css';
 import { codes } from './codeExample';
 import Position from './Position';
-
-
-import 'prismjs/themes/prism.css'; // Prism 테마 추가
-import 'prismjs/components/prism-javascript'; // 사용할 언어 추가
-import styled, {css} from 'styled-components';
+import Opacity from './Opacity';
+import { useRef } from 'react';
 
 
 
-const PrismCode = styled.code`
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-size: 12px;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.5;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
 
-  /* Prism 클래스에 대한 스타일 */
-  ${props => props.theme && css`
-    .token.comment {
-      color: #5c6370;
-    }
 
-    .token.function {
-      color: #61afef;
-    }
-    /* 다른 Prism 클래스에 대한 스타일 추가 */
-  `}
-`;
-
-const StyledPre = styled.pre`
-  background: #282c34;
-  margin: 0;
-  padding: 16px;
-  overflow: auto;
-  font-size: 16px;
-  border-radius: 5px;
-  width: 642px;
-`;
 
 // 이하 코드는 그대로 유지
 
@@ -59,12 +18,12 @@ function App() {
 
   
 
-  // useEffect(() => {
-  //   Prism.highlightAll(); // Prism을 사용하여 코드 하이라이팅 적용
-  //   console.log('test')
-  // }, [StyledPre]); // useEffect를 사용하여 컴포넌트가 마운트될 때만 실행
+  const menuSectionRef = useRef(null);
+  const storePositionRef = useRef(null);
+  const neneGalleryRef = useRef(null);
+  const stickyImgRef = useRef(null);
 
-
+  const sectionRefs = [menuSectionRef, storePositionRef, neneGalleryRef];
   
 
   return (
@@ -167,65 +126,47 @@ function App() {
                 <div className='renewal-container'>
                 <h2>3. EXPLAIN</h2>
                   <div className="flex-container">
-                      <div className='explain-container'>
-                        <h3>1&#41; menu-section</h3>
-                        {/* <StyledPre>
-                          <PrismCode> */}
-                            <Position 내용={codes.firstSection}></Position>
-                          {/* </PrismCode>
-                        </StyledPre> */}
-                        <p> 전체적인 슬라이드를 움직여주는 함수와 슬라이드의 위치를 알려주는 네네카를 움직이는 함수입니다. 네네카가 움직일때마다 좌우로 움직이는 효과를 나타내주기 위해서 이미지를 변경하여 사용해주었습니다. 또한 인터랙션이 끝난 후, 원래 상태로 돌아와야하기 때문에 setTimeout을 이용하여 원래 이미지로 되돌려주는 코드를 작성해주었습니다. </p>
-                        {/* <StyledPre> */}
-                          {/* <PrismCode> */}
-                            <Position 내용={codes.secondSection}></Position>
-                          {/* </PrismCode> */}
-                        {/* </StyledPre> */}
-                        <p> 슬라이드 버튼을 만들어주는 코드입니다. html 말고 js로 코드를 작성하여 버튼을 생성하였는데 위 방식을 사용한 이유는 new-menu, popular-menu, recommended-menu 3개의 section이 있고 3개의 section에 버튼을 한번에 만들어 주기 위해 위와 같은 방식을 사용해주었습니다. </p>
-                         {/* <StyledPre> */}
-                          {/* <PrismCode> */}
-                            <Position 내용={codes.thirdSection}></Position>
-                          {/* </PrismCode> */}
-                        {/* </StyledPre> */}
-                        <p>new-menu, popular-menu, recommended-menu에 들어가는 메뉴들의 정보들을 json파일에 넣어서 사용하기 위해 fetch 함수로 비동기적처리를 함께 해주었습니다.</p>
-                        <h3>2&#41; 근처매장</h3>
-                         {/* <StyledPre> */}
-                          {/* <PrismCode> */}
-                            <Position 내용={codes.fourthSection}></Position>
-                          {/* </PrismCode> */}
-                        {/* </StyledPre> */}
-                        <p>makeContent라는 함수입니다. 위 함수는 fetch함수로 가지고 온 데이터들을 활용하여 메뉴들의 정보를 나타내주는 함수입니다. 위와 같은 방식으로 작성한 이유는 new-menu, popular-menu, recommended-menu 3개의 section에 들어가는 메뉴의 정보들을 한번에 컨트롤 할 수 있으며, 수정 및 보완을 하는데 있어서 이점이 있다고 생각합니다.</p>
-                         {/* <StyledPre> */}
-                          {/* <PrismCode> */}
-                            <Position 내용={codes.fifthSection}></Position>
-                          {/* </PrismCode> */}
-                        {/* </StyledPre> */}
-                        <p>Kakao map Api를 사용하기 위해 일부 코드를 가지고 왔습니다. 카카오맵 기능중 검색했을때 나타나는 리스트들을 정렬하는 부분을 사용하기 위해서 가지고 왔으며, 사용목적인 네네치킨을 기본 검색값으로 설정을 변경해주었습니다. </p>
-                         {/* <StyledPre> */}
-                          {/* <PrismCode> */}
-                            <Position 내용={codes.sixthSection}></Position>
-                          {/* </PrismCode> */}
-                        {/* </StyledPre> */}
-                        <p>placeSearchCB라는 함수입니다. 위 함수는 카카오맵 api에서 사용중인 함수인데 이 부분을 제가 사용하고 싶은대로 응용하여 수정해주었습니다. displayPlaces(data)가 데이터를 가지고 온다라는 사실을 확인하였고, 데이터중 일부인 place_name, phone, address_name을 사용하였습니다. 
- 검색 리스트형식을 슬라이드 형식으로 표현해주었으며, 검색리스트가 4개이상 나타나게 된다면 옆으로 누르기 버튼을 생성하여 리스트들을 보여주게 만들었습니다.</p>
-                        {/* <StyledPre><PrismCode >{codes.firstSection}</PrismCode></StyledPre>
-                        
-                        <StyledPre><PrismCode >{codes.secondSection}</PrismCode></StyledPre>
-                        
-                        
-                        
-                        <StyledPre><PrismCode >{codes.thirdSection}</PrismCode></StyledPre>
-                        
-                        <StyledPre><PrismCode >{codes.fourthSection}</PrismCode></StyledPre>
-                        
-                        <StyledPre><PrismCode >{codes.fifthSection}</PrismCode></StyledPre>
-                        
-                        <StyledPre><PrismCode >{codes.sixthSection}</PrismCode></StyledPre> */}
-                        
-                        
-                        <h3>3&#41; 네네갤러리</h3>
-                        <p>네네 갤러리 section 입니다. sns 홍보 및 사람들의 인지도를 보여주고자 하는 목적으로 만든 section입니다. </p>
-            
-                      </div>
+                      <ul className='explain-container'>
+                        <li className='menu-section' ref={menuSectionRef}>
+                          <h3>1&#41; menu-section</h3>
+                          <ul>
+                            <li className='code-list'>
+                                <Position 내용={codes.firstSection}></Position>
+                                <p> 전체적인 슬라이드를 움직여주는 함수와 슬라이드의 위치를 알려주는 네네카를 움직이는 함수입니다. 네네카가 움직일때마다 좌우로 움직이는 효과를 나타내주기 위해서 이미지를 변경하여 사용해주었습니다. 또한 인터랙션이 끝난 후, 원래 상태로 돌아와야하기 때문에 setTimeout을 이용하여 원래 이미지로 되돌려주는 코드를 작성해주었습니다. </p>
+                            </li>
+                            <li className='code-list'>
+                              <Position 내용={codes.secondSection}></Position>  
+                              <p> 슬라이드 버튼을 만들어주는 코드입니다. html 말고 js로 코드를 작성하여 버튼을 생성하였는데 위 방식을 사용한 이유는 new-menu, popular-menu, recommended-menu 3개의 section이 있고 3개의 section에 버튼을 한번에 만들어 주기 위해 위와 같은 방식을 사용해주었습니다. </p>
+                            </li>
+                            <li className='code-list'>
+                              <Position 내용={codes.thirdSection}></Position>
+                              <p>new-menu, popular-menu, recommended-menu에 들어가는 메뉴들의 정보들을 json파일에 넣어서 사용하기 위해 fetch 함수로 비동기적처리를 함께 해주었습니다.</p>
+                            </li>
+                          </ul>
+                        </li>
+                        <li className='store-position' ref={storePositionRef}>
+                          <h3>2&#41; 근처매장</h3>
+                e         <ul>
+                            <li className='code-list'>
+                                <Position 내용={codes.fourthSection}></Position>
+                                <p>makeContnt라는 함수입니다. 위 함수는 fetch함수로 가지고 온 데이터들을 활용하여 메뉴들의 정보를 나타내주는 함수입니다. 위와 같은 방식으로 작성한 이유는 new-menu, popular-menu, recommended-menu 3개의 section에 들어가는 메뉴의 정보들을 한번에 컨트롤 할 수 있으며, 수정 및 보완을 하는데 있어서 이점이 있다고 생각합니다.</p>
+                            </li>
+                            <li className='code-list'>
+                              <Position 내용={codes.fifthSection}></Position>
+                              <p>Kakao map Api를 사용하기 위해 일부 코드를 가지고 왔습니다. 카카오맵 기능중 검색했을때 나타나는 리스트들을 정렬하는 부분을 사용하기 위해서 가지고 왔으며, 사용목적인 네네치킨을 기본 검색값으로 설정을 변경해주었습니다. </p>
+                            </li>
+                            <li className='code-list'>
+                              <Position 내용={codes.sixthSection}></Position>
+                              <p>placeSearchCB라는 함수입니다. 위 함수는 카카오맵 api에서 사용중인 함수인데 이 부분을 제가 사용하고 싶은대로 응용하여 수정해주었습니다. displayPlaces(data)가 데이터를 가지고 온다라는 사실을 확인하였고, 데이터중 일부인 place_name, phone, address_name을 사용하였습니다. 
+  검색 리스트형식을 슬라이드 형식으로 표현해주었으며, 검색리스트가 4개이상 나타나게 된다면 옆으로 누르기 버튼을 생성하여 리스트들을 보여주게 만들었습니다.</p>
+                            </li>
+                          </ul>
+                        </li>
+                        <li className='neneGallery' ref={neneGalleryRef}>
+                          <h3>3&#41; 네네갤러리</h3>
+                          <p>네네 갤러리 section 입니다. sns 홍보 및 사람들의 인지도를 보여주고자 하는 목적으로 만든 section입니다. </p>
+                        </li>
+                      </ul>
                   </div>
                 </div>
           </section>
@@ -249,11 +190,12 @@ function App() {
             </div>
           </section>  
          </div>
-         <div className="sticky-img">
-          <img src="/img/renewal-1.png" alt="#" />
-          <img src="/img/renewal-2.png" alt="#" />
-          <img src="/img/renewal-3.png" alt="#" />
-         </div>
+         <Opacity ></Opacity>
+         {/* <div className="sticky-img" ref={stickyImgRef}> */}
+          {/* <img src="/img/renewal-1.png" alt="#" /> */}
+          {/* <img src="/img/renewal-2.png" alt="#" /> */}
+          {/* <img src="/img/renewal-3.png" alt="#" /> */}
+         {/* </div> */}
       </div>
       <section className='takeaway-section'>
         <div className="flex-container">
