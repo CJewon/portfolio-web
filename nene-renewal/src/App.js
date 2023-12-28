@@ -3,16 +3,7 @@ import './App.css';
 import { codes } from './codeExample';
 import Position from './Position';
 import Opacity from './Opacity';
-import { useRef } from 'react';
-
-
-
-
-
-
-// 이하 코드는 그대로 유지
-
-
+import { useEffect, useRef } from 'react';
 
 function App() {
 
@@ -21,9 +12,103 @@ function App() {
   const menuSectionRef = useRef(null);
   const storePositionRef = useRef(null);
   const neneGalleryRef = useRef(null);
-  const stickyImgRef = useRef(null);
+  const menuSectionImgRef = useRef(null);
+  const storePositionImgRef = useRef(null);
+  const neneGalleryImgRef = useRef(null);
 
   const sectionRefs = [menuSectionRef, storePositionRef, neneGalleryRef];
+  const imgRefs = [menuSectionImgRef, storePositionImgRef, neneGalleryImgRef];
+
+  
+
+  useEffect(()=>{
+    const options = {
+      root: null, // 뷰포트를 기준으로 감지할 것인지, 다른 요소를 기준으로 할 것인지 지정
+      rootMargin: '0px', // 뷰포트와 교차 영역을 얼마나 넓게 할 것인지 지정
+      threshold: 0, // 교차 영역의 어느 정도가 보이는지를 나타내는 비율 (0.5는 요소의 50% 이상이 보일 때 감지)
+    };
+    const callback = (entries, observer) => {
+      entries.forEach((entry,index) => {
+        if (entry.isIntersecting) {
+          // 요소가 뷰포트에 들어왔을 때 실행할 작업
+
+          for (let i = 0; i < sectionRefs.length; i++) {
+                if (imgRefs[i]?.current) {
+                  imgRefs[i].current.style.opacity = 0.5;
+                }
+              }
+              console.log(entry.target)
+
+              // index of로 entry.target이 sectionRefs배열에서 몇번째에 있는지 확인한 후,
+              // const 몇번째 = ??? ; 
+              // imgRefs[몇번째].current.style.opacity = 1;
+
+
+          // if (entry.target === menuSectionRef.current) {
+          //   for (let i = 0; i < sectionRefs.length; i++) {
+          //     if (imgRefs[i]?.current) {
+          //       imgRefs[i].current.style.opacity = 0.5;
+          //     }
+          //   }
+          //   imgRefs[0].current.style.opacity = 1;
+          // } else if (entry.target === storePositionRef.current) {
+          //   for (let i = 0; i < sectionRefs.length; i++) {
+          //     if (imgRefs[i]?.current) {
+          //       imgRefs[i].current.style.opacity = 0.5;
+          //     }
+          //   }
+          //   imgRefs[1].current.style.opacity = 1;
+          // } else if (entry.target === neneGalleryRef.current) {
+          //   for (let i = 0; i < sectionRefs.length; i++) {
+          //     if (imgRefs[i]?.current) {
+          //       imgRefs[i].current.style.opacity = 0.5;
+          //     }
+          //   }
+          //   imgRefs[2].current.style.opacity = 1;
+          // }
+        } else {
+          for (let i = 0; i < sectionRefs.length; i++) {
+            if (imgRefs[i]?.current) {
+              imgRefs[i].current.style.opacity = 1;
+            }
+          }
+        }
+        // else if (!entry.isIntersecting) {
+        //   for (let i = 0; i < sectionRefs.length; i++) {
+        //     if (imgRefs[i]?.current) {
+        //       imgRefs[i].current.style.opacity = 1;
+        //     }
+        //   }
+        // }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+    observer.observe(menuSectionRef.current);
+    observer.observe(storePositionRef.current);
+    observer.observe(neneGalleryRef.current);
+
+    // if (menuSectionRef.current) {
+    //   observer.observe(menuSectionRef.current);
+    //   // observer.unobserve(storePositionRef.current);
+    //   // observer.unobserve(neneGalleryRef.current);
+    // } else if (storePositionRef.current) {
+    //   // observer.unobserve(menuSectionRef.current);
+    //   observer.observe(storePositionRef.current);
+    //   // observer.unobserve(neneGalleryRef.current);
+    // } else if (neneGalleryRef.current) {
+    //   // observer.unobserve(menuSectionRef.current);
+    //   // observer.unobserve(storePositionRef.current);
+    //   observer.observe(neneGalleryRef.current);
+    // }
+
+    // observer.disconnect(); // 컴포넌트 언마운트 시 옵저버 해제
+
+    return () => {
+      observer.disconnect(); // 컴포넌트 언마운트 시 옵저버 해제
+    };
+  },[]) 
+  
   
 
   return (
@@ -190,12 +275,8 @@ function App() {
             </div>
           </section>  
          </div>
-         <Opacity sectionRefs={sectionRefs[0]}></Opacity>
-         {/* <div className="sticky-img" ref={stickyImgRef}> */}
-          {/* <img src="/img/renewal-1.png" alt="#" /> */}
-          {/* <img src="/img/renewal-2.png" alt="#" /> */}
-          {/* <img src="/img/renewal-3.png" alt="#" /> */}
-         {/* </div> */}
+         
+         <Opacity sectionRefs={imgRefs}></Opacity>
       </div>
       <section className='takeaway-section'>
         <div className="flex-container">
