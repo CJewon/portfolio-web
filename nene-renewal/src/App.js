@@ -31,55 +31,23 @@ function App() {
       entries.forEach((entry,index) => {
         if (entry.isIntersecting) {
           // 요소가 뷰포트에 들어왔을 때 실행할 작업
-
-          for (let i = 0; i < sectionRefs.length; i++) {
-                if (imgRefs[i]?.current) {
-                  imgRefs[i].current.style.opacity = 0.5;
-                }
+          for(let k = 0; k <= index; k++) {
+            for (let i = 0; i < sectionRefs.length; i++) {
+              if (imgRefs[i]?.current) {
+                imgRefs[i].current.style.opacity = 0.5;
               }
-              console.log(entry.target)
-
-              // index of로 entry.target이 sectionRefs배열에서 몇번째에 있는지 확인한 후,
-              // const 몇번째 = ??? ; 
-              // imgRefs[몇번째].current.style.opacity = 1;
-
-
-          // if (entry.target === menuSectionRef.current) {
-          //   for (let i = 0; i < sectionRefs.length; i++) {
-          //     if (imgRefs[i]?.current) {
-          //       imgRefs[i].current.style.opacity = 0.5;
-          //     }
-          //   }
-          //   imgRefs[0].current.style.opacity = 1;
-          // } else if (entry.target === storePositionRef.current) {
-          //   for (let i = 0; i < sectionRefs.length; i++) {
-          //     if (imgRefs[i]?.current) {
-          //       imgRefs[i].current.style.opacity = 0.5;
-          //     }
-          //   }
-          //   imgRefs[1].current.style.opacity = 1;
-          // } else if (entry.target === neneGalleryRef.current) {
-          //   for (let i = 0; i < sectionRefs.length; i++) {
-          //     if (imgRefs[i]?.current) {
-          //       imgRefs[i].current.style.opacity = 0.5;
-          //     }
-          //   }
-          //   imgRefs[2].current.style.opacity = 1;
-          // }
-        } else {
-          for (let i = 0; i < sectionRefs.length; i++) {
-            if (imgRefs[i]?.current) {
-              imgRefs[i].current.style.opacity = 1;
+              imgRefs[index].current.style.opacity = 1;
             }
           }
-        }
-        // else if (!entry.isIntersecting) {
-        //   for (let i = 0; i < sectionRefs.length; i++) {
-        //     if (imgRefs[i]?.current) {
-        //       imgRefs[i].current.style.opacity = 1;
-        //     }
-        //   }
-        // }
+            
+          } else {
+            for (let i = 0; i < sectionRefs.length; i++) {
+              if (imgRefs[i]?.current) {
+                imgRefs[i].current.style.opacity = 1;
+              }
+            }
+          }
+        
       });
     };
 
