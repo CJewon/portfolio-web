@@ -31,7 +31,7 @@ function App() {
       entries.forEach((entry,index) => {
         if (entry.isIntersecting) {
           // 요소가 뷰포트에 들어왔을 때 실행할 작업
-          const index = 3;
+          const index = 2;
           // index = 0 일때
           // index = 1 일때
           // index = 2 일때
