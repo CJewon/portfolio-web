@@ -29,19 +29,17 @@ function App() {
     };
     const callback = (entries, observer) => {
       entries.forEach((entry,index) => {
+        console.log(`Entry ${index}:`, entry);
+        console.log(entry.isIntersecting)
         if (entry.isIntersecting) {
           // 요소가 뷰포트에 들어왔을 때 실행할 작업
-          const index = 2;
-          // index = 0 일때
-          // index = 1 일때
-          // index = 2 일때
           for(let k = 0; k < index; k++) {
             for (let i = 0; i < sectionRefs.length; i++) {
               if (imgRefs[i]?.current) {
                 imgRefs[i].current.style.opacity = 0.5;
               }
-              imgRefs[index].current.style.opacity = 1;
             }
+            imgRefs[index].current.style.opacity = 1;
           }
             
           } else {
