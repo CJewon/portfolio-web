@@ -31,7 +31,11 @@ function App() {
       entries.forEach((entry,index) => {
         if (entry.isIntersecting) {
           // 요소가 뷰포트에 들어왔을 때 실행할 작업
-          for(let k = 0; k <= index; k++) {
+          const index = 3;
+          // index = 0 일때
+          // index = 1 일때
+          // index = 2 일때
+          for(let k = 0; k < index; k++) {
             for (let i = 0; i < sectionRefs.length; i++) {
               if (imgRefs[i]?.current) {
                 imgRefs[i].current.style.opacity = 0.5;
@@ -47,7 +51,6 @@ function App() {
               }
             }
           }
-        
       });
     };
 
@@ -56,22 +59,7 @@ function App() {
     observer.observe(storePositionRef.current);
     observer.observe(neneGalleryRef.current);
 
-    // if (menuSectionRef.current) {
-    //   observer.observe(menuSectionRef.current);
-    //   // observer.unobserve(storePositionRef.current);
-    //   // observer.unobserve(neneGalleryRef.current);
-    // } else if (storePositionRef.current) {
-    //   // observer.unobserve(menuSectionRef.current);
-    //   observer.observe(storePositionRef.current);
-    //   // observer.unobserve(neneGalleryRef.current);
-    // } else if (neneGalleryRef.current) {
-    //   // observer.unobserve(menuSectionRef.current);
-    //   // observer.unobserve(storePositionRef.current);
-    //   observer.observe(neneGalleryRef.current);
-    // }
-
-    // observer.disconnect(); // 컴포넌트 언마운트 시 옵저버 해제
-
+    
     return () => {
       observer.disconnect(); // 컴포넌트 언마운트 시 옵저버 해제
     };
