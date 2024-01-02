@@ -29,8 +29,9 @@ function App() {
     };
     const callback = (entries, observer) => {
       entries.forEach((entry,index) => {
-        console.log(`Entry ${index}:`, entry);
-        console.log(entry.isIntersecting)
+        // console.log(`Entry ${index}:`, entry);
+        // console.log(entry.isIntersecting)
+        console.log(observer)
         if (entry.isIntersecting) {
           // 요소가 뷰포트에 들어왔을 때 실행할 작업
           for(let k = 0; k < index; k++) {
