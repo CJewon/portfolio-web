@@ -15,8 +15,10 @@ function App() {
   const menuSectionImgRef = useRef(null);
   const storePositionImgRef = useRef(null);
   const neneGalleryImgRef = useRef(null);
+  const questionContainerRef = useRef(null);
+  const EndSectionRef = useRef(null);
 
-  const sectionRefs = [menuSectionRef, storePositionRef, neneGalleryRef];
+  const sectionRefs = [menuSectionRef, storePositionRef, neneGalleryRef, questionContainerRef, EndSectionRef];
   const imgRefs = [menuSectionImgRef, storePositionImgRef, neneGalleryImgRef];
 
   
@@ -31,27 +33,29 @@ function App() {
     const callback = (entries) => {
       entries.forEach((entry, index) => {
          if (entry.isIntersecting) {
+          console.log(entry.isIntersecting)
           // intersectingIndex 변수에 현재 보이는 섹션의 인덱스를 저장
           const intersectingIndex = sectionRefs.findIndex(
             (ref) => ref.current === entry.target
           );
   
-          if (intersectingIndex !== -1) {
+          if (intersectingIndex == 0 || intersectingIndex == 1 || intersectingIndex == 2) {
             // 유효한 인덱스가 발견되면 투명도를 해당하는 이미지에 맞게 업데이트
             for (let i = 0; i < sectionRefs.length; i++) {
               if (imgRefs[i]?.current) {
                 imgRefs[i].current.style.opacity = i === intersectingIndex ? 1 : 0.5;
               }
             }
-          }
-        } else {
-          // 교차하지 않으면 모든 섹션의 투명도를 재설정
-          for (let i = 0; i < sectionRefs.length; i++) {
-            if (imgRefs[i]?.current) {
-              imgRefs[i].current.style.opacity = 1;
+          } else if(intersectingIndex == 3 || intersectingIndex == 4){
+            // 교차하지 않으면 모든 섹션의 투명도를 재설정
+            for (let i = 0; i < sectionRefs.length; i++) {
+              if (imgRefs[i]?.current) {
+                imgRefs[i].current.style.opacity = 1;
+              }
             }
           }
-        }
+          console.log(intersectingIndex);
+          }
       });
     };
   
@@ -162,7 +166,7 @@ function App() {
                   </ul>
                 </div>
               </div>
-              <div className='question-container'>
+              <div className='question-container' ref={questionContainerRef}>
                         <h3>Q : 어떤 원칙을 가지고 디자인을 했나요?</h3>
                         <p>A : 불규칙적으로 나열되어 있는 컨텐츠를 정리해준다는 느낌으로 전체적으로 디자인을 해주었습니다. 컬러는 네네치킨에서 사용하는 메인컬러를 최대한 사용하고자 노력했습니다.</p>
               </div>
@@ -216,10 +220,10 @@ function App() {
                   </div>
                 </div>
           </section>
-          <section className='end-section' id='end'>
+          <section className='end-section' id='end' >
             <div className='renewal-container'>
-            <h2>4. END</h2>
-              <div className="flex-container">
+            <h2 ref={EndSectionRef}>4. END</h2>
+              <div className="flex-container" >
                 <div className='question-container'>
                           <ul>
                             <li>
