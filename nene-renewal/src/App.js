@@ -21,48 +21,54 @@ function App() {
 
   
 
-  useEffect(()=>{
+  useEffect(() => {
     const options = {
-      root: null, // 뷰포트를 기준으로 감지할 것인지, 다른 요소를 기준으로 할 것인지 지정
-      rootMargin: '0px', // 뷰포트와 교차 영역을 얼마나 넓게 할 것인지 지정
-      threshold: 0, // 교차 영역의 어느 정도가 보이는지를 나타내는 비율 (0.5는 요소의 50% 이상이 보일 때 감지)
+      root: null,
+      rootMargin: '0px',
+      threshold: 0,
     };
-    const callback = (entries, observer) => {
-      entries.forEach((entry,index) => {
-        // console.log(`Entry ${index}:`, entry);
-        // console.log(entry.isIntersecting)
-        console.log(observer)
-        if (entry.isIntersecting) {
-          // 요소가 뷰포트에 들어왔을 때 실행할 작업
-          for(let k = 0; k < index; k++) {
+  
+    const callback = (entries) => {
+      entries.forEach((entry, index) => {
+         if (entry.isIntersecting) {
+          // intersectingIndex 변수에 현재 보이는 섹션의 인덱스를 저장
+          const intersectingIndex = sectionRefs.findIndex(
+            (ref) => ref.current === entry.target
+          );
+  
+          if (intersectingIndex !== -1) {
+            // 유효한 인덱스가 발견되면 투명도를 해당하는 이미지에 맞게 업데이트
             for (let i = 0; i < sectionRefs.length; i++) {
               if (imgRefs[i]?.current) {
-                imgRefs[i].current.style.opacity = 0.5;
-              }
-            }
-            imgRefs[index].current.style.opacity = 1;
-          }
-            
-          } else {
-            for (let i = 0; i < sectionRefs.length; i++) {
-              if (imgRefs[i]?.current) {
-                imgRefs[i].current.style.opacity = 1;
+                imgRefs[i].current.style.opacity = i === intersectingIndex ? 1 : 0.5;
               }
             }
           }
+        } else {
+          // 교차하지 않으면 모든 섹션의 투명도를 재설정
+          for (let i = 0; i < sectionRefs.length; i++) {
+            if (imgRefs[i]?.current) {
+              imgRefs[i].current.style.opacity = 1;
+            }
+          }
+        }
       });
     };
-
+  
     const observer = new IntersectionObserver(callback, options);
-    observer.observe(menuSectionRef.current);
-    observer.observe(storePositionRef.current);
-    observer.observe(neneGalleryRef.current);
-
-    
+  
+    // 모든 섹션을 감시하도록 함
+    sectionRefs.forEach((ref) => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+  
     return () => {
-      observer.disconnect(); // 컴포넌트 언마운트 시 옵저버 해제
+      observer.disconnect();
     };
-  },[]) 
+  }, [sectionRefs, imgRefs]);
+  
   
   
 
@@ -186,7 +192,7 @@ function App() {
                         </li>
                         <li className='store-position' ref={storePositionRef}>
                           <h3>2&#41; 근처매장</h3>
-                e         <ul>
+                           <ul>
                             <li className='code-list'>
                                 <Position 내용={codes.fourthSection}></Position>
                                 <p>makeContnt라는 함수입니다. 위 함수는 fetch함수로 가지고 온 데이터들을 활용하여 메뉴들의 정보를 나타내주는 함수입니다. 위와 같은 방식으로 작성한 이유는 new-menu, popular-menu, recommended-menu 3개의 section에 들어가는 메뉴의 정보들을 한번에 컨트롤 할 수 있으며, 수정 및 보완을 하는데 있어서 이점이 있다고 생각합니다.</p>
