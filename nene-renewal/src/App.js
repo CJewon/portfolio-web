@@ -33,7 +33,7 @@ function App() {
     const callback = (entries) => {
       entries.forEach((entry, index) => {
          if (entry.isIntersecting) {
-          console.log(entry.isIntersecting)
+          console.log(entry.boundingClientRect)
           // intersectingIndex 변수에 현재 보이는 섹션의 인덱스를 저장
           const intersectingIndex = sectionRefs.findIndex(
             (ref) => ref.current === entry.target
