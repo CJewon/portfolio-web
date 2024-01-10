@@ -39,7 +39,7 @@ h1, h2, a {
 
 section {
   background-color: #6F6D6D;
-  padding-bottom: 112px;
+  margin-bottom: 112px;
 }
 
 a {
@@ -150,28 +150,24 @@ header a {
 h2 {
   font-size: 48px;
   color: #F5F5F5;
-  padding-left: 90px;
 }
+
 
 h3 {
-  font-size: 24px;
-  padding-bottom: 80px;
+  font-size: 28px;
+  margin: 80px 0;
   font-weight: bold;
   color: #F0DA14;
+  line-height: 1.5;
 }
 
-.question-container {
-  padding-left: 100px;
-}
+
 
 .overview-size {
   width: 450px;
- padding-top: 80px; 
 }
 
-.overview-size li {
-  padding-bottom: 200px;
-}
+
 
 .overview-size li h3 {
   width: 531px;
@@ -214,14 +210,13 @@ background-color: #B6B3B2;
   background-color: #2b2b2b;
 }
 
-.design-explain-container ul {
-  padding-top: 80px;
+.design-explain-container {
+  margin-top: 80px;
 }
 
 .design-explain-container li {
   display: flex;
   align-items: center;
-  padding-left: 100px;
 }
 
 .design-explain-container li p {
@@ -232,7 +227,6 @@ background-color: #B6B3B2;
 
 .color-name {
   display: flex;
-  padding-left: 100px;
   gap: 35px;
   transform: translateX(185px);
   padding-top: 8px;
@@ -269,10 +263,7 @@ background-color: #B6B3B2;
   font-size: 20px;
 }
 
-.explain-container {
-  padding-top: 80px;
-  padding-left: 100px;
-}
+
 
 .explain-container p {
   color: #FF7A7A;
@@ -280,7 +271,7 @@ background-color: #B6B3B2;
   font-weight: 300;
 }
 
-.flex-container > .question-container ul li {
+.flex-container > .question-container  li {
   padding-top: 80px;
 }
 
@@ -302,7 +293,17 @@ background-color: #B6B3B2;
 }
 
 .code-list p {
-  padding-top: 45px;
-  padding-bottom: 150px;
+  margin-top: 45px;
+  margin-bottom: 150px;
 }
 
+.sticky-img.all-background-opacity > img.active {
+  opacity: 1;
+}
+.sticky-img.all-background-opacity > img {
+  opacity: 0.5;
+}
+
+.renewal-container {
+  padding: 0 100px;
+}

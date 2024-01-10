@@ -17,8 +17,10 @@ function App() {
   const neneGalleryImgRef = useRef(null);
   const questionContainerRef = useRef(null);
   const EndSectionRef = useRef(null);
+  const explainRef = useRef(null);
+  const imgContainerRef = useRef(null);
 
-  const sectionRefs = [menuSectionRef, storePositionRef, neneGalleryRef, questionContainerRef, EndSectionRef];
+  const sectionRefs = [menuSectionRef, storePositionRef, neneGalleryRef];
   const imgRefs = [menuSectionImgRef, storePositionImgRef, neneGalleryImgRef];
 
   
@@ -30,36 +32,95 @@ function App() {
       threshold: 0,
     };
   
-    const callback = (entries) => {
-      entries.forEach((entry, index) => {
-         if (entry.isIntersecting) {
-          console.log(entry.boundingClientRect)
-          // intersectingIndex 변수에 현재 보이는 섹션의 인덱스를 저장
-          const intersectingIndex = sectionRefs.findIndex(
-            (ref) => ref.current === entry.target
-          );
+    // const callback = (entries) => {
+    //   entries.forEach((entry, index) => {
+    //      if (entry.isIntersecting) {
+    //       console.log(ent)
+
+    //       // 엔트리가 뷰에 들어온 상황
+    //       console.log(entry.target, index)
+         
+
+
+    //       // console.log(entry.boundingClientRect)
+    //       // // intersectingIndex 변수에 현재 보이는 섹션의 인덱스를 저장
+    //       // const intersectingIndex = sectionRefs.findIndex(
+    //       //   (ref) => ref.current === entry.target
+    //       // );
   
-          if (intersectingIndex == 0 || intersectingIndex == 1 || intersectingIndex == 2) {
-            // 유효한 인덱스가 발견되면 투명도를 해당하는 이미지에 맞게 업데이트
-            for (let i = 0; i < sectionRefs.length; i++) {
-              if (imgRefs[i]?.current) {
-                imgRefs[i].current.style.opacity = i === intersectingIndex ? 1 : 0.5;
-              }
-            }
-          } else if(intersectingIndex == 3 || intersectingIndex == 4){
-            // 교차하지 않으면 모든 섹션의 투명도를 재설정
-            for (let i = 0; i < sectionRefs.length; i++) {
-              if (imgRefs[i]?.current) {
-                imgRefs[i].current.style.opacity = 1;
-              }
-            }
-          }
-          console.log(intersectingIndex);
-          }
-      });
+    //       // if (intersectingIndex == 0 || intersectingIndex == 1 || intersectingIndex == 2) {
+    //       //   // 유효한 인덱스가 발견되면 투명도를 해당하는 이미지에 맞게 업데이트
+    //       //   for (let i = 0; i < sectionRefs.length; i++) {
+    //       //     if (imgRefs[i]?.current) {
+    //       //       imgRefs[i].current.style.opacity = i === intersectingIndex ? 1 : 0.5;
+    //       //     }
+    //       //   }
+    //       // } else if(intersectingIndex == 3 || intersectingIndex == 4){
+    //       //   // 교차하지 않으면 모든 섹션의 투명도를 재설정
+    //       //   for (let i = 0; i < sectionRefs.length; i++) {
+    //       //     if (imgRefs[i]?.current) {
+    //       //       imgRefs[i].current.style.opacity = 1;
+    //       //     }
+    //       //   }
+    //       // }
+    //       // console.log(intersectingIndex);
+    //       }else {
+    //         // 엔트리가 뷰에서 나간 상황
+    //         // entry.current.style.opacity = 1
+    //       }
+    //   });
+    // };
+
+
+    const callback = (entry) => {
+   
+      const intersectingIndex = sectionRefs.findIndex(
+        (ref) => ref.current === entry[0].target
+      );
+      if (entry[0].isIntersecting) {
+        imgRefs[intersectingIndex].current.classList.add('active')
+        console.log(intersectingIndex);
+
+        console.log(entry)
+
+
+        // 엔트리가 뷰에 들어온 상황
+        // imgContainerRef.current.classList.add('active')
+        // console.log('이 뷰에 들어왔다')
+
+        // (css) .sticky-img.all-background-opacity > img.active{
+      //   opacity = 0.1;
+      // }
+        
+
+
+      }else {
+        // 엔트리가 뷰에서 나간 상황
+        imgRefs[intersectingIndex].current.classList.remove('active')
+        // imgContainerRef.current.classList.remove('active');
+        // console.log('이 뷰에서 나갔다')
+      }
     };
+
+    const sectionCallback = (entry) => {
+   
+      if (entry[0].isIntersecting) {
+        // console.log(imgContainerRef)
+        imgContainerRef.current.classList.add('all-background-opacity')
+        // console.log("백그라운드 변경1")
+        // (css) .sticky-img.all-background-opacity > img{
+        //   opacity = 0.5;
+        // }
+      }else {
+        // 엔트리가 뷰에서 나간 상황
+        imgContainerRef.current.classList.remove('all-background-opacity')
+        // console.log("백그라운드 변경2")
+       }
+ };
+
   
     const observer = new IntersectionObserver(callback, options);
+    const sectionObserver = new IntersectionObserver(sectionCallback, options);
   
     // 모든 섹션을 감시하도록 함
     sectionRefs.forEach((ref) => {
@@ -67,11 +128,15 @@ function App() {
         observer.observe(ref.current);
       }
     });
+
+    if(explainRef.current) {
+      sectionObserver.observe(explainRef.current)
+    }
   
     return () => {
       observer.disconnect();
     };
-  }, [sectionRefs, imgRefs]);
+  }, [sectionRefs, imgRefs, explainRef]);
   
   
   
@@ -176,7 +241,7 @@ function App() {
                 <div className='renewal-container'>
                 <h2>3. EXPLAIN</h2>
                   <div className="flex-container">
-                      <ul className='explain-container'>
+                      <ul className='explain-container' ref={explainRef}>
                         <li className='menu-section' ref={menuSectionRef}>
                           <h3>1&#41; menu-section</h3>
                           <ul>
@@ -241,7 +306,7 @@ function App() {
           </section>  
          </div>
          
-         <Opacity sectionRefs={imgRefs}></Opacity>
+         <Opacity sectionRefs={imgRefs} containerRef={imgContainerRef}></Opacity>
       </div>
       <section className='takeaway-section'>
         <div className="flex-container">
