@@ -108,6 +108,8 @@ header a {
   line-height: 1.5;
   font-size: 20px;
   font-family: 'IAMAPLAYER';
+  color: #2b2b2b;
+  font-weight: 600;
 }
 
 .copyright {
