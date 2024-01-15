@@ -9,7 +9,7 @@ function App() {
           <a href="#">WORK</a>
           <a href="#">CONTACT</a>
         </header>
-        <section className="main-container" id='idPos'>
+        <section className="main-section" id='idPos'>
           <div className="round-container"></div>
           <div className="title-container">
             <h1>WELCOME TO MY PORTFOLIO</h1>
@@ -20,7 +20,7 @@ function App() {
             <p>CHOIJEWONⓒ 2023 PORTFOLIO</p>
           </div>
         </section>
-        <section className='introduce-container' id='introducePos'>
+        <section className='introduce-section' id='introducePos'>
           <h2>INTRODUCE</h2>
           <div className="img-container">
             <img src="#" alt="#" />
@@ -36,8 +36,31 @@ function App() {
             </p>
           </div>
         </section>
-        <section className='work-container'>
-          
+        <section className='work-section' id='workPos'>
+          <img src="#" alt="#" />
+          <div className="website-explain-container">
+            <img src="#" alt="#" />
+            <div className='website-explain-text'>
+              <h4>네네치킨</h4>
+              <p>네네치킨 메인 홈페이지 리뉴얼</p>
+              <div className="summary-rect">
+                <p>#디자인</p>
+              </div>
+              <div className="summary-rect">
+                <p>#Javascript</p>
+              </div>
+              <div className="summary-rect">
+                <p>#리뉴얼페이지</p>
+              </div>
+              <a href="#">상세보기</a>
+            </div>
+          </div>
+          <img src="#" alt="#" />
+        </section>
+        <section className="contact-section" id='contactPos'>
+          <p>저에 대해 더 궁금하신 점이 있으신가요?</p>
+          <p>이메일 : donkey0103@naver.com</p>
+          <p>메일을 보내주시면 확인 후 최대한 빠르게 회신 드리겠습니다.</p>
         </section>
     </div>
   );
