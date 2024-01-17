@@ -5,10 +5,12 @@ function App() {
   return (
     <div className="App">
         <header>
-          <a href="#idPos">MAIN</a>
-          <a href="#introducePos">INTRODUCE</a>
-          <a href="#">WORK</a>
-          <a href="#">CONTACT</a>
+          <ul>
+            <li><a href="#idPos">MAIN</a></li>
+            <li><a href="#introducePos">INTRODUCE</a></li>
+            <li><a href="#">WORK</a></li>
+            <li><a href="#">CONTACT</a></li>
+          </ul>
         </header>
         <section className="main-section" id='idPos'>
           <div className="round-container"></div>
@@ -38,6 +40,7 @@ function App() {
           </div>
         </section>
         <section className='work-section' id='workPos'>
+          <h2>WORK</h2>
           <img src="#" alt="#" />
           <div className="website-explain-container">
             <img src="#" alt="#" />
@@ -59,9 +62,7 @@ function App() {
           <img src="#" alt="#" />
         </section>
         <section className="contact-section" id='contactPos'>
-          <p>저에 대해 더 궁금하신 점이 있으신가요?</p>
-          <p>이메일 : donkey0103@naver.com</p>
-          <p>메일을 보내주시면 확인 후 최대한 빠르게 회신 드리겠습니다.</p>
+          <h2>CONTACT</h2>
         </section>
     </div>
   );
