@@ -1,5 +1,29 @@
+@font-face {
+  font-family: 'IAMAPLAYER';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/IAMAPLAYER.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
 .App {
   background-color: #404040;
+  font-family: "IAMAPLAYER";
+  white-space: pre-wrap;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+p {
+  color: #F5F5F5;
 }
 
 header {
@@ -24,22 +48,35 @@ header > a {
   height: fit-content;
   display: flex;
   align-items: center;
+  font-size: 16px; 
+}
+
+a.header-position {
+  color: #FFFFFF;
 }
 
 section {
+  width: 100vw;
+  height: 100vh;
   padding-top: 110px;
   margin: 0 309px;
 }
 
 .main-section {
-  display: flex;
-  
+  /* margin-top: 48px; */
 }
 
-.round-container {
-  width: 3px;
-  height: 570px;
-  border-radius: 100px;
-  background-color: #D9D9D9;
-  opacity: 0.2;
+.main-container {
+  max-width: 1302px;
+  height: 573px;
+  border-left: 3px solid #A7A7A7;
+  padding: 44px 27px;
+}
+
+h1 {
+  font-size: 64px;
+  color: #F5F5F5;
+  background-color: #473D3D;
+  line-height: 2;
+  font-weight: 500;
 }

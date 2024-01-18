@@ -6,21 +6,22 @@ function App() {
     <div className="App">
         <header>
           <ul>
-            <li><a href="#idPos">MAIN</a></li>
+            <li><a href="#idPos" className='header-position'>MAIN</a></li>
             <li><a href="#introducePos">INTRODUCE</a></li>
             <li><a href="#">WORK</a></li>
             <li><a href="#">CONTACT</a></li>
           </ul>
         </header>
         <section className="main-section" id='idPos'>
-          <div className="round-container"></div>
-          <div className="title-container">
-            <h1>WELCOME TO MY PORTFOLIO</h1>
-            <p>안녕하세요! 끊임없이 도전하고, 나아가 프론트엔드 개발자가 되고 싶은 신입 웹 퍼블리셔 최제원입니다.</p>
-          </div>
-          <div className="copyright-container">
-            <p>본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 만들어진 사이트입니다.</p>
-            <p>CHOIJEWONⓒ 2023 PORTFOLIO</p>
+          <div className="main-container">
+            <div className="title-container">
+              <h1>WELCOME TO MY<br/>PORTFOLIO</h1>
+              <p>안녕하세요! 끊임없이 도전하고, 나아가 프론트엔드 개발자가 되고 싶은 신입 웹 퍼블리셔 최제원입니다.</p>
+            </div>
+            <div className="copyright-container">
+              <p>본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 만들어진 사이트입니다.</p>
+              <p>CHOIJEWONⓒ 2023 PORTFOLIO</p>
+            </div>
           </div>
         </section>
         <section className='introduce-section' id='introducePos'>
@@ -63,6 +64,18 @@ function App() {
         </section>
         <section className="contact-section" id='contactPos'>
           <h2>CONTACT</h2>
+          <p>저에 대해 더 궁금한 점이 있으신가요?</p>
+          <div className="adress-container">
+            <ul>
+              <li className='email-kakaotalk'>
+                <p>이메일 : donkey0103@naver.com</p>
+                <p>카카오톡 : kakaotalk</p>
+              </li>
+              <li className='end-p-tag'>
+                <p>여러분과 함께 미래를 위한 독특하고 혁신적인 프로젝트를 함께하며 성장하고 싶습니다. 새로운 도전과 경험을 통해 함께 발전해 나가는 여정에서 여러분과 소중한 협업을 만들어나가고 싶습니다. 언제든지 이메일이나 카카오톡을 통해 연락주세요. 연락을 남겨주시면 1 ~ 2일내로 답신드리겠습니다. 감사합니다!</p>
+              </li>
+            </ul>
+          </div>
         </section>
     </div>
   );
