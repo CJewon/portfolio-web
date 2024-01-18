@@ -62,9 +62,6 @@ section {
   margin: 0 309px;
 }
 
-.main-section {
-  /* margin-top: 48px; */
-}
 
 .main-container {
   max-width: 1302px;
@@ -76,7 +73,15 @@ section {
 h1 {
   font-size: 64px;
   color: #F5F5F5;
-  background-color: #473D3D;
-  line-height: 2;
   font-weight: 500;
+}
+
+h1 > span {
+  display: block;
+  background-color: #473D3D;
+  margin-bottom: 16px;
+}
+
+h1 > span:last-of-type {
+  margin: 0;
 }
