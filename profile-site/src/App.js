@@ -21,10 +21,10 @@ function App() {
               <p>안녕하세요! 끊임없이 도전하고, 나아가 프론트엔드 개발자가 되고 싶은 신입 웹 퍼블리셔 최제원입니다.</p>
             </div>
           </div>
-            <div className="copyright-container">
-              <p>본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 만들어진 사이트입니다.</p>
-              <p>CHOIJEWONⓒ 2023 PORTFOLIO</p>
-            </div>
+          <div className="copyright-container">
+            <p>본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 만들어진 사이트입니다.</p>
+            <p>CHOIJEWONⓒ 2023 PORTFOLIO</p>
+          </div>
         </section>
         <section className='introduce-section' id='introducePos'>
           <h2>INTRODUCE</h2>
