@@ -70,8 +70,9 @@ section {
   max-width: 1302px;
   height: 573px;
   border-left: 3px solid #A7A7A7;
-  padding: 44px 27px;
+  padding: 88px 27px;
   margin-top: 48px;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -87,9 +88,6 @@ h1 > span {
 }
 
 
-h1 > span:last-of-type {
-  margin: 0;
-}
 
 .title-container > p {
   font-size: 20px;
@@ -101,9 +99,8 @@ h1 > span:last-of-type {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: fit-content;
   flex-direction: column;
-  padding-top: 24px;
+  padding-top: 100px;
 }
 
 .copyright-container > p {
@@ -126,8 +123,7 @@ h3 {
 }
 
 .introduce-section > h2 {
-  margin: 0;
-  margin-bottom: 32px;
+  margin-bottom: 54px;
 }
 
 .img-container > img {
@@ -138,15 +134,18 @@ h3 {
 
 .introduce-container {
   display: flex;
-  /* justify-content: space-between; */
   gap: 130px;
 }
 
-.introduce-text-container {
-  border-bottom: 1px solid #D9D9D9;
-  border-top : 1px solid #D9D9D9;
-  height: 100%;
+.introduce-text-container > h3 {
+  margin: 32px 0;
+}
+
+.introduce-text {
+  border-bottom: 1px solid rgba(217, 217, 217, 0.2);
+  border-top : 1px solid rgba(217, 217, 217, 0.2);
   padding: 32px 0;
+  box-sizing: border-box;
 }
 
 .introduce-text-container span {
@@ -154,9 +153,76 @@ h3 {
   font-weight: bold;
 }
 
-.introduce-text-container > p:first-of-type {
+.introduce-text > p:first-of-type {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.introduce-text > p {
+  font-family: "NOTO SANS KR";
+  font-weight: 100;
+  margin: 0;
+  padding-bottom: 20px;
+  line-height: 1.5;
+}
+
+.introduce-text > p:last-of-type {
+  padding-bottom: 0;
+}
+
+.stack-graph-container {
+  margin-top: 32px;
+}
+
+.stack-graph-circle-container {
+  padding: 32px;
+}
+
+.stack-graph-container > h3 > span {
+  font-weight: 500;
+  font-family: "NOTO SANS KR";
   font-size: 24px;
 }
+
+.circle-ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.circle-li {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.circle-img {
+  position: relative;
+}
+
+.icon-img {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.percent {
+  font-family: "NOTO SANS KR";
+  text-align: center;
+}
+
+.percent-bar {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
 
 
 
