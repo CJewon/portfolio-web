@@ -105,37 +105,54 @@ function App() {
         </section>
         <section className='work-section' id='workPos'>
           <h2>WORK</h2>
-          <img src="#" alt="#" />
-          <div className="website-explain-container">
-            <img src="#" alt="#" />
-            <div className='website-explain-text'>
-              <h4>네네치킨</h4>
-              <p>네네치킨 메인 홈페이지 리뉴얼</p>
-              <div className="summary-rect">
-                <p>#디자인</p>
+          <div className="work-container">
+            <a href="#">
+              <img src="/img/previousButton.png" alt="왼쪽화살표" />
+            </a>
+            <div className="website-explain-container">
+              <img src="/img/neneWeb.png" alt="네네홈페이지" />
+              <div className='website-explain-text'>
+                <h4>네네치킨</h4>
+                <p>네네치킨 메인 홈페이지 리뉴얼</p>
+                <div className="summary-rect-container">
+                  <div className="summary-rect-text">
+                    <div className="summary-rect">
+                      <p>#디자인</p>
+                    </div>
+                    <div className="summary-rect">
+                      <p>#Javascript</p>
+                    </div>
+                    <div className="summary-rect">
+                      <p>#리뉴얼페이지</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="website-click-button">
+                  <a href="#">상세보기</a>
+                </div>
               </div>
-              <div className="summary-rect">
-                <p>#Javascript</p>
-              </div>
-              <div className="summary-rect">
-                <p>#리뉴얼페이지</p>
-              </div>
-              <a href="#">상세보기</a>
             </div>
+            <a href="#">
+              <img src="/img/nextButton.png" alt="오른쪽화살표" />
+            </a>
           </div>
-          <img src="#" alt="#" />
+          <div className="slide-position">
+             <div className="slide-circle active"></div>
+             <div className="slide-circle"></div>
+          </div>
         </section>
         <section className="contact-section" id='contactPos'>
           <h2>CONTACT</h2>
           <p>저에 대해 더 궁금한 점이 있으신가요?</p>
           <div className="adress-container">
-            <ul>
+            <ul className='address-ul'>
               <li className='email-kakaotalk'>
-                <p>이메일 : donkey0103@naver.com</p>
-                <p>카카오톡 : kakaotalk</p>
+                <p>이메일 : <span>donkey0103@naver.com</span></p>
+                <p>카카오톡 : <span>kakaotalk</span></p>
               </li>
               <li className='end-p-tag'>
-                <p>여러분과 함께 미래를 위한 독특하고 혁신적인 프로젝트를 함께하며 성장하고 싶습니다. 새로운 도전과 경험을 통해 함께 발전해 나가는 여정에서 여러분과 소중한 협업을 만들어나가고 싶습니다. 언제든지 이메일이나 카카오톡을 통해 연락주세요. 연락을 남겨주시면 1 ~ 2일내로 답신드리겠습니다. 감사합니다!</p>
+                <p>여러분과 함께 미래를 위한 독특하고 혁신적인 프로젝트를 함께하며 성장하고 싶습니다. 새로운 도전과 경험을 통해 함께 발전해 나가는 여정에서 여러분과 소중한 협업을 만들어나가고 싶습니다.<br></br> 언제든지 이메일이나 카카오톡을 통해 연락주세요. 연락을 남겨주시면 1 ~ 2일내로 답신드리겠습니다. 감사합니다!</p>
               </li>
             </ul>
           </div>
