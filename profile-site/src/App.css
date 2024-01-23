@@ -44,8 +44,7 @@ header > ul {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-top: 44px;
-  margin: 0;
+  height: 100%;
   gap: 80px;
 }
 
@@ -506,7 +505,12 @@ h4 {
   }
 
   .copyright-container > p {
-    font-size: 10px;
+    font-size: 9px;
     font-family: "Inter";
+    margin: 0;
+  }
+
+  header > ul {
+    gap: 28px;
   }
 }
