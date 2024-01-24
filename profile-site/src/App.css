@@ -62,8 +62,8 @@ a.header-position {
 
 section {
   height: 100vh;
+  padding: 0 32px;
   padding-top: 110px;
-  margin: 0 309px;
   box-sizing: border-box;
 }
 
@@ -72,8 +72,9 @@ section {
   height: 573px;
   border-left: 3px solid #A7A7A7;
   padding: 88px 27px;
-  margin-top: 48px;
   box-sizing: border-box;
+  margin: 0 auto;
+  margin-top: 48px;
 }
 
 h1 {
@@ -87,8 +88,6 @@ h1 > span {
   background-color: #473D3D;
   margin-bottom: 20px;
 }
-
-
 
 .title-container > p {
   font-size: 20px;
@@ -122,7 +121,12 @@ h3 {
   color: #F0EFEF;
 }
 
-.introduce-section > h2 {
+.introduce-title {
+  margin: 0 auto;
+  max-width: 1302px; 
+}
+
+.introduce-title > h2 {
   margin-bottom: 54px;
 }
 
@@ -136,6 +140,7 @@ h3 {
   display: flex;
   gap: 130px;
   max-width: 1302px;
+  box-sizing: border-box;
 }
 
 .introduce-text-container > h3 {
@@ -175,21 +180,22 @@ h3 {
   margin-top: 32px;
 }
 
-.stack-graph-circle-container {
-  padding: 32px;
+.stack-graph-container > h3 {
+  padding-bottom: 12px;
+  box-sizing: border-box;
 }
 
 .stack-graph-container > h3 > span {
   font-weight: 500;
   font-family: "NOTO SANS KR";
   font-size: 24px;
+  
 }
 
 .circle-ul {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 50px;
 }
 
 .circle-li {
@@ -221,6 +227,11 @@ h3 {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.work-title {
+  margin: 0 auto;
+  max-width: 1302px;
 }
 
 .work-container {
@@ -322,11 +333,16 @@ h4 {
   background-color: #00D1FF;
 }
 
-.contact-section > p {
+.contact-container > p {
   padding: 64px 0;
   box-sizing: border-box;
   color: #F0EFEF;
   font-size: 20px;
+}
+
+.contact-container {
+  max-width: 1302px;
+  margin: 0 auto;
 }
 
 .adress-container {
@@ -371,9 +387,6 @@ h4 {
 }
 
 @media screen and (max-width: 1365px) {
-  section {
-    margin: 0 32px;
-  }
 
   header {
     padding: 0 32px;
@@ -395,9 +408,14 @@ h4 {
    padding-top: 85px;
   }
 
+  .img-container {
+    width: 40%;
+  }
+
   .img-container > img {
-    width: 285px;
-    height: 384px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .introduce-container {
@@ -415,6 +433,7 @@ h4 {
 
   .introduce-text-container {
     width: 393px;
+    flex-grow: 1;
   }
 
   .introduce-text-container > h3 {
@@ -427,17 +446,10 @@ h4 {
 
   .introduce-text > p {
     padding-bottom: 16px;
-    line-height: 1.2;
   }
 
   .introduce-text > p:first-of-type {
     font-size: 20px;
-  }
-
-  .stack-graph-container {
-    position: absolute;
-    left: 0;
-    transform: translateX(15%);
   }
 
   .stack-graph-container h3 {
@@ -471,6 +483,8 @@ h4 {
   .email-kakaotalk > p {
     font-size: 24px;
   }
+
+  
   
 }
 
@@ -513,4 +527,60 @@ h4 {
   header > ul {
     gap: 28px;
   }
+
+  .img-container > img {
+    width: 148px;
+    height: 193px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .introduce-text > p {
+    font-size: 12px
+  };
+
+  .introduce-text > p:first-of-type {
+    font-size: 16px;
+  }
+
+  
+  
+  
+  .slide-button {
+    width: 25px;
+    height: 25px;
+  }
+
+  h4 {
+    font-size: 24px;
+  }
+
+  .website-explain-text > p {
+    font-size: 14px;
+  }
+
+  .website-explain-container > img {
+    width: 224px;
+    height: 107px;
+  }
+
+  .summary-rect {
+    width: 88px;
+    height: 24px;
+  }
+
+  .website-click-button {
+    width: 120px;
+    height: 36px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+
 }
