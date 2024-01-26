@@ -1,7 +1,33 @@
 import './reset.css';
 import './App.css';
+import { useEffect, useRef } from 'react';
 
 function App() {
+
+  // 1. 원페이지
+  // 2. 슬라이드
+  useEffect(()=>{
+    const slidePreButton = document.getElementsByClassName('pre-button')
+      const slideNextButton = document.getElementsByClassName('next-button')
+      // const slidePage = document.getElementsByClassName('slide-page')
+      const workPage = document.getElementsByClassName('website-explain-container');
+
+      console.log(slidePreButton)
+      console.log(slideNextButton)
+      console.log(workPage);
+
+      slidePreButton[0].addEventListener('click', () => {
+        workPage.style.transform = `translateX(-${100}vw)`;
+      })
+
+      slideNextButton[0].addEventListener('click', () => {
+        workPage.style.transform = `translateX(${100}vw)`;
+      })
+  },[])
+ 
+  // 3. route
+  // 4. observer 사용하여 stack-graph 나타내기
+
   return (
     <div className="App">
         <header>
@@ -23,8 +49,7 @@ function App() {
             </div>
           </div>
           <div className="copyright-container">
-            <p>본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 만들어진 사이트입니다.</p>
-            <p>CHOIJEWONⓒ 2023 PORTFOLIO</p>
+            <p>본 페이지는 상업적 목적이 아닌<br className='disabled active'></br> 개인 포트폴리오용으로 만들어진 사이트입니다.</p>
           </div>
         </section>
         <section className='introduce-section' id='introducePos'>
@@ -109,7 +134,7 @@ function App() {
           <div className="work-title">
           <h2>WORK</h2>
             <div className="work-container">
-              <a href="#">
+              <a href="#" className='pre-button'>
                 <img className='slide-button' src="/img/previousButton.png" alt="왼쪽화살표" />
               </a>
               <div className="website-explain-container">
@@ -136,7 +161,31 @@ function App() {
                   </a>
                 </div>
               </div>
-              <a href="#">
+              <div className="website-explain-container">
+                <img src="/img/neneWeb.png" alt="네네홈페이지" />
+                <div className='website-explain-text'>
+                  <h4>네네치킨</h4>
+                  <p>네네치킨 메인 홈페이지 리뉴얼</p>
+                  <div className="summary-rect-container">
+                    <div className="summary-rect-text">
+                      <div className="summary-rect">
+                        <p>#디자인</p>
+                      </div>
+                      <div className="summary-rect">
+                        <p>#Javascript</p>
+                      </div>
+                      <div className="summary-rect">
+                        <p>#리뉴얼페이지</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <a className="website-click-button" href='#'>
+                    <div href="#">상세보기</div>
+                  </a>
+                </div>
+              </div>
+              <a href="#" className='next-button'>
                 <img className='slide-button' src="/img/nextButton.png" alt="오른쪽화살표" />
               </a>
             </div>
@@ -163,6 +212,9 @@ function App() {
             </div>
           </div>
         </section>
+        <footer className='footer-container'>
+          <p>CHOIJEWONⓒ 2023 PORTFOLIO</p>
+        </footer>
     </div>
   );
 }

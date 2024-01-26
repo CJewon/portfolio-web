@@ -66,6 +66,10 @@ section {
   box-sizing: border-box;
 }
 
+.disabled {
+  display: none;
+}
+
 .main-container {
   max-width: 1302px;
   height: 573px;
@@ -386,6 +390,18 @@ h4 {
   font-weight: 100;
 }
 
+footer {
+  padding: 0 32px;
+  padding-bottom: 32px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+footer > p {
+  color: #706f6f;
+  font-size: 14px;
+}
+
 @media screen and (max-width: 1365px) {
 
   header {
@@ -525,7 +541,7 @@ h4 {
   }
 
   .copyright-container > p {
-    font-size: 9px;
+    font-size: 12px;
     font-family: "Inter";
     margin: 0;
   }
@@ -665,5 +681,21 @@ h4 {
 
   .end-p-tag p {
     font-size: 14px;
+  }
+}
+
+@media screen and (max-width : 599px) {
+  .circle-ul {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width : 470px) {
+  .copyright-container {
+    text-align: center;
+  }
+
+  .disabled {
+    display: block;
   }
 }
