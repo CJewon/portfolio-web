@@ -1,6 +1,14 @@
 import './reset.css';
 import './App.css';
 import { useEffect, useRef } from 'react';
+import html from './img/html.png';
+import css from './img/css.png';
+import js from './img/js.png';
+import react from './img/react.png';
+import myImg from './img/myImg.jpg';
+import neneWeb from './img/neneWeb.png'
+import nextButton from './img/nextButton.png'
+import previousButton from './img/previousButton.png'
 
 function App() {
 
@@ -61,7 +69,7 @@ function App() {
           <h2>INTRODUCE</h2>
             <div className="introduce-container">
               <div className="img-container">
-                <img src="/img/myImg.jpg" alt="내이미지" />
+                <img src={myImg} alt="내이미지" />
               </div>
               <div className="introduce-text-container">
                 <h3>안녕하세요!<br></br>신입 웹 퍼블리셔 <span>최제원</span>입니다.</h3>
@@ -87,7 +95,7 @@ function App() {
                             <svg className='percent-bar' xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
                             <circle cx="50" cy="50" r="46" stroke="#0ACAD7" stroke-width="8"/>
                             </svg>
-                            <img src="/img/html.png" alt="html" className='icon-img' />
+                            <img src={html} alt="html" className='icon-img' />
                           </div>
                           <p className='percent'>50%</p>
                         </li>
@@ -99,7 +107,7 @@ function App() {
                             <svg className='percent-bar' xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
                             <circle cx="50" cy="50" r="46" stroke="#0ACAD7" stroke-width="8"/>
                             </svg>
-                            <img src="/img/css.png" alt="css" className='icon-img' />
+                            <img src={css} alt="css" className='icon-img' />
                           </div>
                           <p className='percent'>50%</p>
                         </li>
@@ -111,7 +119,7 @@ function App() {
                             <svg className='percent-bar' xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
                             <circle cx="50" cy="50" r="46" stroke="#0ACAD7" stroke-width="8"/>
                             </svg>
-                            <img src="/img/js.png" alt="js" className='icon-img' />
+                            <img src={js} alt="js" className='icon-img' />
                           </div>
                           <p className='percent'>50%</p>  
                         </li>
@@ -123,7 +131,7 @@ function App() {
                             <svg className='percent-bar' xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
                             <circle cx="50" cy="50" r="46" stroke="#0ACAD7" stroke-width="8"/>
                             </svg>
-                            <img src="/img/react.png" alt="react" className='icon-img' />
+                            <img src={react} alt="react" className='icon-img' />
                           </div>
                           <p className='percent'>50%</p>
                         </li>
@@ -139,34 +147,10 @@ function App() {
           <h2>WORK</h2>
             <div className="work-container">
               <a href="#" className='pre-button'>
-                <img className='slide-button' src="/img/previousButton.png" alt="왼쪽화살표" />
+                <img className='slide-button' src={previousButton} alt="왼쪽화살표" />
               </a>
               <div className="website-explain-container">
-                <img src="/img/neneWeb.png" alt="네네홈페이지" />
-                <div className='website-explain-text'>
-                  <h4>네네치킨</h4>
-                  <p>네네치킨 메인 홈페이지 리뉴얼</p>
-                  <div className="summary-rect-container">
-                    <div className="summary-rect-text">
-                      <div className="summary-rect">
-                        <p>#디자인</p>
-                      </div>
-                      <div className="summary-rect">
-                        <p>#Javascript</p>
-                      </div>
-                      <div className="summary-rect">
-                        <p>#리뉴얼페이지</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <a className="website-click-button" href='#'>
-                    <div href="#">상세보기</div>
-                  </a>
-                </div>
-              </div>
-              <div className="website-explain-container">
-                <img src="/img/neneWeb.png" alt="네네홈페이지" />
+                <img src={neneWeb} alt="네네홈페이지" />
                 <div className='website-explain-text'>
                   <h4>네네치킨</h4>
                   <p>네네치킨 메인 홈페이지 리뉴얼</p>
@@ -190,7 +174,7 @@ function App() {
                 </div>
               </div>
               <a href="#" className='next-button'>
-                <img className='slide-button' src="/img/nextButton.png" alt="오른쪽화살표" />
+                <img className='slide-button' src={nextButton} alt="오른쪽화살표" />
               </a>
             </div>
             <div className="slide-position">
