@@ -5,6 +5,7 @@ import { useEffect, useRef } from 'react';
 function App() {
 
   // 1. 원페이지
+  
   // 2. 슬라이드
   useEffect(()=>{
     const slidePreButton = document.getElementsByClassName('pre-button')
@@ -26,7 +27,9 @@ function App() {
   },[])
  
   // 3. router
+
   // 4. observer 사용하여 stack-graph 나타내기
+
   // 5. header의 메뉴클릭했을때 위치이동
 
   return (

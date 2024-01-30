@@ -1,4 +1,5 @@
 {
+  "homepage": "https://cjewon.github.io/portfolio-web/",
   "name": "profile-site",
   "version": "0.1.0",
   "private": true,
@@ -38,10 +39,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://cjewon.github.io/portfolio-web/profile-site/",
+  
   "devDependencies": {
     "gh-pages": "^6.1.1"
   }
-
-  
 }
