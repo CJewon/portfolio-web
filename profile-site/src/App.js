@@ -1,6 +1,6 @@
 import './reset.css';
 import './App.css';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import html from './img/html.png';
 import css from './img/css.png';
 import js from './img/js.png';

@@ -1,0 +1,311 @@
+@font-face {
+  font-family: 'IAMAPLAYER';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/IAMAPLAYER.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+  background-color: #6F6D6D;
+}
+
+header {
+  width: 100%;
+  height: 126px;
+  background-color: #473D3D;
+}
+
+p,h1 {
+  white-space: pre-line;
+  
+}
+
+
+p {
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 1.5;
+}
+
+h1, h2, a {
+  font-family: 'IAMAPLAYER';
+}
+
+
+section {
+  background-color: #6F6D6D;
+  margin-bottom: 112px;
+}
+
+a {
+  text-decoration-line: none;
+}
+
+.header-menu-container {
+  height: 100%;
+  padding: 0 309px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header ul {
+  display: flex;
+  gap: 42px;
+}
+
+header li {
+  width: 100px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header a {
+
+  color: #F5F5F5;
+  font-size: 20px;
+  
+}
+
+.profile-section {
+  width: 100%;
+  height: calc(100vh - 126px);
+  /* padding-bottom : 100px */
+}
+
+.profile-container {
+  padding-top: 108px;
+  padding-left: 309px;
+  padding-right: 309px;
+  display: flex;
+}
+
+.profile-image {
+  width: 50%;
+  height: 429px;
+}
+
+.my-profile {
+  width: 50%;
+}
+
+.my-profile > h1 {
+  line-height: 1.2;
+  font-size: 64px;
+  color: #F5F5F5;
+  padding-bottom: 80px;
+}
+
+
+.my-profile > p {
+  line-height: 1.5;
+  font-size: 20px;
+  font-family: 'IAMAPLAYER';
+  color: #2b2b2b;
+  font-weight: 600;
+}
+
+.copyright {
+  display: flex;
+  flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ padding-top: 200px;
+ color: #A09696;
+}
+
+.click-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  transform: translate(85vw, -210px);
+  background-color: #F8BA03;
+  width: 136px;
+  height: 136px;
+  border-radius: 45px;
+  z-index: 1;
+}
+
+.click-button > a {
+  color: #FFFFFF;
+  line-height: 1.2;
+  font-size: 32px;
+  font-family: 'IAMPLAYER';
+  text-align: center;
+}
+
+
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+h2 {
+  font-size: 48px;
+  color: #F5F5F5;
+}
+
+
+h3 {
+  font-size: 28px;
+  margin: 80px 0;
+  font-weight: bold;
+  color: #F0DA14;
+  line-height: 1.5;
+}
+
+
+
+.overview-size {
+  width: 450px;
+}
+
+
+
+.overview-size li h3 {
+  width: 531px;
+}
+
+.overview-size li p {
+  width: 531px;
+  color: #F5F5F5;
+  font-weight: 300;
+  line-height: 1.5;
+  font-size: 20px;
+}
+
+.color-rect {
+  width: 100px;
+  height: 100px;
+}
+
+.rect1 {
+background-color: #4F4C4C;
+}
+
+.rect2{
+background-color: #B6B3B2;
+}
+
+.rect3{
+  background-color: #DBD8D8;
+}
+
+.rect4{
+  background-color: #B19028;
+}
+
+.rect5{
+  background-color: #F7BB00;
+}
+
+.rect6{
+  background-color: #2b2b2b;
+}
+
+.design-explain-container {
+  margin-top: 80px;
+}
+
+.design-explain-container li {
+  display: flex;
+  align-items: center;
+}
+
+.design-explain-container li p {
+  width: 143px;
+  padding-right: 28px;
+  font-size: 24px;
+}
+
+.color-name {
+  display: flex;
+  gap: 35px;
+  transform: translateX(185px);
+  padding-top: 8px;
+  padding-bottom: 32px;
+}
+
+.design-section .question-container{
+  padding-top: 48px;
+}
+
+.sticky-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 309px;
+  position: relative;
+}
+
+.sticky-img {
+  padding-top: 48px;
+  background-color: #6F6D6D;
+  position: sticky;
+  top: 0;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.explain-container p, .question-container p {
+  width: 642px;
+  color: #f5f5f5;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+
+
+.explain-container p {
+  color: #FF7A7A;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.flex-container > .question-container  li {
+  padding-top: 80px;
+}
+
+.takeaway-section {
+  padding: 80px 309px;
+}
+
+.takeaway-section > .flex-container {
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 100px;
+}
+
+.takeaway-section > .flex-container > p {
+  width: 531px;
+  font-size: 20px;
+  color: #F5F5F5;
+  font-weight: 300;
+}
+
+.code-list p {
+  margin-top: 45px;
+  margin-bottom: 150px;
+}
+
+.sticky-img.all-background-opacity > img.active {
+  opacity: 1;
+}
+.sticky-img.all-background-opacity > img {
+  opacity: 0.5;
+}
+
+.renewal-container {
+  padding: 0 100px;
+}
