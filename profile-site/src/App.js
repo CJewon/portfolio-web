@@ -18,7 +18,7 @@ import neneWeb from './img/neneWeb.png'
 import nextButton from './img/nextButton.png'
 import previousButton from './img/previousButton.png'
 
-import NeneRenewalSite from './neneComponent/NeneRenewalSite';
+// import NeneRenewalSite from './neneComponent/NeneRenewalSite';
 
 
 
