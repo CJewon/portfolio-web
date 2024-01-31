@@ -215,7 +215,7 @@ export default function NeneRenewalSite() {
           </section>
           <section className='end-section' id='end' >
             <div className='renewal-container'>
-            <h2 ref={EndSectionRef}>4. END</h2>
+            <h2 ref={endSectionRef}>4. END</h2>
               <div className="flex-container" >
                 <div className='question-container'>
                           <ul>

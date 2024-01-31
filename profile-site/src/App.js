@@ -46,8 +46,8 @@ function App() {
           <ul>
             <li><a href="#idPos" className='header-position'>MAIN</a></li>
             <li><a href="#introducePos">INTRODUCE</a></li>
-            <li><a href="#">WORK</a></li>
-            <li><a href="#">CONTACT</a></li>
+            <li><a href="#workPos">WORK</a></li>
+            <li><a href="#contactPos">CONTACT</a></li>
           </ul>
         </header>
         <section className="main-section" id='idPos'>
