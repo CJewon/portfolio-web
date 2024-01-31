@@ -1,6 +1,14 @@
 import './reset.css';
 import './App.css';
-import { useEffect } from 'react';
+
+
+// import {BrowserRouter, Routes, Route} from 'react-router-dom';
+
+import { Component, useEffect } from 'react';
+
+
+
+
 import html from './img/html.png';
 import css from './img/css.png';
 import js from './img/js.png';
@@ -9,6 +17,10 @@ import myImg from './img/myImg.jpg';
 import neneWeb from './img/neneWeb.png'
 import nextButton from './img/nextButton.png'
 import previousButton from './img/previousButton.png'
+
+import NeneRenewalSite from './neneComponent/NeneRenewalSite';
+
+
 
 function App() {
 
