@@ -2,11 +2,12 @@ import './reset.css';
 import './App.css';
 
 
-// import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {Route,Routes,Link} from 'react-router-dom';
 
-import { Component, useEffect } from 'react';
+import { Component, useEffect, useState } from 'react';
 
-import NeneRenewalSite from './neneComponent/NeneRenewalSite';
+
+// import NeneRenewalSite from './neneComponent/NeneRenewalSite';
 
 
 
@@ -180,9 +181,15 @@ function App() {
                     </div>
                   </div>
                   
-                  <a className="website-click-button" href='#'>
+                  {/* <a className="website-click-button" href='#'>
                     <div href="#">상세보기</div>
-                  </a>
+                    </a> */}
+          
+                      {/* <Link to='/'>상세보기</Link> */}
+                      {/* <Routes>
+                        <Route path='NeneRenewalSite'></Route>
+                      </Routes> */}
+                    
                 </div>
               </div>
               <a href="#" className='next-button'>
