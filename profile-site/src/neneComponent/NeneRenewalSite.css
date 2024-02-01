@@ -11,42 +11,42 @@
  font-family: 'Noto Sans KR', sans-serif;
 }
 
-body {
+#nene body {
   background-color: #6F6D6D;
 }
 
-header {
+#nene header {
   width: 100%;
   height: 126px;
   background-color: #473D3D;
 }
 
-p,h1 {
+#nene p,h1 {
   white-space: pre-line;
   
 }
 
 
-p {
+#nene p {
   font-family: 'Noto Sans KR', sans-serif;
   line-height: 1.5;
 }
 
-h1, h2, a {
+#nene h1, h2, a {
   font-family: 'IAMAPLAYER';
 }
 
 
-section {
+#nene section {
   background-color: #6F6D6D;
   margin-bottom: 112px;
 }
 
-a {
+#nene a {
   text-decoration-line: none;
 }
 
-.header-menu-container {
+#nene .header-menu-container {
   height: 100%;
   padding: 0 309px;
   display: flex;
@@ -54,12 +54,12 @@ a {
   align-items: center;
 }
 
-header ul {
+#nene header ul {
   display: flex;
   gap: 42px;
 }
 
-header li {
+#nene header li {
   width: 100px;
   height: 30px;
   display: flex;
@@ -67,36 +67,36 @@ header li {
   align-items: center;
 }
 
-header a {
+#nene header a {
 
   color: #F5F5F5;
   font-size: 20px;
   
 }
 
-.profile-section {
+#nene .profile-section {
   width: 100%;
   height: calc(100vh - 126px);
   /* padding-bottom : 100px */
 }
 
-.profile-container {
+#nene .profile-container {
   padding-top: 108px;
   padding-left: 309px;
   padding-right: 309px;
   display: flex;
 }
 
-.profile-image {
+#nene .profile-image {
   width: 50%;
   height: 429px;
 }
 
-.my-profile {
+#nene .my-profile {
   width: 50%;
 }
 
-.my-profile > h1 {
+#nene .my-profile > h1 {
   line-height: 1.2;
   font-size: 64px;
   color: #F5F5F5;
@@ -104,7 +104,7 @@ header a {
 }
 
 
-.my-profile > p {
+#nene .my-profile > p {
   line-height: 1.5;
   font-size: 20px;
   font-family: 'IAMAPLAYER';
@@ -112,7 +112,7 @@ header a {
   font-weight: 600;
 }
 
-.copyright {
+#nene .copyright {
   display: flex;
   flex-direction: column;
  justify-content: center;
@@ -121,7 +121,7 @@ header a {
  color: #A09696;
 }
 
-.click-button {
+#nene .click-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -134,7 +134,7 @@ header a {
   z-index: 1;
 }
 
-.click-button > a {
+#nene .click-button > a {
   color: #FFFFFF;
   line-height: 1.2;
   font-size: 32px;
@@ -144,18 +144,18 @@ header a {
 
 
 
-.flex-container {
+#nene .flex-container {
   display: flex;
   justify-content: space-between;
 }
 
-h2 {
+#nene h2 {
   font-size: 48px;
   color: #F5F5F5;
 }
 
 
-h3 {
+#nene h3 {
   font-size: 28px;
   margin: 80px 0;
   font-weight: bold;
@@ -165,17 +165,17 @@ h3 {
 
 
 
-.overview-size {
+#nene .overview-size {
   width: 450px;
 }
 
 
 
-.overview-size li h3 {
+#nene .overview-size li h3 {
   width: 531px;
 }
 
-.overview-size li p {
+#nene .overview-size li p {
   width: 531px;
   color: #F5F5F5;
   font-weight: 300;
@@ -183,51 +183,51 @@ h3 {
   font-size: 20px;
 }
 
-.color-rect {
+#nene .color-rect {
   width: 100px;
   height: 100px;
 }
 
-.rect1 {
+#nene .rect1 {
 background-color: #4F4C4C;
 }
 
-.rect2{
+#nene .rect2{
 background-color: #B6B3B2;
 }
 
-.rect3{
+#nene .rect3{
   background-color: #DBD8D8;
 }
 
-.rect4{
+#nene .rect4{
   background-color: #B19028;
 }
 
-.rect5{
+#nene .rect5{
   background-color: #F7BB00;
 }
 
-.rect6{
+#nene .rect6{
   background-color: #2b2b2b;
 }
 
-.design-explain-container {
+#nene .design-explain-container {
   margin-top: 80px;
 }
 
-.design-explain-container li {
+#nene .design-explain-container li {
   display: flex;
   align-items: center;
 }
 
-.design-explain-container li p {
+#nene .design-explain-container li p {
   width: 143px;
   padding-right: 28px;
   font-size: 24px;
 }
 
-.color-name {
+#nene .color-name {
   display: flex;
   gap: 35px;
   transform: translateX(185px);
@@ -235,18 +235,18 @@ background-color: #B6B3B2;
   padding-bottom: 32px;
 }
 
-.design-section .question-container{
+#nene .design-section .question-container{
   padding-top: 48px;
 }
 
-.sticky-section {
+#nene .sticky-section {
   display: flex;
   justify-content: space-between;
   padding: 0 309px;
   position: relative;
 }
 
-.sticky-img {
+#nene .sticky-img {
   padding-top: 48px;
   background-color: #6F6D6D;
   position: sticky;
@@ -258,7 +258,7 @@ background-color: #B6B3B2;
 
 
 
-.explain-container p, .question-container p {
+#nene .explain-container p, .question-container p {
   width: 642px;
   color: #f5f5f5;
   font-weight: 300;
@@ -267,45 +267,45 @@ background-color: #B6B3B2;
 
 
 
-.explain-container p {
+#nene .explain-container p {
   color: #FF7A7A;
   font-size: 20px;
   font-weight: 300;
 }
 
-.flex-container > .question-container  li {
+#nene .flex-container > .question-container  li {
   padding-top: 80px;
 }
 
-.takeaway-section {
+#nene .takeaway-section {
   padding: 80px 309px;
 }
 
-.takeaway-section > .flex-container {
+#nene .takeaway-section > .flex-container {
   flex-direction: column;
   align-items: flex-start;
   padding-left: 100px;
 }
 
-.takeaway-section > .flex-container > p {
+#nene .takeaway-section > .flex-container > p {
   width: 531px;
   font-size: 20px;
   color: #F5F5F5;
   font-weight: 300;
 }
 
-.code-list p {
+#nene .code-list p {
   margin-top: 45px;
   margin-bottom: 150px;
 }
 
-.sticky-img.all-background-opacity > img.active {
+#nene .sticky-img.all-background-opacity > img.active {
   opacity: 1;
 }
-.sticky-img.all-background-opacity > img {
+#nene .sticky-img.all-background-opacity > img {
   opacity: 0.5;
 }
 
-.renewal-container {
+#nene .renewal-container {
   padding: 0 100px;
 }
