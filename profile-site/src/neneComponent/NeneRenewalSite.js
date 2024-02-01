@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import './reset.css';
-import './prism.js';
+import '../prism.css';
+import '../prism.js';
 import './NeneRenewalSite.css';
-import './prism.css';
 import { codes } from './CodeExample.js';
 import Position from './Position.js';
 import Opacity from './Opacity.js';
