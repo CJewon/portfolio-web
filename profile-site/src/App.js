@@ -192,9 +192,9 @@ function App() {
                      
                     <BrowserRouter>
                       <Routes>
-                        <Route path='/neneComponent/NeneRenewalSite' element={<NeneRenewalSite></NeneRenewalSite>}></Route>  
+                        <Route path='/neneComponent/NeneRenewalSite.js' element={<NeneRenewalSite></NeneRenewalSite>}></Route>  
                       </Routes>
-                      {/* <Link to='../neneComponent/NeneRenewalSite.js'>열기</Link> */}
+                      <Link to='/neneComponent/NeneRenewalSite.js'>열기</Link>
                     </BrowserRouter>
                    
                     
