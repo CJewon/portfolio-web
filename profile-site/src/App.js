@@ -34,9 +34,9 @@ function App() {
       // const slidePage = document.getElementsByClassName('slide-page')
       const workPage = document.getElementsByClassName('website-explain-container');
 
-      console.log(slidePreButton)
-      console.log(slideNextButton)
-      console.log(workPage);
+      // console.log(slidePreButton)
+      // console.log(slideNextButton)
+      // console.log(workPage);
 
       slidePreButton[0].addEventListener('click', () => {
         workPage.style.transform = `translateX(-${100}vw)`;
@@ -191,10 +191,10 @@ function App() {
                     </BrowserRouter> */}
                      
                     <BrowserRouter>
-                      {/* <Routes>
-                        <Route path='/neneComponent/NeneRenewalSite.js' element={<NeneRenewalSite></NeneRenewalSite>}></Route>  
-                      </Routes> */}
-                      <Link to='/neneComponent/NeneRenewalSite.js'>열기</Link>
+                      <Routes>
+                        <Route path='/neneComponent/NeneRenewalSite' element={<NeneRenewalSite></NeneRenewalSite>}></Route>  
+                      </Routes>
+                      {/* <Link to='../neneComponent/NeneRenewalSite.js'>열기</Link> */}
                     </BrowserRouter>
                    
                     
