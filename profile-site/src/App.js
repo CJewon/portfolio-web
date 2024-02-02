@@ -3,7 +3,7 @@ import {Route,Routes,Link} from 'react-router-dom';
 import { Component, useEffect, useState } from 'react';
 
 
-// import NeneRenewalSite from './neneComponent/NeneRenewalSite';
+import NeneRenewalSite from './neneComponent/NeneRenewalSite';
 
 
 import './reset.css';
