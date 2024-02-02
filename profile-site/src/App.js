@@ -1,4 +1,4 @@
-import {Route,Routes,Link} from 'react-router-dom';
+import {Route, Routes, Link, BrowserRouter} from 'react-router-dom';
 
 import { Component, useEffect, useState } from 'react';
 
@@ -183,12 +183,20 @@ function App() {
                   
                   {/* <a className="website-click-button" href='#'>
                     <div href="#">상세보기</div>
-                    </a> */}
-          
-                      {/* <Link to='/'>상세보기</Link> */}
+                  </a> */}
+                    {/* <BrowserRouter>
+                      <Routes>
+                        <Route path='/neneComponent/NeneRenewalSite' element={<NeneRenewalSite/>}></Route>
+                      </Routes>
+                    </BrowserRouter> */}
+                     
+                    <BrowserRouter>
                       {/* <Routes>
-                        <Route path='NeneRenewalSite'></Route>
+                        <Route path='/neneComponent/NeneRenewalSite.js' element={<NeneRenewalSite></NeneRenewalSite>}></Route>  
                       </Routes> */}
+                      <Link to='/neneComponent/NeneRenewalSite.js'>열기</Link>
+                    </BrowserRouter>
+                   
                     
                 </div>
               </div>
