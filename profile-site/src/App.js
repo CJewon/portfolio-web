@@ -25,10 +25,10 @@ import previousButton from './img/previousButton.png'
 
 function App() {
 
+  useEffect(()=>{
   // 1. 원페이지
   
   // 2. 슬라이드
-  useEffect(()=>{
     const slidePreButton = document.getElementsByClassName('pre-button')
       const slideNextButton = document.getElementsByClassName('next-button')
       // const slidePage = document.getElementsByClassName('slide-page')
@@ -45,13 +45,13 @@ function App() {
       slideNextButton[0].addEventListener('click', () => {
         workPage.style.transform = `translateX(${100}vw)`;
       })
-  },[])
- 
-  // 3. router
-
-  // 4. observer 사용하여 stack-graph 나타내기
-
-  // 5. header의 메뉴클릭했을때 위치이동
+      
+      // 3. router
+      
+      // 4. observer 사용하여 stack-graph 나타내기
+      
+      // 5. header의 메뉴클릭했을때 위치이동
+    },[])
 
   return (
     <div className="App">
