@@ -1,7 +1,7 @@
 import React from 'react'
 
-import '../reset.css';
-import '../App.css';
+import '../css/reset.css';
+import '../css/Main.css'
 
 import {Link} from 'react-router-dom'
 
@@ -15,6 +15,9 @@ import nextButton from '../img/nextButton.png'
 import previousButton from '../img/previousButton.png'
 
 export default function Main() {
+
+
+
   return (
     <div className='main-app'>
       <header>

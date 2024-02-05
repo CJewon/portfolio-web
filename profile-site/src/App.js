@@ -1,6 +1,3 @@
-import './reset.css'
-import './App.css';
-
 import {Route, Routes, Link, BrowserRouter} from 'react-router-dom'
 
 import Main from './Component/Main';
