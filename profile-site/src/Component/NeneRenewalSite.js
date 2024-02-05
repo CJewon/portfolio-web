@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 // import './reset.css';
-import '../prism.css';
+import '../css/prism.css';
 import '../prism.js';
-import './NeneRenewalSite.css';
+import '../css/NeneRenewalSite.css';
 import { codes } from './CodeExample.js';
 import Position from './Position.js';
 import Opacity from './Opacity.js';
-import ProfileImg from './neneImg/ProfileImg.png';
+import ProfileImg from '../img/neneImg/ProfileImg.png';
 
 export default function NeneRenewalSite() {
 

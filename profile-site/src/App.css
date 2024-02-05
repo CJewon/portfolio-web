@@ -11,7 +11,7 @@
  font-family: 'Noto Sans KR', sans-serif;
 }
 
-.App {
+.main-app {
   background-color: #404040;
   font-family: "IAMAPLAYER";
   white-space: pre-wrap;
@@ -310,9 +310,6 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.website-click-button > div {
   font-weight: bold;
   font-family: "Inter";
   align-items: center;

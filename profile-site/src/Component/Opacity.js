@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import Renewal1 from './neneImg/renewal-1.png'
-import Renewal2 from './neneImg/renewal-2.png'
-import Renewal3 from './neneImg/renewal-3.png'
+import Renewal1 from '../img/neneImg/renewal-1.png'
+import Renewal2 from '../img/neneImg/renewal-2.png'
+import Renewal3 from '../img/neneImg/renewal-3.png'
 
 export default function (props) {
 
