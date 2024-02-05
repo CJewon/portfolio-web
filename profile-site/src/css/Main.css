@@ -11,26 +11,26 @@
    font-family: 'Noto Sans KR', sans-serif;
   }
   
-  .main-app {
+.main-app {
     background-color: #404040;
     font-family: "IAMAPLAYER";
     white-space: pre-wrap;
   }
   
-  li {
+  #main li {
     list-style: none;
   }
   
-  a {
+  #main a {
     text-decoration: none;
     color: #000000;
   }
   
-  p {
+  #main p {
     color: #F5F5F5;
   }
   
-  header {
+  #main header {
     color: #404040;
     width: 100vw;
     height: 110px;
@@ -39,7 +39,7 @@
     box-sizing: border-box;
   }
   
-  header > ul {
+  #main header > ul {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -47,7 +47,7 @@
     gap: 80px;
   }
   
-  header > a {
+  #main header > a {
     width: fit-content;
     height: fit-content;
     display: flex;
@@ -55,22 +55,22 @@
     font-size: 16px;
   }
   
-  a.header-position {
+  #main a.header-position {
     color: #F5F5F5;
   }
   
-  section {
+  #main section {
     height: 100vh;
     padding: 0 32px;
     padding-top: 110px;
     box-sizing: border-box;
   }
   
-  .disabled {
+  #main .disabled {
     display: none;
   }
   
-  .main-container {
+  #main .main-container {
     max-width: 1302px;
     height: 573px;
     border-left: 3px solid #A7A7A7;
@@ -80,24 +80,24 @@
     margin-top: 48px;
   }
   
-  h1 {
+  #main h1 {
     font-size: 64px;
     color: #F5F5F5;
     font-weight: 500;
   }
   
-  h1 > span {
+  #main h1 > span {
     display: block;
     background-color: #473D3D;
     margin-bottom: 20px;
   }
   
-  .title-container > p {
+  #main .title-container > p {
     font-size: 20px;
     color: #F5F5F5;
   }
   
-  .copyright-container {
+  #main .copyright-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,68 +106,68 @@
     box-sizing: border-box;
   }
   
-  .copyright-container > p {
+  #main .copyright-container > p {
     color: #706f6f;
     font-size: 14px;
   }
   
-  h2 {
+  #main h2 {
     color: #DDCDCD;
     font-size: 48px;
     font-weight: 100;
     margin-top: 48px;
   }
   
-  h3 {
+  #main h3 {
     font-size: 32px;
     font-weight: bold;
     color: #F0EFEF;
   }
   
-  .introduce-title {
+  #main .introduce-title {
     margin: 0 auto;
     max-width: 1302px; 
   }
   
-  .introduce-title > h2 {
+  #main .introduce-title > h2 {
     margin-bottom: 54px;
   }
   
-  .img-container > img {
+  #main .img-container > img {
     width: 421px;
     height: 639px;
     border-radius: 45px;
   }
   
-  .introduce-container {
+  #main .introduce-container {
     display: flex;
     gap: 130px;
     max-width: 1302px;
     box-sizing: border-box;
   }
   
-  .introduce-text-container > h3 {
+  #main .introduce-text-container > h3 {
     margin: 32px 0;
   }
   
-  .introduce-text {
+  #main .introduce-text {
     border-bottom: 1px solid rgba(217, 217, 217, 0.2);
     border-top : 1px solid rgba(217, 217, 217, 0.2);
     padding: 32px 0;
     box-sizing: border-box;
   }
   
-  .introduce-text-container span {
+  #main .introduce-text-container span {
     color: #0ACAD7;
     font-weight: bold;
   }
   
-  .introduce-text > p:first-of-type {
+  #main .introduce-text > p:first-of-type {
     font-size: 24px;
     font-weight: 500;
   }
   
-  .introduce-text > p {
+  #main .introduce-text > p {
     font-family: "NOTO SANS KR";
     font-weight: 100;
     margin: 0;
@@ -175,43 +175,43 @@
     line-height: 1.5;
   }
   
-  .introduce-text > p:last-of-type {
+  #main .introduce-text > p:last-of-type {
     padding-bottom: 0;
   }
   
-  .stack-graph-container {
+  #main .stack-graph-container {
     margin-top: 32px;
   }
   
-  .stack-graph-container > h3 {
+  #main .stack-graph-container > h3 {
     padding-bottom: 12px;
     box-sizing: border-box;
   }
   
-  .stack-graph-container > h3 > span {
+  #main .stack-graph-container > h3 > span {
     font-weight: 500;
     font-family: "NOTO SANS KR";
     font-size: 24px;
     
   }
   
-  .circle-ul {
+  #main .circle-ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   
-  .circle-li {
+  #main .circle-li {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
   
-  .circle-img {
+  #main .circle-img {
     position: relative;
   }
   
-  .icon-img {
+  #main .icon-img {
     width: 50px;
     height: 50px;
     position: absolute;
@@ -220,24 +220,24 @@
     transform: translate(-50%, -50%);
   }
   
-  .percent {
+  #main .percent {
     font-family: "NOTO SANS KR";
     text-align: center;
   }
   
-  .percent-bar {
+  #main .percent-bar {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
   }
   
-  .work-title {
+  #main .work-title {
     margin: 0 auto;
     max-width: 1302px;
   }
   
-  .work-container {
+  #main .work-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -246,12 +246,12 @@
   
   }
   
-  .website-explain-container {
+  #main .website-explain-container {
     display: flex;
     gap: 66px;
   }
   
-  .website-explain-text {
+  #main .website-explain-text {
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -260,27 +260,27 @@
     box-sizing: border-box;
   }
   
-  h4 {
+  #main h4 {
     font-size: 32px;
     font-family: "NOTO SANS KR";
     color: #F0EFEF;
   }
   
-  .website-explain-text > p {
+  #main .website-explain-text > p {
     color: #F0EFEF;
   }
   
-  .summary-rect-container {
+  #main .summary-rect-container {
     padding-bottom: 40px;
     box-sizing: border-box;  
   }
   
-  .summary-rect-text {
+  #main .summary-rect-text {
     display: flex;
     gap: 8px;
   }
   
-  .summary-rect {
+  #main .summary-rect {
     width: 118px;
     height: 30px;
     border: 2px solid #057178;
@@ -289,7 +289,7 @@
     box-sizing: border-box;
   }
   
-  .summary-rect p {
+  #main .summary-rect p {
     font-weight: 500;
     color: #0ACAD7;
     font-family: "Inter";
@@ -302,7 +302,7 @@
     font-size: 14px;
   }
   
-  .website-click-button {
+  #main .website-click-button {
     width: 178px;
     height: 54px;
     background-color: rgba(0, 219, 233, 0.25);
@@ -316,44 +316,44 @@
     color: #00D1FF;
   }
   
-  .slide-position {
+  #main .slide-position {
     display: flex;
     gap: 30px;
     justify-content: center;
     align-items: center;
   }
   
-  .slide-circle {
+  #main .slide-circle {
     width: 9px;
     height: 9px;
     border-radius: 4px;
     background-color: #D9D9D9;
   }
   
-  .slide-circle.active {
+  #main .slide-circle.active {
     background-color: #00D1FF;
   }
   
-  .contact-container > p {
+  #main .contact-container > p {
     padding: 64px 0;
     box-sizing: border-box;
     color: #F0EFEF;
     font-size: 20px;
   }
   
-  .contact-container {
+  #main .contact-container {
     max-width: 1302px;
     margin: 0 auto;
   }
   
-  .adress-container {
+  #main .adress-container {
     border-bottom: 1px solid rgba(217, 217, 217, 0.2);
     border-top: 1px solid rgba(217, 217, 217, 0.2);
   }
   
   
   
-  .address-ul {
+  #main .address-ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -361,143 +361,143 @@
     box-sizing: border-box;
   }
   
-  .address-ul li {
+  #main .address-ul li {
     width: 50%;
   }
   
-  .email-kakaotalk {
+  #main .email-kakaotalk {
     display: flex;
     flex-direction: column;
     gap: 26px;
   }
   
-  .email-kakaotalk > p {
+  #main .email-kakaotalk > p {
     font-family: "NOTO SANS KR";
     font-weight: bold;
     font-size: 32px;
   }
   
-  .email-kakaotalk span {
+  #main .email-kakaotalk span {
     color: #0ACAD7;
   }
   
-  .end-p-tag p {
+  #main .end-p-tag p {
     line-height: 32px;
     font-family: "IAMAPLAYER";
     font-weight: 100;
   }
   
-  footer {
+  #main footer {
     padding: 0 32px;
     padding-bottom: 32px;
     box-sizing: border-box;
     text-align: center;
   }
   
-  footer > p {
+  #main footer > p {
     color: #706f6f;
     font-size: 14px;
   }
   
-  @media screen and (max-width: 1365px) {
+   @media screen and (max-width: 1365px) {
   
-    header {
+    #main header {
       padding: 0 32px;
     }
   
-    h1 {
+    #main h1 {
       font-size: 48px;
     }
   
-    .title-container > p {
+    #main .title-container > p {
       font-size: 16px;
     }
   
-    .main-container {
+    #main .main-container {
       padding: 60px 20px;
     }
   
-    .copyright-container {
+    #main .copyright-container {
      padding-top: 85px;
     }
   
-    .img-container {
+    #main .img-container {
       width: 40%;
     }
   
-    .img-container > img {
+    #main .img-container > img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
   
-    .introduce-container {
+    #main .introduce-container {
       gap: 20px;
     }
   
-    h2 {
+    #main h2 {
       margin: 0;
       font-size: 40px;
     }
   
-    h3 {
+    #main h3 {
       font-size: 24px;
     }
   
-    .introduce-text-container {
+    #main .introduce-text-container {
       width: 393px;
       flex-grow: 1;
     }
   
-    .introduce-text-container > h3 {
+    #main .introduce-text-container > h3 {
       margin: 26px 0;
     }
   
-    .introduce-text {
+    #main .introduce-text {
       padding: 26px 0;
     }
   
-    .introduce-text > p {
+    #main .introduce-text > p {
       padding-bottom: 16px;
     }
   
-    .introduce-text > p:first-of-type {
+    #main .introduce-text > p:first-of-type {
       font-size: 20px;
     }
   
-    .stack-graph-container h3 {
+    #main .stack-graph-container h3 {
       font-size: 24px;
     }
   
-    .work-container {
+    #main .work-container {
       padding: 90px 0;
     }
   
-    .slide-button {
+    #main .slide-button {
       width: 25px;
       height: 25px;
     }
   
-    .website-explain-container {
+    #main .website-explain-container {
       padding: 0 100px;
       box-sizing: border-box;
       flex-direction: column;
       gap: 40px;
     }
   
-    .website-explain-container > img {
+    #main .website-explain-container > img {
       width: 431px;
       height: 200px;
     }
   
-    .website-explain-text {
+    #main .website-explain-text {
       gap: 22px;
       padding: 0;
       justify-content: space-between;
       align-items: center;
     }  
   
-    .email-kakaotalk > p {
+    #main .email-kakaotalk > p {
       font-size: 24px;
     }
   
@@ -505,101 +505,101 @@
     
   }
   
-  @media screen and (max-width: 799px) {
-    section {
+   @media screen and (max-width: 799px) {
+    #main section {
       padding: 0 16px;
       padding-top: 110px;
       height: 100%;
     }
   
-    header {
+    #main header {
       padding: 0;
       display: flex;
       justify-content: center;
       align-self: center;
     }
   
-    .main-container {
+    #main .main-container {
       padding: 40px 10px;
       height: 335px;
     }
   
-    h1 {
+    #main h1 {
       font-size: 32px;
     }
   
-    .title-container > p {
+    #main .title-container > p {
       font-size: 12px;
       line-height: 1.5;
     }
   
-    .copyright-container {
+    #main .copyright-container {
       padding-top: 43px;
     }
   
-    .copyright-container > p {
+    #main .copyright-container > p {
       font-size: 12px;
       font-family: "Inter";
       margin: 0;
     }
   
-    header > ul {
+    #main header > ul {
       gap: 28px;
     }
   
-    .img-container {
+    #main .img-container {
       display: none;
     }
   
-    h2 {
+    #main h2 {
       font-size: 32px;
     }
   
-    h3 {
+    #main h3 {
       font-size: 20px;
     }
   
     .introduce-title,
     .work-title,
     .contact-container,
-    .stack-graph-container {
+    #main .stack-graph-container {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
     }
   
-    .introduce-text-container {
+    #main .introduce-text-container {
       width: 100%;
     }
   
-    .introduce-text-container > h3 {
+    #main .introduce-text-container > h3 {
       line-height: 1.5;
     }
   
-    .introduce-text {
+    #main .introduce-text {
       padding: 22px 0;
     }
   
-    .introduce-text > p {
+    #main .introduce-text > p {
       font-size: 12px
     };
   
-    .introduce-text > p:first-of-type {
+    #main .introduce-text > p:first-of-type {
       font-size: 16px;
     }
   
-    .introduce-title > h2 {
+    #main .introduce-title > h2 {
       margin-bottom: 20px;
     }
   
-    .circle-ul {
+    #main .circle-ul {
       flex-wrap: wrap;
       justify-content: center;
       gap: 50px;
     }
   
-    .stack-graph-container > h3 {
+    #main .stack-graph-container > h3 {
       padding-bottom: 22px;
     }
   
@@ -608,91 +608,91 @@
     
     
     
-    .slide-button {
+    #main .slide-button {
       width: 25px;
       height: 25px;
     }
   
-    h4 {
+    #main h4 {
       font-size: 24px;
     }
   
-    .website-explain-text > p {
+    #main .website-explain-text > p {
       font-size: 14px;
     }
   
-    .website-explain-container {
+    #main .website-explain-container {
       padding: 0 4px;
       display: flex;
       justify-content: center;
       align-items: center;
     }
   
-    .website-explain-container > img {
+    #main .website-explain-container > img {
       width: 224px;
       height: 107px;
     }
   
-    .summary-rect {
+    #main .summary-rect {
       width: 88px;
       height: 24px;
     }
   
-    .summary-rect p {
+    #main .summary-rect p {
       font-size: 12px;
     }
   
-    .website-click-button {
+    #main .website-click-button {
       width: 120px;
       height: 36px;
       font-size: 16px;
       font-weight: bold;
     }
   
-    .contact-container {
+    #main .contact-container {
       padding-bottom: 50px;
     }
   
-    .contact-container > p {
+    #main .contact-container > p {
       padding: 40px 0;
       font-size: 16px;
     }
   
-    .address-ul {
+    #main .address-ul {
       display: block;
       padding: 40px 0;
     }
   
-    .address-ul li {
+    #main .address-ul li {
       width: 100%;
     }
   
-    .email-kakaotalk {
+    #main .email-kakaotalk {
       padding-bottom: 34px;
       box-sizing: border-box;
     }
   
-    .email-kakaotalk p {
+    #main .email-kakaotalk p {
       font-size: 20px;
     }
   
-    .end-p-tag p {
+    #main .end-p-tag p {
       font-size: 14px;
     }
   }
   
-  @media screen and (max-width : 599px) {
-    .circle-ul {
+   @media screen and (max-width : 599px) {
+    #main .circle-ul {
       width: 300px;
     }
   }
   
-  @media screen and (max-width : 470px) {
-    .copyright-container {
+   @media screen and (max-width : 470px) {
+    #main .copyright-container {
       text-align: center;
     }
   
-    .disabled {
+    #main .disabled {
       display: block;
     }
   }

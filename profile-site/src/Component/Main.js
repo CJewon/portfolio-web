@@ -19,7 +19,7 @@ export default function Main() {
 
 
   return (
-    <div className='main-app'>
+    <div className='main-app' id='main'>
       <header>
           <ul>
             <li><a href="#idPos" className='header-position'>MAIN</a></li>

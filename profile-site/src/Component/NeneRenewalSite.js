@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 // import './reset.css';
-import '../css/prism.css';
 import '../prism.js';
+import '../css/prism.css';
 import '../css/NeneRenewalSite.css';
 import { codes } from './CodeExample.js';
 import Position from './Position.js';
@@ -71,7 +71,7 @@ export default function NeneRenewalSite() {
   }, [sectionRefs, imgRefs, explainRef]);
 
   return (
-    <body className="App" id='nene'>
+    <body className="nene-renewal-site" id='nene'>
       <header>
       <div className='header-menu-container'>
         <ul>
