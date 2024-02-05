@@ -150,7 +150,7 @@ export default function Main() {
                     <div href="#">상세보기</div>
                   </a> */}
                     
-                  <Link to='/NeneRenewalSite' className='website-click-button'>상세보기</Link>   
+                  <Link to='/portfolio-web/profile-site/NeneRenewalSite' className='website-click-button'>상세보기</Link>   
                     
                    
                     
