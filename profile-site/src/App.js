@@ -1,4 +1,4 @@
-import {Route, Routes, Link, BrowserRouter} from 'react-router-dom'
+import {Route, Routes, BrowserRouter} from 'react-router-dom'
 
 import Main from './Component/Main';
 import NeneRenewalSite from './Component/NeneRenewalSite';

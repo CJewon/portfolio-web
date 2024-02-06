@@ -19,28 +19,40 @@ export default function Main() {
 
   const section = document.querySelectorAll('section')
   let pageIndex = 0 ;
+  const moveState = false;
   const maxPage = section.length - 1;
 
   useEffect(() => {
-    setTimeout(() => {
-      window.addEventListener('wheel', (event) => {
-        event.preventDefault();
-        if(event.deltaY > 0) {
-          pageIndex++;
-        } else if (event.deltaY < 0) {
-          pageIndex--;
-        }
-        if(pageIndex < 0) {
-          pageIndex = 0;
-        }else if (pageIndex > maxPage) {
-          pageIndex = maxPage
-        }
-        console.log(event.deltaY)
-        console.log(pageIndex)
-        section[pageIndex].getBoundingClientRect().top = 0;
-      }, {passive : false})
-      
-    }, 500);
+
+    
+    window.addEventListener('wheel', (event) => {
+      if(!moveState) {
+        setTimeout(() => {
+          moveState = false;
+        }, 500);
+
+        if(window.scrollY < (section.length)*window.innerHeight){   
+          event.preventDefault();
+          if (event.deltaY > 0) {
+              pageIndex++;
+              // 아래로 스크롤하는 경우
+              window.scrollTo({top:pageIndex*window.innerHeight,left:0,behavior:"smooth"});
+              if(pageIndex > section.length) {
+                  pageIndex = section.length;
+              }
+              
+          } else if (event.deltaY < 0) {
+              // 위로 스크롤하는 경우
+              pageIndex--;
+              window.scrollTo({top:pageIndex*window.innerHeight,left:0,behavior:"smooth"});
+              if (pageIndex < 0) {
+                  pageIndex = 0;
+              }
+              
+          }            
+      } 
+      }
+    })
   }, []);
 
   return (
