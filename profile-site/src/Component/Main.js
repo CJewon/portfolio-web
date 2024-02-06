@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import '../css/reset.css';
 import '../css/Main.css'
 
 import {Link} from 'react-router-dom'
+
 
 import html from '../img/html.png';
 import css from '../img/css.png';
@@ -16,7 +17,31 @@ import previousButton from '../img/previousButton.png'
 
 export default function Main() {
 
+  const section = document.querySelectorAll('section')
+  let pageIndex = 0 ;
+  const maxPage = section.length - 1;
 
+  useEffect(() => {
+    setTimeout(() => {
+      window.addEventListener('wheel', (event) => {
+        event.preventDefault();
+        if(event.deltaY > 0) {
+          pageIndex++;
+        } else if (event.deltaY < 0) {
+          pageIndex--;
+        }
+        if(pageIndex < 0) {
+          pageIndex = 0;
+        }else if (pageIndex > maxPage) {
+          pageIndex = maxPage
+        }
+        console.log(event.deltaY)
+        console.log(pageIndex)
+        section[pageIndex].getBoundingClientRect().top = 0;
+      }, {passive : false})
+      
+    }, 500);
+  }, []);
 
   return (
     <div className='main-app' id='main'>
@@ -145,15 +170,7 @@ export default function Main() {
                       </div>
                     </div>
                   </div>
-                  
-                  {/* <a className="website-click-button" href='#'>
-                    <div href="#">상세보기</div>
-                  </a> */}
-                    
-                  <Link to='/portfolio-web/profile-site/NeneRenewalSite' className='website-click-button'>상세보기</Link>   
-                    
-                   
-                    
+                  <Link to='/portfolio-web/profile-site/NeneRenewalSite' className='website-click-button'>상세보기</Link>                       
                 </div>
               </div>
               <a href="#" className='next-button'>
