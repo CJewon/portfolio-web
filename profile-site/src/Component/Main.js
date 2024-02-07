@@ -193,8 +193,6 @@ export default function Main() {
               <a href="#" className='pre-button'>
                 <img className='slide-button' src={previousButton} alt="왼쪽화살표" />
               </a>
-              <div className="website-explain-container">
-
                 <ul className='slide-ul'>
                   <li className='slide-list'>
                       <img src={neneWeb} alt="네네홈페이지" />
@@ -239,9 +237,6 @@ export default function Main() {
                       </div>
                   </li>
                 </ul>
-                
-                
-              </div>
               <a href="#" className='next-button'>
                 <img className='slide-button' src={nextButton} alt="오른쪽화살표" />
               </a>
