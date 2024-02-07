@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 // import './reset.css';
-import '../prism.js';
-import '../css/prism.css';
+// import '../prism.js';
+// import '../css/prism.css';
 import '../css/NeneRenewalSite.css';
 import { codes } from './CodeExample.js';
 import Position from './Position.js';

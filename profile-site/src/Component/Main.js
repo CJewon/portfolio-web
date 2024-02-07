@@ -18,42 +18,71 @@ import previousButton from '../img/previousButton.png'
 export default function Main() {
 
   const section = document.querySelectorAll('section')
-  let pageIndex = 0 ;
-  const moveState = false;
-  const maxPage = section.length - 1;
+  
+  const [pageIndex, setPageIndex] = useState(0); // 현재 페이지
+  const [moveState, setMoveState] = useState(false); // 스크롤할때의 상태
+  const maxPage = section.length - 1; // section의 갯수
 
   useEffect(() => {
 
-    
-    window.addEventListener('wheel', (event) => {
-      if(!moveState) {
+    window.addEventListener('wheel', (e) => {
+      if (!moveState) {
+        setMoveState(true)
         setTimeout(() => {
-          moveState = false;
-        }, 500);
-
-        if(window.scrollY < (section.length)*window.innerHeight){   
-          event.preventDefault();
-          if (event.deltaY > 0) {
-              pageIndex++;
-              // 아래로 스크롤하는 경우
-              window.scrollTo({top:pageIndex*window.innerHeight,left:0,behavior:"smooth"});
-              if(pageIndex > section.length) {
-                  pageIndex = section.length;
-              }
-              
-          } else if (event.deltaY < 0) {
-              // 위로 스크롤하는 경우
-              pageIndex--;
-              window.scrollTo({top:pageIndex*window.innerHeight,left:0,behavior:"smooth"});
-              if (pageIndex < 0) {
-                  pageIndex = 0;
-              }
-              
-          }            
-      } 
+          setMoveState(false);
+        }, 1000);
       }
-    })
-  }, []);
+
+      //웹사이트의 크기안에 있을때
+      if(window.scrollY < (section.length) * window.innerHeight) {
+        e.preventDefault();
+        // 아래로 스크롤 했을때
+        if(e.deltaX > 0) { 
+          setPageIndex(pageIndex + 1);
+          window.scrollTo({top : pageIndex*window.innerHeight, left : 0, behavior: "smooth"} )
+        }
+      }
+    });
+    
+    
+
+    
+    // const handleScroll = (event) => {
+    //   if(!moveState) {
+    //     setMoveState(true)
+    //     console.log(moveState)
+    //     setTimeout(() => {
+    //       setMoveState(false);
+    //     }, 500);
+
+    //     if(window.scrollY < (section.length)*window.innerHeight){   
+    //       event.preventDefault();
+    //       if (event.deltaY > 0) {
+    //         if (event.deltaY > 0) {
+    //           setPageIndex(prevIndex => {
+    //             const newIndex = prevIndex + 1;
+    //             return newIndex > maxPage ? maxPage : newIndex;
+    //           });
+              
+    //       } 
+    //       else if (event.deltaY < 0) {
+    //           // 위로 스크롤하는 경우
+    //           setPageIndex(prevIndex => {
+    //             const newIndex = prevIndex > 0 ? prevIndex - 1 : 0;
+    //             return newIndex;
+    //           });
+    //       }            
+    //     } 
+    //     }
+    //     console.log(pageIndex)
+    //  }
+    // }
+
+    // window.addEventListener('wheel', handleScroll, {passive : false});
+    // return () => {
+    //   window.removeEventListener('wheel', handleScroll);
+    // };
+  }, [setMoveState, setPageIndex]);
 
   return (
     <div className='main-app' id='main'>
@@ -165,25 +194,53 @@ export default function Main() {
                 <img className='slide-button' src={previousButton} alt="왼쪽화살표" />
               </a>
               <div className="website-explain-container">
-                <img src={neneWeb} alt="네네홈페이지" />
-                <div className='website-explain-text'>
-                  <h4>네네치킨</h4>
-                  <p>네네치킨 메인 홈페이지 리뉴얼</p>
-                  <div className="summary-rect-container">
-                    <div className="summary-rect-text">
-                      <div className="summary-rect">
-                        <p>#디자인</p>
+
+                <ul className='slide-ul'>
+                  <li className='slide-list'>
+                      <img src={neneWeb} alt="네네홈페이지" />
+                        <div className='website-explain-text'>
+                        <h4>네네치킨</h4>
+                        <p>네네치킨 메인 홈페이지 리뉴얼</p>
+                        <div className="summary-rect-container">
+                          <div className="summary-rect-text">
+                            <div className="summary-rect">
+                              <p>#디자인</p>
+                            </div>
+                            <div className="summary-rect">
+                              <p>#Javascript</p>
+                            </div>
+                            <div className="summary-rect">
+                              <p>#리뉴얼페이지</p>
+                            </div>
+                          </div>
+                        </div>
+                        <Link to='/portfolio-web/profile-site/NeneRenewalSite' className='website-click-button'>상세보기</Link>                       
+                        </div>
+                  </li>
+                  <li className='slide-list'>
+                      <img src={neneWeb} alt="네네홈페이지" />
+                      <div className='website-explain-text'>
+                        <h4>네네치킨</h4>
+                        <p>네네치킨 메인 홈페이지 리뉴얼</p>
+                        <div className="summary-rect-container">
+                          <div className="summary-rect-text">
+                            <div className="summary-rect">
+                              <p>#디자인</p>
+                            </div>
+                            <div className="summary-rect">
+                              <p>#Javascript</p>
+                            </div>
+                            <div className="summary-rect">
+                              <p>#리뉴얼페이지</p>
+                            </div>
+                          </div>
+                        </div>
+                        <Link to='/portfolio-web/profile-site/NeneRenewalSite' className='website-click-button'>상세보기</Link>                       
                       </div>
-                      <div className="summary-rect">
-                        <p>#Javascript</p>
-                      </div>
-                      <div className="summary-rect">
-                        <p>#리뉴얼페이지</p>
-                      </div>
-                    </div>
-                  </div>
-                  <Link to='/portfolio-web/profile-site/NeneRenewalSite' className='website-click-button'>상세보기</Link>                       
-                </div>
+                  </li>
+                </ul>
+                
+                
               </div>
               <a href="#" className='next-button'>
                 <img className='slide-button' src={nextButton} alt="오른쪽화살표" />

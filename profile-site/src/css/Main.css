@@ -246,9 +246,17 @@
   
   }
   
-  #main .website-explain-container {
+  #main .slide-list {
     display: flex;
     gap: 66px;
+  }
+
+  #main .slide-ul {
+    display: flex;
+  }
+
+  #main .slide-list.none {
+    display: none;
   }
   
   #main .website-explain-text {
