@@ -24,7 +24,8 @@ export default function Main() {
   const maxPage = section.length - 1; // section의 갯수
   
   const slideContainerRef = useRef(null);
-  const sectionRef = useRef(0)
+  const sectionRef = useRef(null)
+  const percentBarRef = useRef(null)
   
   const [sectionWidth, setSectionWidth] = useState(0);
   const [slideWidth, setSlideWidth] = useState(0)
@@ -63,6 +64,38 @@ export default function Main() {
 
     const slideUl = document.querySelector('.slide-ul')
 
+
+
+
+
+
+
+    //observer을 이용하여 화면에 나타날때마다 percent-bar 작동시키기
+
+    const options = {
+      root : null,
+      rootMargin : '0px',
+      threshoid : 0
+    }
+
+    const callback = (entries, observer) => {
+      entries.foreach(entry => {
+        if(entry.isIntersecting && entry.target.classList.contains('circle-ul')) {
+          console.log('1');
+        }
+      })
+      
+    }
+      const observer = new IntersectionObserver(callback, options);
+      
+      if(percentBarRef.currnet) {
+        observer.observe(percentBarRef.current)
+      }
+      
+      return () => {
+        observer.disconnect();
+      }
+    
     
     // slideUl.style.gap = 
     
@@ -154,7 +187,7 @@ export default function Main() {
                 <div className="stack-graph-container">
                   <h3><span>STACK</span></h3>
                     <div className="stack-graph-circle-container">
-                      <ul className="circle-ul">
+                      <ul className="circle-ul" ref={percentBarRef}>
                         <li className="circle-li">
                           <div className="circle-img">
                             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
