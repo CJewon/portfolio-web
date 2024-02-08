@@ -263,6 +263,8 @@
   #main .slide-list {
     display: flex;
     gap: 66px;
+    padding: 0 112px;
+    box-sizing: border-box;
   }
 
   #main .slide-ul {
