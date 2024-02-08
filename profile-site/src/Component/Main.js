@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import '../css/reset.css';
 import '../css/Main.css'
 
-import {Link} from 'react-router-dom'
+
 
 
 import html from '../img/html.png';
@@ -11,9 +11,9 @@ import css from '../img/css.png';
 import js from '../img/js.png';
 import react from '../img/react.png';
 import myImg from '../img/myImg.jpg';
-import neneWeb from '../img/neneWeb.png'
 import nextButton from '../img/nextButton.png'
 import previousButton from '../img/previousButton.png'
+import SlidePage from './SlidePage';
 
 export default function Main() {
 
@@ -22,9 +22,18 @@ export default function Main() {
   const [pageIndex, setPageIndex] = useState(0); // 현재 페이지
   const [moveState, setMoveState] = useState(false); // 스크롤할때의 상태
   const maxPage = section.length - 1; // section의 갯수
-
+  
+  const slideContainerRef = useRef(null);
+  const sectionRef = useRef(0)
+  
+  const [sectionWidth, setSectionWidth] = useState(0);
+  const [slideWidth, setSlideWidth] = useState(0)
+  
+  
   useEffect(() => {
+    
 
+    // OnePage
     window.addEventListener('wheel', (e) => {
       if (!moveState) {
         setMoveState(true)
@@ -45,7 +54,17 @@ export default function Main() {
     });
     
     
+    //슬라이드 생성 및 실행
+    
+    // console.log(slideContainerRef)
+    const slideContainerStyle = window.getComputedStyle(slideContainerRef.current)
+    const slideContainerWidth = slideContainerStyle.width
+    setSlideWidth(slideContainerWidth);
 
+    const slideUl = document.querySelector('.slide-ul')
+
+    
+    // slideUl.style.gap = 
     
     // const handleScroll = (event) => {
     //   if(!moveState) {
@@ -82,7 +101,12 @@ export default function Main() {
     // return () => {
     //   window.removeEventListener('wheel', handleScroll);
     // };
-  }, [setMoveState, setPageIndex]);
+
+
+  }, []);
+
+  
+  
 
   return (
     <div className='main-app' id='main'>
@@ -136,43 +160,43 @@ export default function Main() {
                             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
                             <circle opacity="0.2" cx="50" cy="50" r="46" stroke="#D9D9D9" stroke-width="8"/>
                             </svg>
-                            <svg className='percent-bar' xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+                            <svg className='percent-bar html' xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
                             <circle cx="50" cy="50" r="46" stroke="#0ACAD7" stroke-width="8"/>
                             </svg>
                             <img src={html} alt="html" className='icon-img' />
                           </div>
-                          <p className='percent'>50%</p>
+                          <p className='percent'>91%</p>
                         </li>
                         <li className="circle-li">
                           <div className="circle-img">
                             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
                             <circle opacity="0.2" cx="50" cy="50" r="46" stroke="#D9D9D9" stroke-width="8"/>
                             </svg>
-                            <svg className='percent-bar' xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+                            <svg className='percent-bar css' xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
                             <circle cx="50" cy="50" r="46" stroke="#0ACAD7" stroke-width="8"/>
                             </svg>
                             <img src={css} alt="css" className='icon-img' />
                           </div>
-                          <p className='percent'>50%</p>
+                          <p className='percent'>87%</p>
                         </li>
                         <li className="circle-li">
                           <div className="circle-img">
                             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
                             <circle opacity="0.2" cx="50" cy="50" r="46" stroke="#D9D9D9" stroke-width="8"/>
                             </svg>
-                            <svg className='percent-bar' xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+                            <svg className='percent-bar js' xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
                             <circle cx="50" cy="50" r="46" stroke="#0ACAD7" stroke-width="8"/>
                             </svg>
                             <img src={js} alt="js" className='icon-img' />
                           </div>
-                          <p className='percent'>50%</p>  
+                          <p className='percent'>84%</p>  
                         </li>
                         <li className="circle-li">
                           <div className="circle-img">
                             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
                             <circle opacity="0.2" cx="50" cy="50" r="46" stroke="#D9D9D9" stroke-width="8"/>
                             </svg>
-                            <svg className='percent-bar' xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+                            <svg className='percent-bar react' xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
                             <circle cx="50" cy="50" r="46" stroke="#0ACAD7" stroke-width="8"/>
                             </svg>
                             <img src={react} alt="react" className='icon-img' />
@@ -189,53 +213,13 @@ export default function Main() {
         <section className='work-section' id='workPos'>
           <div className="work-title">
           <h2>WORK</h2>
-            <div className="work-container">
+            <div className="work-container" ref={slideContainerRef}>
               <a href="#" className='pre-button'>
                 <img className='slide-button' src={previousButton} alt="왼쪽화살표" />
               </a>
                 <ul className='slide-ul'>
-                  <li className='slide-list'>
-                      <img src={neneWeb} alt="네네홈페이지" />
-                        <div className='website-explain-text'>
-                        <h4>네네치킨</h4>
-                        <p>네네치킨 메인 홈페이지 리뉴얼</p>
-                        <div className="summary-rect-container">
-                          <div className="summary-rect-text">
-                            <div className="summary-rect">
-                              <p>#디자인</p>
-                            </div>
-                            <div className="summary-rect">
-                              <p>#Javascript</p>
-                            </div>
-                            <div className="summary-rect">
-                              <p>#리뉴얼페이지</p>
-                            </div>
-                          </div>
-                        </div>
-                        <Link to='/portfolio-web/profile-site/NeneRenewalSite' className='website-click-button'>상세보기</Link>                       
-                        </div>
-                  </li>
-                  <li className='slide-list'>
-                      <img src={neneWeb} alt="네네홈페이지" />
-                      <div className='website-explain-text'>
-                        <h4>네네치킨</h4>
-                        <p>네네치킨 메인 홈페이지 리뉴얼</p>
-                        <div className="summary-rect-container">
-                          <div className="summary-rect-text">
-                            <div className="summary-rect">
-                              <p>#디자인</p>
-                            </div>
-                            <div className="summary-rect">
-                              <p>#Javascript</p>
-                            </div>
-                            <div className="summary-rect">
-                              <p>#리뉴얼페이지</p>
-                            </div>
-                          </div>
-                        </div>
-                        <Link to='/portfolio-web/profile-site/NeneRenewalSite' className='website-click-button'>상세보기</Link>                       
-                      </div>
-                  </li>
+                  <SlidePage></SlidePage>
+                  <SlidePage></SlidePage>
                 </ul>
               <a href="#" className='next-button'>
                 <img className='slide-button' src={nextButton} alt="오른쪽화살표" />

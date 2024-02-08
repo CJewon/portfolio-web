@@ -4,7 +4,10 @@
     font-weight: normal;
     font-style: normal;
   }
-  
+  :root {
+    --bar-linepx : calc(2 * 3.14 * 46px);
+  }
+
   @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
   
   .notosanskr * { 
@@ -217,20 +220,46 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -51%);
   }
   
   #main .percent {
     font-family: "NOTO SANS KR";
     text-align: center;
   }
+
+  
   
   #main .percent-bar {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -51%) rotate(-90deg);
   }
+
+  #main .percent-bar > circle {
+    stroke-dasharray: var(--bar-linepx);
+    stroke-dashoffset: var(--bar-linepx);
+    transition: 2s;
+  }
+
+  #main .percent-bar.html > circle {
+    stroke-dashoffset: calc(var(--bar-linepx) - var(--bar-linepx) * 0.91);
+  }
+
+  
+  #main .percent-bar.css > circle {
+    stroke-dashoffset: calc(var(--bar-linepx) - var(--bar-linepx) * 0.87);
+  }
+  
+  #main .percent-bar.js > circle {
+    stroke-dashoffset: calc(var(--bar-linepx) - var(--bar-linepx) * 0.84);
+  }
+  
+  #main .percent-bar.react > circle {
+    stroke-dashoffset: calc(var(--bar-linepx) - var(--bar-linepx) * 0.5);
+  }
+
   
   #main .work-title {
     margin: 0 auto;
