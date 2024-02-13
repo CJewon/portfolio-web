@@ -258,21 +258,21 @@ export default function Main() {
           <div className="work-title">
           <h2>WORK</h2>
             <div className="work-container" ref={slideContainerRef}>
-              <a href="#" className='pre-button'>
+              {/* <a href="#" className='pre-button'>
                 <img className='slide-button' src={previousButton} alt="왼쪽화살표" />
-              </a>
-                <ul className='slide-ul'>
+              </a> */}
+                {/* <ul className='slide-ul'> */}
                   <SlidePage></SlidePage>
-                  <SlidePage></SlidePage>
-                </ul>
-              <a href="#" className='next-button'>
+                  {/* <SlidePage></SlidePage> */}
+                {/* </ul> */}
+              {/* <a href="#" className='next-button'>
                 <img className='slide-button' src={nextButton} alt="오른쪽화살표" />
-              </a>
+              </a> */}
             </div>
-            <div className="slide-position">
+            {/* <div className="slide-position">
               <div className="slide-circle active"></div>
               <div className="slide-circle"></div>
-            </div>
+            </div> */}
           </div>
         </section>
         <section className="contact-section" id='contactPos'>

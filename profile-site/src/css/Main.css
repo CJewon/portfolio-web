@@ -242,24 +242,6 @@
     stroke-dashoffset: var(--bar-linepx);
     transition: 2s;
   }
-
-  /* #main .percent-bar.html > circle {
-    stroke-dashoffset: calc(var(--bar-linepx) - var(--bar-linepx) * 0.91);
-  }
-
-  
-  #main .percent-bar.css > circle {
-    stroke-dashoffset: calc(var(--bar-linepx) - var(--bar-linepx) * 0.87);
-  } */
-  
-  /* #main .percent-bar.js > circle {
-    stroke-dashoffset: calc(var(--bar-linepx) - var(--bar-linepx) * 0.84);
-  } */
-  
-  /* #main .percent-bar.react > circle {
-    stroke-dashoffset: calc(var(--bar-linepx) - var(--bar-linepx) * 0.5);
-  } */
-
   
   #main .work-title {
     margin: 0 auto;
@@ -290,10 +272,14 @@
 
   
   #main .slide-list {
-    display: flex;
+    display: flex !important;
     gap: 66px;
     padding: 0 112px;
     box-sizing: border-box;
+  }
+
+  #main .slide-dots {
+    bottom: -70px !important;
   }
 
   #main .slide-ul {
