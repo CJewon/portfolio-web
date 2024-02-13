@@ -243,22 +243,22 @@
     transition: 2s;
   }
 
-  #main .percent-bar.html > circle {
+  /* #main .percent-bar.html > circle {
     stroke-dashoffset: calc(var(--bar-linepx) - var(--bar-linepx) * 0.91);
   }
 
   
   #main .percent-bar.css > circle {
     stroke-dashoffset: calc(var(--bar-linepx) - var(--bar-linepx) * 0.87);
-  }
+  } */
   
-  #main .percent-bar.js > circle {
+  /* #main .percent-bar.js > circle {
     stroke-dashoffset: calc(var(--bar-linepx) - var(--bar-linepx) * 0.84);
-  }
+  } */
   
-  #main .percent-bar.react > circle {
+  /* #main .percent-bar.react > circle {
     stroke-dashoffset: calc(var(--bar-linepx) - var(--bar-linepx) * 0.5);
-  }
+  } */
 
   
   #main .work-title {

@@ -26,6 +26,10 @@ export default function Main() {
   const slideContainerRef = useRef(null);
   const sectionRef = useRef(null)
   const percentBarRef = useRef(null)
+  const htmlBarRef = useRef(null)
+  const cssBarRef = useRef(null)
+  const javascriptBarRef = useRef(null)
+  const reactBarRef = useRef(null)
   
   const [sectionWidth, setSectionWidth] = useState(0);
   const [slideWidth, setSlideWidth] = useState(0)
@@ -75,26 +79,33 @@ export default function Main() {
     const options = {
       root : null,
       rootMargin : '0px',
-      threshoid : 0
+      threshoid : 0.1
     }
 
-    const callback = (entries, observer) => {
-      entries.foreach(entry => {
-        if(entry.isIntersecting && entry.target.classList.contains('circle-ul')) {
-          console.log('1');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          htmlBarRef.current.childNodes[0].style.strokeDashoffset = 'calc(var(--bar-linepx) - var(--bar-linepx) * 0.91)';
+          cssBarRef.current.childNodes[0].style.strokeDashoffset = 'calc(var(--bar-linepx) - var(--bar-linepx) * 0.87)';
+          javascriptBarRef.current.childNodes[0].style.strokeDashoffset = 'calc(var(--bar-linepx) - var(--bar-linepx) * 0.84)';
+          reactBarRef.current.childNodes[0].style.strokeDashoffset = 'calc(var(--bar-linepx) - var(--bar-linepx) * 0.50)';
         }
-      })
-      
+        else {
+          htmlBarRef.current.childNodes[0].style.strokeDashoffset = '';
+          cssBarRef.current.childNodes[0].style.strokeDashoffset = '';
+          javascriptBarRef.current.childNodes[0].style.strokeDashoffset = '';
+          reactBarRef.current.childNodes[0].style.strokeDashoffset = '';
+        }
+      });
+    }, options);
+
+    if (percentBarRef.current) {
+      observer.observe(percentBarRef.current);
     }
-      const observer = new IntersectionObserver(callback, options);
-      
-      if(percentBarRef.currnet) {
-        observer.observe(percentBarRef.current)
-      }
-      
-      return () => {
-        observer.disconnect();
-      }
+
+    return () => {
+      observer.disconnect();
+    };
     
     
     // slideUl.style.gap = 
@@ -193,7 +204,7 @@ export default function Main() {
                             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
                             <circle opacity="0.2" cx="50" cy="50" r="46" stroke="#D9D9D9" stroke-width="8"/>
                             </svg>
-                            <svg className='percent-bar html' xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+                            <svg className='percent-bar html' xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" ref={htmlBarRef}>
                             <circle cx="50" cy="50" r="46" stroke="#0ACAD7" stroke-width="8"/>
                             </svg>
                             <img src={html} alt="html" className='icon-img' />
@@ -205,7 +216,7 @@ export default function Main() {
                             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
                             <circle opacity="0.2" cx="50" cy="50" r="46" stroke="#D9D9D9" stroke-width="8"/>
                             </svg>
-                            <svg className='percent-bar css' xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+                            <svg className='percent-bar css' xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" ref={cssBarRef}>
                             <circle cx="50" cy="50" r="46" stroke="#0ACAD7" stroke-width="8"/>
                             </svg>
                             <img src={css} alt="css" className='icon-img' />
@@ -217,7 +228,7 @@ export default function Main() {
                             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
                             <circle opacity="0.2" cx="50" cy="50" r="46" stroke="#D9D9D9" stroke-width="8"/>
                             </svg>
-                            <svg className='percent-bar js' xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+                            <svg className='percent-bar js' xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" ref={javascriptBarRef}>
                             <circle cx="50" cy="50" r="46" stroke="#0ACAD7" stroke-width="8"/>
                             </svg>
                             <img src={js} alt="js" className='icon-img' />
@@ -229,7 +240,7 @@ export default function Main() {
                             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
                             <circle opacity="0.2" cx="50" cy="50" r="46" stroke="#D9D9D9" stroke-width="8"/>
                             </svg>
-                            <svg className='percent-bar react' xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+                            <svg className='percent-bar react' xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" ref={reactBarRef}>
                             <circle cx="50" cy="50" r="46" stroke="#0ACAD7" stroke-width="8"/>
                             </svg>
                             <img src={react} alt="react" className='icon-img' />
