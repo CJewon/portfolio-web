@@ -355,6 +355,15 @@
     align-items: center;
     color: #00D1FF;
   }
+
+  #main .slick-dots {
+    bottom: -120px;
+  }
+
+  #main .slick-prev::before,
+  #main .slick-next::before {
+    font-size: 40px;
+  }
   
   #main .slide-position {
     display: flex;
@@ -429,7 +438,7 @@
   
   #main footer {
     padding: 0 32px;
-    padding-bottom: 32px;
+    padding-top: 80px;
     box-sizing: border-box;
     text-align: center;
   }

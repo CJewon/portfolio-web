@@ -14,6 +14,7 @@ import myImg from '../img/myImg.jpg';
 import nextButton from '../img/nextButton.png'
 import previousButton from '../img/previousButton.png'
 import SlidePage from './SlidePage';
+// import {fullpage}
 
 export default function Main() {
 
@@ -69,6 +70,7 @@ export default function Main() {
   
 
   return (
+
     <div className='main-app' id='main'>
       <header>
           <ul>
@@ -207,10 +209,10 @@ export default function Main() {
               </ul>
             </div>
           </div>
+          <footer className='footer-container'>
+            <p>CHOIJEWONⓒ 2023 PORTFOLIO</p>
+          </footer>
         </section>
-        <footer className='footer-container'>
-          <p>CHOIJEWONⓒ 2023 PORTFOLIO</p>
-        </footer>
     </div>
   )
 }
