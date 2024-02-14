@@ -14,7 +14,7 @@ import myImg from '../img/myImg.jpg';
 import nextButton from '../img/nextButton.png'
 import previousButton from '../img/previousButton.png'
 import SlidePage from './SlidePage';
-// import {fullpage}
+// import {ullpage} from 'react-fullpage'
 
 export default function Main() {
 
@@ -70,7 +70,6 @@ export default function Main() {
   
 
   return (
-
     <div className='main-app' id='main'>
       <header>
           <ul>
