@@ -17,62 +17,18 @@ import SlidePage from './SlidePage';
 
 export default function Main() {
 
-  const section = document.querySelectorAll('section')
-  
-  const [pageIndex, setPageIndex] = useState(0); // 현재 페이지
-  const [moveState, setMoveState] = useState(false); // 스크롤할때의 상태
-  const maxPage = section.length - 1; // section의 갯수
   
   const slideContainerRef = useRef(null);
-  const sectionRef = useRef(null)
+
   const percentBarRef = useRef(null)
   const htmlBarRef = useRef(null)
   const cssBarRef = useRef(null)
   const javascriptBarRef = useRef(null)
   const reactBarRef = useRef(null)
-  
-  const [sectionWidth, setSectionWidth] = useState(0);
-  const [slideWidth, setSlideWidth] = useState(0)
-  
+
   
   useEffect(() => {
     
-
-    // OnePage
-    window.addEventListener('wheel', (e) => {
-      if (!moveState) {
-        setMoveState(true)
-        setTimeout(() => {
-          setMoveState(false);
-        }, 1000);
-      }
-
-      //웹사이트의 크기안에 있을때
-      if(window.scrollY < (section.length) * window.innerHeight) {
-        e.preventDefault();
-        // 아래로 스크롤 했을때
-        if(e.deltaX > 0) { 
-          setPageIndex(pageIndex + 1);
-          window.scrollTo({top : pageIndex*window.innerHeight, left : 0, behavior: "smooth"} )
-        }
-      }
-    });
-    
-    
-    //슬라이드 생성 및 실행
-    
-    // console.log(slideContainerRef)
-    const slideContainerStyle = window.getComputedStyle(slideContainerRef.current)
-    const slideContainerWidth = slideContainerStyle.width
-    setSlideWidth(slideContainerWidth);
-
-    const slideUl = document.querySelector('.slide-ul')
-
-
-
-
-
-
 
     //observer을 이용하여 화면에 나타날때마다 percent-bar 작동시키기
 
@@ -106,46 +62,6 @@ export default function Main() {
     return () => {
       observer.disconnect();
     };
-    
-    
-    // slideUl.style.gap = 
-    
-    // const handleScroll = (event) => {
-    //   if(!moveState) {
-    //     setMoveState(true)
-    //     console.log(moveState)
-    //     setTimeout(() => {
-    //       setMoveState(false);
-    //     }, 500);
-
-    //     if(window.scrollY < (section.length)*window.innerHeight){   
-    //       event.preventDefault();
-    //       if (event.deltaY > 0) {
-    //         if (event.deltaY > 0) {
-    //           setPageIndex(prevIndex => {
-    //             const newIndex = prevIndex + 1;
-    //             return newIndex > maxPage ? maxPage : newIndex;
-    //           });
-              
-    //       } 
-    //       else if (event.deltaY < 0) {
-    //           // 위로 스크롤하는 경우
-    //           setPageIndex(prevIndex => {
-    //             const newIndex = prevIndex > 0 ? prevIndex - 1 : 0;
-    //             return newIndex;
-    //           });
-    //       }            
-    //     } 
-    //     }
-    //     console.log(pageIndex)
-    //  }
-    // }
-
-    // window.addEventListener('wheel', handleScroll, {passive : false});
-    // return () => {
-    //   window.removeEventListener('wheel', handleScroll);
-    // };
-
 
   }, []);
 
