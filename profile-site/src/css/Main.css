@@ -118,7 +118,6 @@
     color: #DDCDCD;
     font-size: 48px;
     font-weight: 100;
-    margin-top: 48px;
   }
   
   #main h3 {
@@ -583,6 +582,10 @@
       justify-content: center;
       align-self: center;
     }
+
+    #main .Section {
+      height: 100% !important;
+    }
   
     #main .main-container {
       padding: 40px 10px;
@@ -624,14 +627,18 @@
       font-size: 20px;
     }
   
-    #main.introduce-title,
-    #main.work-title,
+    #main .introduce-title,
+    #main .work-title,
     #main .contact-container,
     #main .stack-graph-container {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+
+    #main .introduce-section {
+      padding-top: 0;
     }
   
     #main .introduce-text-container {
