@@ -18,6 +18,13 @@ import {SectionsContainer, Section, Header} from 'react-fullpage'
 
 export default function Main() {
 
+
+  // section 참고
+  const mainSectionRef = useRef(null)
+  const introduceSectionRef = useRef(null)
+  const workSectionRef = useRef(null)
+  const contactSectionRef = useRef(null)
+
   
   const slideContainerRef = useRef(null);
   const percentBarRef = useRef(null)
@@ -26,9 +33,33 @@ export default function Main() {
   const javascriptBarRef = useRef(null)
   const reactBarRef = useRef(null)
 
-  let options = {
-    anchors : ['sectionOne', 'sectionTwo', 'sectionThree', 'sectionFour'],
-  }
+  
+  
+  function adjustOptions() {
+    const width = window.innerWidth;
+    const isWidthInRange = width <= 1365;
+
+    let options = {
+        anchors: ['sectionOne', 'sectionTwo', 'sectionThree', 'sectionFour'],
+        navigation: true,
+        scrollBar: false,
+        arrowNavigation: true
+    };
+
+    if (isWidthInRange) {
+        options.navigation = false;
+        options.scrollBar = true;
+        options.arrowNavigation = false;
+    } else {
+      options.navigation = true;
+      options.scrollBar = false;
+      options.arrowNavigation = true;
+    }
+    
+
+    console.log(options)
+    return options;
+}
   
   useEffect(() => {
     
@@ -69,23 +100,24 @@ export default function Main() {
 
   }, []);
 
-  
+    
   
 
   return (
-    <SectionsContainer {...options}>
-
+    
     
     <div className='main-app' id='main'>
-      <header>
-          <ul>
-            <li><a href="#idPos" className='header-position'>MAIN</a></li>
-            <li><a href="#introducePos">INTRODUCE</a></li>
-            <li><a href="#workPos">WORK</a></li>
-            <li><a href="#contactPos">CONTACT</a></li>
-          </ul>
-        </header>
-        <Section className="main-section" id='idPos'>
+        <header>
+            <ul>
+              <li><a href="#idPos" className='header-position'>MAIN</a></li>
+              <li><a href="#introducePos">INTRODUCE</a></li>
+              <li><a href="#workPos">WORK</a></li>
+              <li><a href="#contactPos">CONTACT</a></li>
+            </ul>
+          </header>
+        <SectionsContainer {...adjustOptions()}>  
+        <Section>
+        <section className="main-section" id='idPos' ref={mainSectionRef}>
           <div className="main-container">
             <div className="title-container">
               <h1>
@@ -98,8 +130,10 @@ export default function Main() {
           <div className="copyright-container">
             <p>본 페이지는 상업적 목적이 아닌<br className='disabled active'></br> 개인 포트폴리오용으로 만들어진 사이트입니다.</p>
           </div>
+        </section>
         </Section>
-        <Section className='introduce-section' id='introducePos'>
+        <Section>
+        <section className='introduce-section' id='introducePos' ref={introduceSectionRef}>
           <div className="introduce-title">
           <h2>INTRODUCE</h2>
             <div className="introduce-container">
@@ -176,8 +210,10 @@ export default function Main() {
               </div>
             </div>
           </div>
+        </section>
         </Section>
-        <Section className='work-section' id='workPos'>
+        <Section>
+        <section className='work-section' id='workPos' ref={workSectionRef}>
           <div className="work-title">
           <h2>WORK</h2>
             <div className="work-container" ref={slideContainerRef}>
@@ -197,8 +233,10 @@ export default function Main() {
               <div className="slide-circle"></div>
             </div> */}
           </div>
+        </section>
         </Section>
-        <Section className="contact-section" id='contactPos'>
+        <Section>
+        <section className="contact-section" id='contactPos' ref={contactSectionRef}>
           <div className="contact-container">
             <h2>CONTACT</h2>
             <p>저에 대해 더 궁금한 점이 있으신가요?</p>
@@ -217,8 +255,9 @@ export default function Main() {
           <footer className='footer-container'>
             <p>CHOIJEWONⓒ 2023 PORTFOLIO</p>
           </footer>
+        </section>
         </Section>
-    </div>
     </SectionsContainer>
+    </div>
   )
 }
