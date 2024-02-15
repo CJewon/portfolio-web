@@ -14,19 +14,21 @@ import myImg from '../img/myImg.jpg';
 import nextButton from '../img/nextButton.png'
 import previousButton from '../img/previousButton.png'
 import SlidePage from './SlidePage';
-// import {ullpage} from 'react-fullpage'
+import {SectionsContainer, Section, Header} from 'react-fullpage'
 
 export default function Main() {
 
   
   const slideContainerRef = useRef(null);
-
   const percentBarRef = useRef(null)
   const htmlBarRef = useRef(null)
   const cssBarRef = useRef(null)
   const javascriptBarRef = useRef(null)
   const reactBarRef = useRef(null)
 
+  let options = {
+    anchors : ['sectionOne', 'sectionTwo', 'sectionThree', 'sectionFour'],
+  }
   
   useEffect(() => {
     
@@ -64,12 +66,16 @@ export default function Main() {
       observer.disconnect();
     };
 
+
   }, []);
 
   
   
 
   return (
+    <SectionsContainer {...options}>
+
+    
     <div className='main-app' id='main'>
       <header>
           <ul>
@@ -79,7 +85,7 @@ export default function Main() {
             <li><a href="#contactPos">CONTACT</a></li>
           </ul>
         </header>
-        <section className="main-section" id='idPos'>
+        <Section className="main-section" id='idPos'>
           <div className="main-container">
             <div className="title-container">
               <h1>
@@ -92,8 +98,8 @@ export default function Main() {
           <div className="copyright-container">
             <p>본 페이지는 상업적 목적이 아닌<br className='disabled active'></br> 개인 포트폴리오용으로 만들어진 사이트입니다.</p>
           </div>
-        </section>
-        <section className='introduce-section' id='introducePos'>
+        </Section>
+        <Section className='introduce-section' id='introducePos'>
           <div className="introduce-title">
           <h2>INTRODUCE</h2>
             <div className="introduce-container">
@@ -170,8 +176,8 @@ export default function Main() {
               </div>
             </div>
           </div>
-        </section>
-        <section className='work-section' id='workPos'>
+        </Section>
+        <Section className='work-section' id='workPos'>
           <div className="work-title">
           <h2>WORK</h2>
             <div className="work-container" ref={slideContainerRef}>
@@ -191,8 +197,8 @@ export default function Main() {
               <div className="slide-circle"></div>
             </div> */}
           </div>
-        </section>
-        <section className="contact-section" id='contactPos'>
+        </Section>
+        <Section className="contact-section" id='contactPos'>
           <div className="contact-container">
             <h2>CONTACT</h2>
             <p>저에 대해 더 궁금한 점이 있으신가요?</p>
@@ -211,7 +217,8 @@ export default function Main() {
           <footer className='footer-container'>
             <p>CHOIJEWONⓒ 2023 PORTFOLIO</p>
           </footer>
-        </section>
+        </Section>
     </div>
+    </SectionsContainer>
   )
 }
