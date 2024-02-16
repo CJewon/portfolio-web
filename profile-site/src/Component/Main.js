@@ -42,50 +42,103 @@ export default function Main() {
   }
   )
 
-  console.log(onePageOption);
+  // console.log(onePageOption);
 
   const sectionsRef = [mainSectionRef, introduceSectionRef, workSectionRef, contactSectionRef]
  
-  useEffect(() => {
-    const handleScroll = (event) => {
-      if (!moveState) {
-        setMoveState(true);
+  // useEffect(() => {
+  //   const handleScroll = (event) => {
+  //     if (!moveState) {
+  //       setMoveState(true);
   
        
-          if (event.deltaY > 0) {
-            setOnePageIndex(prevPageIndex => {
-              const nextPageIndex = prevPageIndex + 1;
-              if (nextPageIndex <= sectionsRef.length) {
-                window.scrollTo({ top: nextPageIndex * window.innerHeight, left: 0, behavior: "smooth" });
-                return nextPageIndex;
-              }
-              return prevPageIndex;
-            });
-          } else if (event.deltaY < 0) {
-            setOnePageIndex(prevPageIndex => {
-              const newPrevPageIndex = prevPageIndex - 1;
-              if (newPrevPageIndex >= 0) {
-                window.scrollTo({ top: newPrevPageIndex * window.innerHeight, left: 0, behavior: "smooth" });
-                return newPrevPageIndex;
-              }
-              return prevPageIndex;
-            });
-          }
+  //         if (event.deltaY > 0) {
+  //           setOnePageIndex(prevPageIndex => {
+  //             const nextPageIndex = prevPageIndex + 1;
+  //             if (nextPageIndex <= sectionsRef.length) {
+  //               window.scrollTo({ top: nextPageIndex * window.innerHeight, left: 0, behavior: "smooth" });
+  //               return nextPageIndex;
+  //             }
+  //             return prevPageIndex;
+  //           });
+  //         } else if (event.deltaY < 0) {
+  //           setOnePageIndex(prevPageIndex => {
+  //             const newPrevPageIndex = prevPageIndex - 1;
+  //             if (newPrevPageIndex >= 0) {
+  //               window.scrollTo({ top: newPrevPageIndex * window.innerHeight, left: 0, behavior: "smooth" });
+  //               return newPrevPageIndex;
+  //             }
+  //             return prevPageIndex;
+  //           });
+  //         }
   
-          // 500ms 후에 moveState를 false로 설정하여 다시 이벤트 핸들러가 실행될 수 있도록 함
-          setTimeout(() => {
-            setMoveState(false);
-          }, 1000);
+  //         // 500ms 후에 moveState를 false로 설정하여 다시 이벤트 핸들러가 실행될 수 있도록 함
+  //         setTimeout(() => {
+  //           setMoveState(false);
+  //         }, 1000);
         
+  //     }
+  //   };
+  
+  //   window.addEventListener('mousewheel', handleScroll, {passive : false});
+  
+  //   return () => {
+  //     window.removeEventListener('mousewheel', handleScroll);
+  //   };
+  // }, [moveState, sectionsRef]);
+
+  useEffect(() => {
+
+    window.addEventListener('mousewheel', (event)=> {
+      if(event.deltaY > 0) {
+        setOnePageIndex(onePageIndex + 1);
+        console.log(setOnePageIndex)
+      }else if (event.deltaY < 0) {
+        setOnePageIndex(onePageIndex - 1)
+        console.log(setOnePageIndex)
       }
-    };
+    }
+    , {passive : false})
+
+
+
+    // const handleScroll = (event) => {
+
+     
+        // setMoveState(true);
   
-    window.addEventListener('mousewheel', handleScroll, {passive : false});
+       
+        //   if (event.deltaY > 0) {
+        //     setOnePageIndex(prevPageIndex => {
+        //       const nextPageIndex = prevPageIndex + 1;
+        //       if (nextPageIndex <= sectionsRef.length) {
+        //         window.scrollTo({ top: nextPageIndex * window.innerHeight, left: 0, behavior: "smooth" });
+        //         return nextPageIndex;
+        //       }
+        //       return prevPageIndex;
+        //     });
+        //   } else if (event.deltaY < 0) {
+        //     setOnePageIndex(prevPageIndex => {
+        //       const newPrevPageIndex = prevPageIndex - 1;
+        //       if (newPrevPageIndex >= 0) {
+        //         window.scrollTo({ top: newPrevPageIndex * window.innerHeight, left: 0, behavior: "smooth" });
+        //         return newPrevPageIndex;
+        //       }
+        //       return prevPageIndex;
+        //     });
+        //   }
   
-    return () => {
-      window.removeEventListener('mousewheel', handleScroll);
-    };
-  }, [moveState, sectionsRef]);
+         
+        
+      
+    // };
+  
+    // window.addEventListener('mousewheel', handleScroll, {passive : false});
+  
+    // return () => {
+    //   window.removeEventListener('mousewheel', handleScroll);
+    // };
+  }, []);
   
   
   
