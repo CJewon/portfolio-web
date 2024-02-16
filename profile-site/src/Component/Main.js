@@ -14,7 +14,7 @@ import myImg from '../img/myImg.jpg';
 import nextButton from '../img/nextButton.png'
 import previousButton from '../img/previousButton.png'
 import SlidePage from './SlidePage';
-import {SectionsContainer, Section, Header} from 'react-fullpage'
+import {SectionsContainer, Section} from 'react-fullpage'
 
 export default function Main() {
 
@@ -33,33 +33,100 @@ export default function Main() {
   const javascriptBarRef = useRef(null)
   const reactBarRef = useRef(null)
 
-  
-  
-  function adjustOptions() {
-    const width = window.innerWidth;
-    const isWidthInRange = width <= 1365;
+  const [point, setPoint] = useState('');
+  const [onePageIndex, setOnePageIndex] = useState(0);
+  const [moveState, setMoveState] = useState(false);
 
-    let options = {
-        anchors: ['sectionOne', 'sectionTwo', 'sectionThree', 'sectionFour'],
-        navigation: true,
-        scrollBar: false,
-        arrowNavigation: true
+  const [onePageOption, setOnePageOption] = useState( {
+    useAddEventlistner : useRef(false)
+  }
+  )
+
+  console.log(onePageOption);
+
+  const sectionsRef = [mainSectionRef, introduceSectionRef, workSectionRef, contactSectionRef]
+ 
+  useEffect(() => {
+    const handleScroll = (event) => {
+      if (!moveState) {
+        setMoveState(true);
+  
+       
+          if (event.deltaY > 0) {
+            setOnePageIndex(prevPageIndex => {
+              const nextPageIndex = prevPageIndex + 1;
+              if (nextPageIndex <= sectionsRef.length) {
+                window.scrollTo({ top: nextPageIndex * window.innerHeight, left: 0, behavior: "smooth" });
+                return nextPageIndex;
+              }
+              return prevPageIndex;
+            });
+          } else if (event.deltaY < 0) {
+            setOnePageIndex(prevPageIndex => {
+              const newPrevPageIndex = prevPageIndex - 1;
+              if (newPrevPageIndex >= 0) {
+                window.scrollTo({ top: newPrevPageIndex * window.innerHeight, left: 0, behavior: "smooth" });
+                return newPrevPageIndex;
+              }
+              return prevPageIndex;
+            });
+          }
+  
+          // 500ms 후에 moveState를 false로 설정하여 다시 이벤트 핸들러가 실행될 수 있도록 함
+          setTimeout(() => {
+            setMoveState(false);
+          }, 1000);
+        
+      }
     };
+  
+    window.addEventListener('mousewheel', handleScroll, {passive : false});
+  
+    return () => {
+      window.removeEventListener('mousewheel', handleScroll);
+    };
+  }, [moveState, sectionsRef]);
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  // const [options, setOptions] = useState({
+  //   anchors: ['sectionOne', 'sectionTwo', 'sectionThree', 'sectionFour'],
+  //   navigation: true,
+  //   scrollBar: false,
+  //   arrowNavigation: true
+  // });
 
-    if (isWidthInRange) {
-        options.navigation = false;
-        options.scrollBar = true;
-        options.arrowNavigation = false;
-    } else {
-      options.navigation = true;
-      options.scrollBar = false;
-      options.arrowNavigation = true;
-    }
-    
+  // const isWidthInRange = window.innerWidth <= 1365;
 
-    console.log(options)
-    return options;
-}
+  // useEffect(() => {
+  //   if (isWidthInRange) {
+  //     setOptions(prevOptions => ({
+  //       ...prevOptions,
+  //       navigation: false,
+  //       scrollBar: true,
+  //       arrowNavigation: false
+  //     }));
+  //   } else {
+  //     setOptions(prevOptions => ({
+  //       ...prevOptions,
+  //       navigation: true,
+  //       scrollBar: false,
+  //       arrowNavigation: true
+  //     }));
+  //   }
+  // }, [isWidthInRange]);
+
+  // useEffect(()=> {
+
+  // },[])
   
   useEffect(() => {
     
@@ -115,8 +182,8 @@ export default function Main() {
               <li><a href="#contactPos">CONTACT</a></li>
             </ul>
           </header>
-        <SectionsContainer {...adjustOptions()}>  
-        <Section>
+        {/* <SectionsContainer {...options}>   */}
+        {/* <Section> */}
         <section className="main-section" id='idPos' ref={mainSectionRef}>
           <div className="main-container">
             <div className="title-container">
@@ -131,8 +198,8 @@ export default function Main() {
             <p>본 페이지는 상업적 목적이 아닌<br className='disabled active'></br> 개인 포트폴리오용으로 만들어진 사이트입니다.</p>
           </div>
         </section>
-        </Section>
-        <Section>
+        {/* </Section> */}
+        {/* <Section> */}
         <section className='introduce-section' id='introducePos' ref={introduceSectionRef}>
           <div className="introduce-title">
           <h2>INTRODUCE</h2>
@@ -211,8 +278,8 @@ export default function Main() {
             </div>
           </div>
         </section>
-        </Section>
-        <Section>
+        {/* </Section> */}
+        {/* <Section> */}
         <section className='work-section' id='workPos' ref={workSectionRef}>
           <div className="work-title">
           <h2>WORK</h2>
@@ -234,8 +301,8 @@ export default function Main() {
             </div> */}
           </div>
         </section>
-        </Section>
-        <Section>
+        {/* </Section> */}
+        {/* <Section> */}
         <section className="contact-section" id='contactPos' ref={contactSectionRef}>
           <div className="contact-container">
             <h2>CONTACT</h2>
@@ -256,8 +323,8 @@ export default function Main() {
             <p>CHOIJEWONⓒ 2023 PORTFOLIO</p>
           </footer>
         </section>
-        </Section>
-    </SectionsContainer>
+        {/* </Section> */}
+     {/* </SectionsContainer> */}
     </div>
   )
 }
