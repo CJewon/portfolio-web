@@ -91,11 +91,11 @@ export default function Main() {
 
     window.addEventListener('mousewheel', (event)=> {
       if(event.deltaY > 0) {
-        setOnePageIndex(onePageIndex + 1);
-        console.log(setOnePageIndex)
+        setOnePageIndex(prevOnePageIndex => prevOnePageIndex + 1);
+        console.log(onePageIndex)
       }else if (event.deltaY < 0) {
-        setOnePageIndex(onePageIndex - 1)
-        console.log(setOnePageIndex)
+        setOnePageIndex(prevOnePageIndex => prevOnePageIndex - 1)
+        console.log(onePageIndex)
       }
     }
     , {passive : false})
