@@ -1,15 +1,25 @@
 {
   "files": {
-    "main.css": "/portfolio-web/static/css/main.02bdb406.css",
-    "main.js": "/portfolio-web/static/js/main.58310eda.js",
-    "static/js/787.2811d297.chunk.js": "/portfolio-web/static/js/787.2811d297.chunk.js",
-    "index.html": "/portfolio-web/index.html",
-    "main.02bdb406.css.map": "/portfolio-web/static/css/main.02bdb406.css.map",
-    "main.58310eda.js.map": "/portfolio-web/static/js/main.58310eda.js.map",
-    "787.2811d297.chunk.js.map": "/portfolio-web/static/js/787.2811d297.chunk.js.map"
+    "main.css": "/portfolio-web/profile-site/static/css/main.433239d7.css",
+    "main.js": "/portfolio-web/profile-site/static/js/main.9027dd09.js",
+    "static/js/787.2811d297.chunk.js": "/portfolio-web/profile-site/static/js/787.2811d297.chunk.js",
+    "static/media/ProfileImg.png": "/portfolio-web/profile-site/static/media/ProfileImg.3850c1d3cb7ce29129c0.png",
+    "static/media/myImg.jpg": "/portfolio-web/profile-site/static/media/myImg.ca24fc45e7ec8a3a7509.jpg",
+    "static/media/neneWeb.png": "/portfolio-web/profile-site/static/media/neneWeb.6a7acff039687d6e3479.png",
+    "static/media/renewal-1.png": "/portfolio-web/profile-site/static/media/renewal-1.8cda7ce5f0e1fb1ac6fb.png",
+    "static/media/renewal-3.png": "/portfolio-web/profile-site/static/media/renewal-3.74e707ee7804bdc1d866.png",
+    "static/media/renewal-2.png": "/portfolio-web/profile-site/static/media/renewal-2.e9712065d43e84b2524f.png",
+    "static/media/slick.svg": "/portfolio-web/profile-site/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/portfolio-web/profile-site/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/portfolio-web/profile-site/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/portfolio-web/profile-site/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/portfolio-web/profile-site/index.html",
+    "main.433239d7.css.map": "/portfolio-web/profile-site/static/css/main.433239d7.css.map",
+    "main.9027dd09.js.map": "/portfolio-web/profile-site/static/js/main.9027dd09.js.map",
+    "787.2811d297.chunk.js.map": "/portfolio-web/profile-site/static/js/787.2811d297.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.02bdb406.css",
-    "static/js/main.58310eda.js"
+    "static/css/main.433239d7.css",
+    "static/js/main.9027dd09.js"
   ]
 }
