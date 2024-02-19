@@ -32,113 +32,149 @@ export default function Main() {
   const cssBarRef = useRef(null)
   const javascriptBarRef = useRef(null)
   const reactBarRef = useRef(null)
+  
+  const onePageRef = useRef(null)
 
-  const [point, setPoint] = useState('');
-  const [onePageIndex, setOnePageIndex] = useState(0);
-  const [moveState, setMoveState] = useState(false);
-
-  const [onePageOption, setOnePageOption] = useState( {
-    useAddEventlistner : useRef(false)
-  }
-  )
-
-  // console.log(onePageOption);
-
-  const sectionsRef = [mainSectionRef, introduceSectionRef, workSectionRef, contactSectionRef]
  
-  // useEffect(() => {
-  //   const handleScroll = (event) => {
-  //     if (!moveState) {
-  //       setMoveState(true);
-  
-       
-  //         if (event.deltaY > 0) {
-  //           setOnePageIndex(prevPageIndex => {
-  //             const nextPageIndex = prevPageIndex + 1;
-  //             if (nextPageIndex <= sectionsRef.length) {
-  //               window.scrollTo({ top: nextPageIndex * window.innerHeight, left: 0, behavior: "smooth" });
-  //               return nextPageIndex;
-  //             }
-  //             return prevPageIndex;
-  //           });
-  //         } else if (event.deltaY < 0) {
-  //           setOnePageIndex(prevPageIndex => {
-  //             const newPrevPageIndex = prevPageIndex - 1;
-  //             if (newPrevPageIndex >= 0) {
-  //               window.scrollTo({ top: newPrevPageIndex * window.innerHeight, left: 0, behavior: "smooth" });
-  //               return newPrevPageIndex;
-  //             }
-  //             return prevPageIndex;
-  //           });
-  //         }
-  
-  //         // 500ms 후에 moveState를 false로 설정하여 다시 이벤트 핸들러가 실행될 수 있도록 함
-  //         setTimeout(() => {
-  //           setMoveState(false);
-  //         }, 1000);
-        
-  //     }
-  //   };
-  
-  //   window.addEventListener('mousewheel', handleScroll, {passive : false});
-  
-  //   return () => {
-  //     window.removeEventListener('mousewheel', handleScroll);
-  //   };
-  // }, [moveState, sectionsRef]);
+  const [moveState, setMoveState] = useState(false);
+  const [useDelta, setUseDelta] = useState(0);
+  const [index, setIndex] = useState(0) ;
 
+  
+  const sectionsRef = [mainSectionRef, introduceSectionRef, workSectionRef, contactSectionRef]
+  
   useEffect(() => {
+    
+    const handleScroll = (event) => {
+      
+      event.preventDefault();
+      if (!moveState) {
+        setMoveState(true);   
+        setUseDelta(event.deltaY);
 
-    window.addEventListener('mousewheel', (event)=> {
-      if(event.deltaY > 0) {
-        setOnePageIndex(prevOnePageIndex => prevOnePageIndex + 1);
-        console.log(onePageIndex)
-      }else if (event.deltaY < 0) {
-        setOnePageIndex(prevOnePageIndex => prevOnePageIndex - 1)
-        console.log(onePageIndex)
-      }
+      };
+ 
     }
-    , {passive : false})
-
-
-
-    // const handleScroll = (event) => {
-
-     
-        // setMoveState(true);
   
        
-        //   if (event.deltaY > 0) {
-        //     setOnePageIndex(prevPageIndex => {
-        //       const nextPageIndex = prevPageIndex + 1;
-        //       if (nextPageIndex <= sectionsRef.length) {
-        //         window.scrollTo({ top: nextPageIndex * window.innerHeight, left: 0, behavior: "smooth" });
-        //         return nextPageIndex;
-        //       }
-        //       return prevPageIndex;
-        //     });
-        //   } else if (event.deltaY < 0) {
-        //     setOnePageIndex(prevPageIndex => {
-        //       const newPrevPageIndex = prevPageIndex - 1;
-        //       if (newPrevPageIndex >= 0) {
-        //         window.scrollTo({ top: newPrevPageIndex * window.innerHeight, left: 0, behavior: "smooth" });
-        //         return newPrevPageIndex;
-        //       }
-        //       return prevPageIndex;
-        //     });
-        //   }
-  
+    
+    // 500ms 후에 moveState를 false로 설정하여 다시 이벤트 핸들러가 실행될 수 있도록 함
+    if (moveState) {
+      console.log('여기');
+      if (useDelta > 0) {
+        setIndex(prevIndex => {
+          const nextIndex = prevIndex + 1;
+          return nextIndex < sectionsRef.length ? nextIndex : sectionsRef.length - 1;
+        });
+      } else if (useDelta < 0) {
+        setIndex(prevIndex => {
+          const nextIndex = prevIndex - 1;
+          return nextIndex >= 0 ? nextIndex : 0;
+        });
+      }     
+        console.log(index)
+
+       
+        
+        setTimeout(() => {
+             
+          console.log('실행되었습니다')
+          setMoveState(false);
+    
+        }, 500);
          
+    }
+
+
+    
         
       
-    // };
+      
   
-    // window.addEventListener('mousewheel', handleScroll, {passive : false});
+    window.addEventListener('mousewheel', handleScroll, {passive : false});
   
-    // return () => {
-    //   window.removeEventListener('mousewheel', handleScroll);
-    // };
-  }, []);
+    return () => {
+      window.removeEventListener('mousewheel', handleScroll);
+    };
+  },[moveState]);
+
+  useEffect(() => {
+    window.scrollTo({top : index * window.innerHeight, left : 0, behavior: "smooth"})
+  }, [index])
+
+  
+
+
+  // useEffect(() => {
+  //   const handleScroll = (event) => {
+  //     event.preventDefault();
+  //     const { deltaY } = event
+  //     const { scrollTop } = onePageRef.current; // 스크롤 위쪽 끝부분 위치
+  //     const pageHeight = window.innerHeight;
+
+  //     if(deltaY > 0) {
+  //       if(scrollTop >= 0 && scrollTop < pageHeight) {
+  //         onePageRef.current.scrollTo({
+  //           top: pageHeight,
+  //           left: 0,
+  //           behavior : "smooth",
+  //         })
+  //       } else if(scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
+  //         onePageRef.current.scrollTo({
+  //           top: pageHeight * 2,
+  //           left: 0,
+  //           behavior : "smooth",
+  //         }) 
+  //       } else if(scrollTop >= pageHeight && scrollTop < pageHeight * 3) {
+  //         onePageRef.current.scrollTo({
+  //           top: pageHeight * 3,
+  //           left: 0,
+  //           behavior : "smooth",
+  //         })
+  //       } else {
+  //         onePageRef.current.scrollTo({
+  //           top: pageHeight * 3,
+  //           left: 0,
+  //           behavior : "smooth",
+  //         })
+  //       }
+  //     } else {
+  //       if(scrollTop >= 0 && scrollTop < pageHeight) {
+  //         onePageRef.current.scrollTo({
+  //           top : 0,
+  //           left : 0,
+  //           behavior : "smooth"
+  //         }) 
+  //       } else if (scrollTop >= 0 && scrollTop < pageHeight * 2) {
+  //         onePageRef.current.scrollTo({
+  //           top : 0,
+  //           left : 0,
+  //           behavior : "smooth"
+  //         })
+  //       } else if (scrollTop >= 0 && scrollTop < pageHeight * 3) {
+  //         onePageRef.current.scrollTo({
+  //           top : 0,
+  //           left : 0,
+  //           behavior : "smooth"
+  //         })
+  //     } else {
+  //       onePageRef.current.scrollTo({
+  //         top: pageHeight,
+  //         left : 0,
+  //         behavior : "smooth"
+  //       })
+  //     }
+  //   }
+  // }
+
+  //   const onePageRefCurrent = onePageRef.current;
+  //   onePageRefCurrent.addEventListener("wheel", handleScroll);
+  //   return () => {
+  //     onePageRefCurrent.removeEventListener("wheel", handleScroll);
+  //   }
+    
+  // }, [])
+
   
   
   
@@ -226,7 +262,7 @@ export default function Main() {
   return (
     
     
-    <div className='main-app' id='main'>
+    <div className='main-app' id='main' ref={onePageRef}>
         <header>
             <ul>
               <li><a href="#idPos" className='header-position'>MAIN</a></li>
