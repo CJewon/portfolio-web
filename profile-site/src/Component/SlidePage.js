@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom'
 export default function SlidePage() {
 
   const settings = {
+    centerMode : true,
     dots: true,
     infinite: true,
     speed: 500,
