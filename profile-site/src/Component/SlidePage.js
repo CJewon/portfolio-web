@@ -40,7 +40,7 @@ export default function SlidePage() {
               </div>
             </div>
           </div>
-          <Link to='/NeneRenewalSite' className='website-click-button'>상세보기</Link>                       
+          <Link to='/portfolio-web/NeneRenewalSite' className='website-click-button'>상세보기</Link>                       
           </div>
       </div>
       <div className="slide-list">
@@ -61,7 +61,7 @@ export default function SlidePage() {
               </div>
             </div>
           </div>
-          <Link to='/NeneRenewalSite' className='website-click-button'>상세보기</Link>                       
+          <Link to='/portfolio-web/NeneRenewalSite' className='website-click-button'>상세보기</Link>                       
           </div>
       </div>
     </Slider>
