@@ -39,22 +39,21 @@ export default function Main() {
   const [moveState, setMoveState] = useState(false);
   const [useDelta, setUseDelta] = useState(0);
   const [index, setIndex] = useState(0) ;
-
+  
+  
   
   const sectionsRef = [mainSectionRef, introduceSectionRef, workSectionRef, contactSectionRef]
   
-  useEffect(() => {
-    
-    const handleScroll = (event) => {
-      
+  const handleScroll = (event) => {
       event.preventDefault();
       if (!moveState) {
         setMoveState(true);   
         setUseDelta(event.deltaY);
-
       };
- 
-    }
+  }
+  
+  useEffect(() => {
+    
   
        
     
@@ -72,7 +71,7 @@ export default function Main() {
           return nextIndex >= 0 ? nextIndex : 0;
         });
       }     
-        console.log(index)
+        // console.log(index)
 
        
         
@@ -90,8 +89,9 @@ export default function Main() {
         
       
       
-  
-    window.addEventListener('mousewheel', handleScroll, {passive : false});
+ 
+      window.addEventListener('mousewheel', handleScroll, {passive : false});
+
   
     return () => {
       window.removeEventListener('mousewheel', handleScroll);
@@ -102,120 +102,25 @@ export default function Main() {
     window.scrollTo({top : index * window.innerHeight, left : 0, behavior: "smooth"})
   }, [index])
 
+  useEffect(() => {
+    const handleResize = () => {
+      const bodyWidth = document.body.getBoundingClientRect().width;
+      if (bodyWidth <= 800) {
+        window.removeEventListener('mousewheel', handleScroll);
+      } else {
+        window.addEventListener('mousewheel', handleScroll, { passive: false });
+      }
+    };
   
+    handleResize(); // 초기 실행
+    window.addEventListener('resize', handleResize); // 리사이즈 이벤트 리스너 추가
+  
+    return () => {
+      window.removeEventListener('resize', handleResize); // cleanup 함수
+      window.removeEventListener('mousewheel', handleScroll); // cleanup 함수
+    };
+  }, [moveState, useDelta]); // moveState와 useDelta 상태가 변경될 때마다 재실행
 
-
-  // useEffect(() => {
-  //   const handleScroll = (event) => {
-  //     event.preventDefault();
-  //     const { deltaY } = event
-  //     const { scrollTop } = onePageRef.current; // 스크롤 위쪽 끝부분 위치
-  //     const pageHeight = window.innerHeight;
-
-  //     if(deltaY > 0) {
-  //       if(scrollTop >= 0 && scrollTop < pageHeight) {
-  //         onePageRef.current.scrollTo({
-  //           top: pageHeight,
-  //           left: 0,
-  //           behavior : "smooth",
-  //         })
-  //       } else if(scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
-  //         onePageRef.current.scrollTo({
-  //           top: pageHeight * 2,
-  //           left: 0,
-  //           behavior : "smooth",
-  //         }) 
-  //       } else if(scrollTop >= pageHeight && scrollTop < pageHeight * 3) {
-  //         onePageRef.current.scrollTo({
-  //           top: pageHeight * 3,
-  //           left: 0,
-  //           behavior : "smooth",
-  //         })
-  //       } else {
-  //         onePageRef.current.scrollTo({
-  //           top: pageHeight * 3,
-  //           left: 0,
-  //           behavior : "smooth",
-  //         })
-  //       }
-  //     } else {
-  //       if(scrollTop >= 0 && scrollTop < pageHeight) {
-  //         onePageRef.current.scrollTo({
-  //           top : 0,
-  //           left : 0,
-  //           behavior : "smooth"
-  //         }) 
-  //       } else if (scrollTop >= 0 && scrollTop < pageHeight * 2) {
-  //         onePageRef.current.scrollTo({
-  //           top : 0,
-  //           left : 0,
-  //           behavior : "smooth"
-  //         })
-  //       } else if (scrollTop >= 0 && scrollTop < pageHeight * 3) {
-  //         onePageRef.current.scrollTo({
-  //           top : 0,
-  //           left : 0,
-  //           behavior : "smooth"
-  //         })
-  //     } else {
-  //       onePageRef.current.scrollTo({
-  //         top: pageHeight,
-  //         left : 0,
-  //         behavior : "smooth"
-  //       })
-  //     }
-  //   }
-  // }
-
-  //   const onePageRefCurrent = onePageRef.current;
-  //   onePageRefCurrent.addEventListener("wheel", handleScroll);
-  //   return () => {
-  //     onePageRefCurrent.removeEventListener("wheel", handleScroll);
-  //   }
-    
-  // }, [])
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  // const [options, setOptions] = useState({
-  //   anchors: ['sectionOne', 'sectionTwo', 'sectionThree', 'sectionFour'],
-  //   navigation: true,
-  //   scrollBar: false,
-  //   arrowNavigation: true
-  // });
-
-  // const isWidthInRange = window.innerWidth <= 1365;
-
-  // useEffect(() => {
-  //   if (isWidthInRange) {
-  //     setOptions(prevOptions => ({
-  //       ...prevOptions,
-  //       navigation: false,
-  //       scrollBar: true,
-  //       arrowNavigation: false
-  //     }));
-  //   } else {
-  //     setOptions(prevOptions => ({
-  //       ...prevOptions,
-  //       navigation: true,
-  //       scrollBar: false,
-  //       arrowNavigation: true
-  //     }));
-  //   }
-  // }, [isWidthInRange]);
-
-  // useEffect(()=> {
-
-  // },[])
   
   useEffect(() => {
     
@@ -271,8 +176,7 @@ export default function Main() {
               <li><a href="#contactPos">CONTACT</a></li>
             </ul>
           </header>
-        {/* <SectionsContainer {...options}>   */}
-        {/* <Section> */}
+        
         <section className="main-section" id='idPos' ref={mainSectionRef}>
           <div className="main-container">
             <div className="title-container">
@@ -287,8 +191,7 @@ export default function Main() {
             <p>본 페이지는 상업적 목적이 아닌<br className='disabled active'></br> 개인 포트폴리오용으로 만들어진 사이트입니다.</p>
           </div>
         </section>
-        {/* </Section> */}
-        {/* <Section> */}
+       
         <section className='introduce-section' id='introducePos' ref={introduceSectionRef}>
           <div className="introduce-title">
           <h2>INTRODUCE</h2>
@@ -367,31 +270,19 @@ export default function Main() {
             </div>
           </div>
         </section>
-        {/* </Section> */}
-        {/* <Section> */}
+        
         <section className='work-section' id='workPos' ref={workSectionRef}>
           <div className="work-title">
           <h2>WORK</h2>
             <div className="work-container" ref={slideContainerRef}>
-              {/* <a href="#" className='pre-button'>
-                <img className='slide-button' src={previousButton} alt="왼쪽화살표" />
-              </a> */}
-                {/* <ul className='slide-ul'> */}
+            
                   <SlidePage></SlidePage>
-                  {/* <SlidePage></SlidePage> */}
-                {/* </ul> */}
-              {/* <a href="#" className='next-button'>
-                <img className='slide-button' src={nextButton} alt="오른쪽화살표" />
-              </a> */}
+              
             </div>
-            {/* <div className="slide-position">
-              <div className="slide-circle active"></div>
-              <div className="slide-circle"></div>
-            </div> */}
+            
           </div>
         </section>
-        {/* </Section> */}
-        {/* <Section> */}
+       
         <section className="contact-section" id='contactPos' ref={contactSectionRef}>
           <div className="contact-container">
             <h2>CONTACT</h2>
@@ -412,8 +303,7 @@ export default function Main() {
             <p>CHOIJEWONⓒ 2023 PORTFOLIO</p>
           </footer>
         </section>
-        {/* </Section> */}
-     {/* </SectionsContainer> */}
+        
     </div>
   )
 }
