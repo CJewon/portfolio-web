@@ -241,6 +241,8 @@
     stroke-dashoffset: var(--bar-linepx);
     transition: 2s;
   }
+
+  
   
   #main .work-title {
     margin: 0 auto;
@@ -248,6 +250,7 @@
   }
   
   #main .work-container {
+    width: 100%;
     padding: 122px 0;
     box-sizing: border-box;
     position: relative;
@@ -273,7 +276,8 @@
   #main .slide-list {
     display: flex !important;
     gap: 66px;
-    padding: 0 50px;
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
   }
 
@@ -360,11 +364,12 @@
   }
 
   #main .slick-prev {
-    left: -1%;
+    left: 0%;
+    z-index: 1;
   }
 
   #main .slick-next {
-    right: -1%;
+    right: 0%;
   }
 
   #main .slick-prev::before,
@@ -688,14 +693,15 @@
     
   
     
-    #main .slick-slider {
-      width: 100vw;
-    }
+  
     
     #main .slide-button {
       width: 25px;
       height: 25px;
     }
+
+    
+    #main .slide-list 
   
     #main h4 {
       font-size: 24px;

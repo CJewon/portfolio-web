@@ -11,8 +11,10 @@ export default function SlidePage() {
 
   const settings = {
     centerMode : true,
+    centerPadding : '0px',
     dots: true,
     infinite: true,
+    draggable : false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -23,7 +25,7 @@ export default function SlidePage() {
   return (
 
     <Slider {...settings}>
-      <div className="slide-list"  style = "display: flex;">
+      <div className="slide-list">
           <img src={neneWeb} alt="네네홈페이지" />
           <div className='website-explain-text'>
           <h4>네네치킨</h4>
