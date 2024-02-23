@@ -38,6 +38,7 @@
 
 
 #nene section {
+  min-width: 1000px;
   background-color: #6F6D6D;
   margin-bottom: 112px;
   padding: 0 32px;
@@ -78,7 +79,6 @@
 
 #nene .profile-section {
   width: 100%;
-  height: calc(100vh - 126px);
 }
 
 #nene .profile-container {
@@ -89,16 +89,14 @@
   align-content: center;
   gap: 140px;
   max-width: 1302px;
+  box-sizing: border-box;
 }
 
 #nene .profile-image {
- 
   height: 429px;
 }
 
-#nene .my-profile {
-  
-}
+
 
 #nene .my-profile > h1 {
   line-height: 1.2;
@@ -125,6 +123,10 @@
  color: #A09696;
 }
 
+#nene .copyright > p {
+  font-size: 12px;
+}
+
 #nene .click-button {
   display: flex;
   justify-content: center;
@@ -148,10 +150,6 @@
 
 
 
-#nene .flex-container {
-  display: flex;
-  justify-content: space-between;
-}
 
 #nene h2 {
   font-size: 48px;
@@ -161,26 +159,24 @@
 
 #nene h3 {
   font-size: 28px;
-  margin: 80px 0;
+  padding: 80px 0;
   font-weight: bold;
   color: #F0DA14;
   line-height: 1.5;
+  box-sizing: border-box;
 }
 
 
-
-#nene .overview-size {
-  width: 450px;
+#nene .contents-container {
+  padding: 0 32px;
 }
 
-
-
-#nene .overview-size li h3 {
+/* #nene .overview-size li h3 {
   width: 531px;
-}
+} */
 
 #nene .overview-size li p {
-  width: 531px;
+  /* width: 531px; */
   color: #F5F5F5;
   font-weight: 300;
   line-height: 1.5;
@@ -245,8 +241,8 @@ background-color: #B6B3B2;
 
 #nene .sticky-section {
   display: flex;
-  justify-content: space-between;
-  padding: 0 309px;
+  justify-content: center;
+  /* padding: 0 309px; */
   position: relative;
 }
 
@@ -277,9 +273,7 @@ background-color: #B6B3B2;
   font-weight: 300;
 }
 
-#nene .flex-container > .question-container  li {
-  padding-top: 80px;
-}
+
 
 #nene .takeaway-section {
   padding: 80px 309px;
@@ -289,7 +283,6 @@ background-color: #B6B3B2;
 #nene .takeaway-section > .flex-container {
   flex-direction: column;
   align-items: flex-start;
-  padding-left: 100px;
 }
 
 #nene .takeaway-section > .flex-container > p {
@@ -311,11 +304,13 @@ background-color: #B6B3B2;
   opacity: 0.5;
 }
 
-#nene .renewal-container {
-  padding: 0 100px;
-}
 
 @media screen and (max-width : 1365px) {
+
+ #nene section {
+  margin-bottom: 50px;
+  min-width: 700px;
+ }
 
  #nene header ul {
   gap: 20px;
@@ -324,4 +319,42 @@ background-color: #B6B3B2;
  #nene header a {
   font-size: 16px;
  } 
+ #nene .profile-container {
+  display: block;
+  border-left: 3px solid #A7A7A7;
+  padding: 88px 27px;
+  margin-top: 48px;
+ }
+
+ #nene .profile-image {
+  display: none;
+ }
+
+ #nene .copyright {
+  padding-top: 170px;
+ }
+
+ #nene .click-button {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  transform: translate(80vw, -150px);
+ }
+
+ #nene .click-button > a {
+  font-size: 16px;
+ }
+
+ #nene .sticky-section {
+  padding: 0
+ }
+
+ #nene h2 {
+  font-size: 40px
+ };
+
+ #nene pre[class*=language-] {
+  width: 400px;
+ }
+
 }
