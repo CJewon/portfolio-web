@@ -309,7 +309,9 @@ background-color: #B6B3B2;
 
  #nene section {
   margin-bottom: 50px;
-  min-width: 700px;
+  width: 400px;
+  padding: 0;
+  padding-left: 32px;
  }
 
  #nene header ul {
@@ -355,6 +357,14 @@ background-color: #B6B3B2;
 
  #nene pre[class*=language-] {
   width: 400px;
+ }
+
+ #nene .contents-container {
+  padding: 0;
+ }
+
+ #nene .sticky-img {
+  padding-right: 32px;
  }
 
 }
