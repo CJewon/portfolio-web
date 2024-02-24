@@ -154,6 +154,7 @@
 #nene h2 {
   font-size: 48px;
   color: #F5F5F5;
+  width: fit-content;
 }
 
 
@@ -164,6 +165,7 @@
   color: #F0DA14;
   line-height: 1.5;
   box-sizing: border-box;
+  width: fit-content;
 }
 
 
@@ -233,6 +235,7 @@ background-color: #B6B3B2;
   transform: translateX(185px);
   padding-top: 8px;
   padding-bottom: 32px;
+  width: fit-content;
 }
 
 #nene .design-section .question-container{
@@ -309,9 +312,7 @@ background-color: #B6B3B2;
 
  #nene section {
   margin-bottom: 50px;
-  width: 400px;
-  padding: 0;
-  padding-left: 32px;
+  min-width: 800px;
  }
 
  #nene header ul {
@@ -364,7 +365,16 @@ background-color: #B6B3B2;
  }
 
  #nene .sticky-img {
+  width: 200px;
   padding-right: 32px;
+ }
+
+ #nene h3 {
+  font-size: 20px;
+ }
+
+ #nene .overview-size li p {
+  font-size: 16px;
  }
 
 }
