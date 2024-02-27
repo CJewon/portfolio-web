@@ -11,10 +11,12 @@ export default function (props) {
   },[])
     
       return (
-        <div className="sticky-img" ref={props.containerRef}>
-          <img src={Renewal1} alt="#" ref={props.sectionRefs[0]}/>
-          <img src={Renewal2} alt="#" ref={props.sectionRefs[1]}/>
-          <img src={Renewal3} alt="#" ref={props.sectionRefs[2]}/>
-         </div>
+        <div className="sticky-container">
+          <div className="sticky-img" ref={props.containerRef}>
+            <img src={Renewal1} alt="#" ref={props.sectionRefs[0]}/>
+            <img src={Renewal2} alt="#" ref={props.sectionRefs[1]}/>
+            <img src={Renewal3} alt="#" ref={props.sectionRefs[2]}/>
+          </div>
+        </div>
       );
 }

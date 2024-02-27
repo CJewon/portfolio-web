@@ -67,6 +67,34 @@ export default function NeneRenewalSite() {
     };
   }, [sectionRefs, imgRefs, explainRef]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      const languageJavascript = document.getElementsByClassName('language-javascript');
+      const stickySection = document.getElementsByClassName('sticky-section');
+      const respGap = window.innerWidth < 800 ? 16 : (window.innerWidth < 1366 ? 32 : (window.innerWidth < 1688 ? 200 : 270));
+      const stickyWidth = window.innerWidth < 800 ? 100 : (window.innerWidth < 1366 ? 200 : 323);
+      const flexGap = window.innerWidth < 800 ? 24 : 60;
+  
+      Array.from(languageJavascript).forEach(content => {
+        content.style.width = `${window.innerWidth - (respGap * 2 + stickyWidth + flexGap)}px`;
+      });
+  
+      // Sticky section에 간격 적용
+      Array.from(stickySection).forEach(section => {
+        section.style.gap = `${flexGap}px`;
+      });
+    };
+  
+    handleResize(); // 초기 로드 시에도 실행
+  
+    window.addEventListener('resize', handleResize);
+  
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  
+
   return (
     <body className="nene-renewal-site" id='nene'>
       <header>
@@ -105,7 +133,7 @@ export default function NeneRenewalSite() {
           <section className='overview-section' id='ovs'>
             <div className='renewal-container'>
             <h2>1. OVERVIEW</h2>
-              <div className="flex-container">
+          
                 <div className='question-container overview-size'>
                           <ul>
                             <li>
@@ -118,13 +146,13 @@ export default function NeneRenewalSite() {
                             </li>
                           </ul>
                 </div>
-              </div>
+        
             </div>
           </section>
           <section className='design-section' id='des'>
             <div className='renewal-container'>
             <h2>2. Design</h2>
-              <div className="flex-container">
+              
                 <div className='design-explain-container'>
                   <ul>
                     <li>
@@ -156,7 +184,7 @@ export default function NeneRenewalSite() {
                     </div>
                   </ul>
                 </div>
-              </div>
+           
               <div className='question-container' ref={questionContainerRef}>
                         <h3>Q : 어떤 원칙을 가지고 디자인을 했나요?</h3>
                         <p>A : 불규칙적으로 나열되어 있는 컨텐츠를 정리해준다는 느낌으로 전체적으로 디자인을 해주었습니다. 컬러는 네네치킨에서 사용하는 메인컬러를 최대한 사용하고자 노력했습니다.</p>
