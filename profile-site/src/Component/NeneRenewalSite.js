@@ -218,7 +218,7 @@ export default function NeneRenewalSite() {
                            <ul>
                             <li className='code-list'>
                                 <Position 내용={codes.fourthSection}></Position>
-                                <p>makeContnt라는 함수입니다. 위 함수는 fetch함수로 가지고 온 데이터들을 활용하여 메뉴들의 정보를 나타내주는 함수입니다. 위와 같은 방식으로 작성한 이유는 new-menu, popular-menu, recommended-menu 3개의 section에 들어가는 메뉴의 정보들을 한번에 컨트롤 할 수 있으며, 수정 및 보완을 하는데 있어서 이점이 있다고 생각합니다.</p>
+                                <p>makeContent라는 함수입니다. 위 함수는 fetch함수로 가지고 온 데이터들을 활용하여 메뉴들의 정보를 나타내주는 함수입니다. 위와 같은 방식으로 작성한 이유는 new-menu, popular-menu, recommended-menu 3개의 section에 들어가는 메뉴의 정보들을 한번에 컨트롤 할 수 있으며, 수정 및 보완을 하는데 있어서 이점이 있다고 생각합니다.</p>
                             </li>
                             <li className='code-list'>
                               <Position 내용={codes.fifthSection}></Position>
