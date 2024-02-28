@@ -73,7 +73,7 @@ export default function NeneRenewalSite() {
       const stickySection = document.getElementsByClassName('sticky-section');
       const respGap = window.innerWidth < 800 ? 16 : (window.innerWidth < 1366 ? 32 : (window.innerWidth < 1688 ? 200 : 270));
       const stickyWidth = window.innerWidth < 800 ? 100 : (window.innerWidth < 1366 ? 200 : 323);
-      const flexGap = window.innerWidth < 800 ? 24 : 60;
+      const flexGap = window.innerWidth < 800 ? 0 : 60;
   
       Array.from(languageJavascript).forEach(content => {
         content.style.width = `${window.innerWidth - (respGap * 2 + stickyWidth + flexGap)}px`;

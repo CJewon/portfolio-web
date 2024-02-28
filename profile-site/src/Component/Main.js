@@ -35,6 +35,8 @@ export default function Main() {
   
   const onePageRef = useRef(null)
 
+  const headerRef = useRef(null)
+
  
   const [moveState, setMoveState] = useState(false);
   const [useDelta, setUseDelta] = useState(0);
@@ -99,7 +101,13 @@ export default function Main() {
   },[moveState]);
 
   useEffect(() => {
+    
+    for(let i = 0; i < 4; i++) {
+      headerRef.current.childNodes[i].children[0].classList.remove('header-position')
+    }
+    headerRef.current.childNodes[index].children[0].classList.add('header-position')
     window.scrollTo({top : index * window.innerHeight, left : 0, behavior: "smooth"})
+    
   }, [index])
 
   useEffect(() => {
@@ -169,7 +177,7 @@ export default function Main() {
     
     <div className='main-app' id='main' ref={onePageRef}>
         <header>
-            <ul>
+            <ul ref={headerRef}>
               <li><a href="#idPos" className='header-position'>MAIN</a></li>
               <li><a href="#introducePos">INTRODUCE</a></li>
               <li><a href="#workPos">WORK</a></li>
