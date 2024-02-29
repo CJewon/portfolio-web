@@ -41,7 +41,7 @@ export default function Main() {
   const [moveState, setMoveState] = useState(false);
   const [useDelta, setUseDelta] = useState(0);
   const [index, setIndex] = useState(0) ;
-  
+  const [clientWidth, setClientWidth] = useState(false);
   
   
   const sectionsRef = [mainSectionRef, introduceSectionRef, workSectionRef, contactSectionRef]
@@ -129,6 +129,13 @@ export default function Main() {
     };
   }, [moveState, useDelta]); // moveState와 useDelta 상태가 변경될 때마다 재실행
 
+  useEffect(()=> {
+    console.log(sectionsRef[0])
+   
+  }, [])
+
+  
+
   
   useEffect(() => {
     
@@ -192,11 +199,11 @@ export default function Main() {
                 <span>WELCOME TO MY</span>
                 <span>PORTFOLIO</span>
               </h1>
-              <p>안녕하세요! 끊임없이 도전하고, 나아가 프론트엔드 개발자가 되고 싶은 신입 웹 퍼블리셔 최제원입니다.</p>
+              <p>안녕하세요! 끊임없이 도전하고,<br className='mobile-br'></br>나아가 프론트엔드 개발자가 되고 싶은<br className='mobile-br'></br>신입 웹 퍼블리셔 최제원입니다.</p>
             </div>
           </div>
           <div className="copyright-container">
-            <p>본 페이지는 상업적 목적이 아닌<br className='disabled active'></br> 개인 포트폴리오용으로 만들어진 사이트입니다.</p>
+            <p>본 페이지는 상업적 목적이 아닌<br className='mobile-br'></br> 개인 포트폴리오용으로 만들어진 사이트입니다.</p>
           </div>
         </section>
        
