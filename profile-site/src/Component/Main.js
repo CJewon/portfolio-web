@@ -106,7 +106,15 @@ export default function Main() {
       headerRef.current.childNodes[i].children[0].classList.remove('header-position')
     }
     headerRef.current.childNodes[index].children[0].classList.add('header-position')
+
+   
+   
+
+    
+
     window.scrollTo({top : index * window.innerHeight, left : 0, behavior: "smooth"})
+
+
     
   }, [index])
 
@@ -130,10 +138,114 @@ export default function Main() {
   }, [moveState, useDelta]); // moveState와 useDelta 상태가 변경될 때마다 재실행
 
   useEffect(()=> {
-    console.log(sectionsRef[0])
+    const headerATag = document.getElementsByClassName('header-click-tag')
+    
+    for(let j = 0; j < 4; j++) {
+      headerATag[j].addEventListener('click', () => {
+        for(let k = 0; k < 4; k++) {
+          headerRef.current.childNodes[k].children[0].classList.remove('header-position')
+        }
+        headerRef.current.childNodes[j].children[0].classList.add('header-position')
+      })
+    }
+   
    
   }, [])
 
+  useEffect(() => {
+    const options = {
+      root : null,
+      rootMargin : '0px',
+      threshoid : 0.5
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          
+        }
+        else {
+          for(let b = 0; b < 4; b++) {
+            // headerRef.current.childNodes[b].children[0].classList.remove('header-position')
+          }
+        }
+      });
+    }, options);
+
+    for(let a = 0; a < sectionsRef.length; a++) {
+      if(sectionsRef[a].current) {
+        observer.observe(sectionsRef[a].current)
+      }
+    }
+
+    return () => {
+      observer.disconnect();
+    }
+
+  }, [])
+
+  useEffect(() => {
+    const options = {
+      root : null,
+      rootMargin : '0px',
+      threshoid : 0.5
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          
+        }
+        else {
+          for(let b = 0; b < 4; b++) {
+            // headerRef.current.childNodes[b].children[0].classList.remove('header-position')
+          }
+        }
+      });
+    }, options);
+
+    for(let a = 0; a < sectionsRef.length; a++) {
+      if(sectionsRef[a].current) {
+        observer.observe(sectionsRef[a].current)
+      }
+    }
+
+    return () => {
+      observer.disconnect();
+    }
+
+  }, [])
+  useEffect(() => {
+    const options = {
+      root : null,
+      rootMargin : '0px',
+      threshoid : 0.5
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      console.log(entries);
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+         console.log(`현재 ${entry.target.id}가 보이고있어요`)
+        }
+        else {
+          console.log(`${entry.target.id}에서 벗어났어요`)
+        }
+      });
+    }, options);
+
+    for(let a = 0; a < sectionsRef.length; a++) {
+      if(sectionsRef[a].current) {
+        observer.observe(sectionsRef[a].current)
+      }
+    }
+
+    return () => {
+      observer.disconnect();
+    }
+
+  }, [])
+  
   
 
   
@@ -185,10 +297,10 @@ export default function Main() {
     <div className='main-app' id='main' ref={onePageRef}>
         <header>
             <ul ref={headerRef}>
-              <li><a href="#idPos" className='header-position'>MAIN</a></li>
-              <li><a href="#introducePos">INTRODUCE</a></li>
-              <li><a href="#workPos">WORK</a></li>
-              <li><a href="#contactPos">CONTACT</a></li>
+              <li><a href="#idPos" className='header-position header-click-tag'>MAIN</a></li>
+              <li><a href="#introducePos" className='header-click-tag'>INTRODUCE</a></li>
+              <li><a href="#workPos" className='header-click-tag'>WORK</a></li>
+              <li><a href="#contactPos" className='header-click-tag'>CONTACT</a></li>
             </ul>
           </header>
         
