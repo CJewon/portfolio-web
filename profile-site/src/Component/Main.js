@@ -107,15 +107,8 @@ export default function Main() {
     }
     headerRef.current.childNodes[index].children[0].classList.add('header-position')
 
-   
-   
-
-    
-
     window.scrollTo({top : index * window.innerHeight, left : 0, behavior: "smooth"})
 
-
-    
   }, [index])
 
   useEffect(() => {
@@ -152,69 +145,8 @@ export default function Main() {
    
   }, [])
 
-  useEffect(() => {
-    const options = {
-      root : null,
-      rootMargin : '0px',
-      threshoid : 0.5
-    }
+ 
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          
-        }
-        else {
-          for(let b = 0; b < 4; b++) {
-            // headerRef.current.childNodes[b].children[0].classList.remove('header-position')
-          }
-        }
-      });
-    }, options);
-
-    for(let a = 0; a < sectionsRef.length; a++) {
-      if(sectionsRef[a].current) {
-        observer.observe(sectionsRef[a].current)
-      }
-    }
-
-    return () => {
-      observer.disconnect();
-    }
-
-  }, [])
-
-  useEffect(() => {
-    const options = {
-      root : null,
-      rootMargin : '0px',
-      threshoid : 0.5
-    }
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          
-        }
-        else {
-          for(let b = 0; b < 4; b++) {
-            // headerRef.current.childNodes[b].children[0].classList.remove('header-position')
-          }
-        }
-      });
-    }, options);
-
-    for(let a = 0; a < sectionsRef.length; a++) {
-      if(sectionsRef[a].current) {
-        observer.observe(sectionsRef[a].current)
-      }
-    }
-
-    return () => {
-      observer.disconnect();
-    }
-
-  }, [])
   useEffect(() => {
     const options = {
       root : null,
