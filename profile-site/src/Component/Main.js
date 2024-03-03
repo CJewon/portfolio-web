@@ -61,7 +61,7 @@ export default function Main() {
     
     // 500ms 후에 moveState를 false로 설정하여 다시 이벤트 핸들러가 실행될 수 있도록 함
     if (moveState) {
-      console.log('여기');
+      // console.log('여기');
       if (useDelta > 0) {
         setIndex(prevIndex => {
           const nextIndex = prevIndex + 1;
@@ -79,7 +79,7 @@ export default function Main() {
         
         setTimeout(() => {
              
-          console.log('실행되었습니다')
+          // console.log('실행되었습니다')
           setMoveState(false);
     
         }, 500);
@@ -151,17 +151,23 @@ export default function Main() {
     const options = {
       root : null,
       rootMargin : '0px',
-      threshoid : 0.5
+      threshold : 0.5
     }
 
     const observer = new IntersectionObserver(entries => {
-      console.log(entries);
+      // console.log(entries);
       entries.forEach(entry => {
         if (entry.isIntersecting) {
          console.log(`현재 ${entry.target.id}가 보이고있어요`)
+         const id = entry.target.id;
+          const headerLink = document.querySelector(`[href="#${id}"]`);
+          headerLink.classList.add('header-position');
         }
         else {
           console.log(`${entry.target.id}에서 벗어났어요`)
+          const id = entry.target.id;
+          const headerLink = document.querySelector(`[href="#${id}"]`);
+          headerLink.classList.remove('header-position');
         }
       });
     }, options);
@@ -189,7 +195,7 @@ export default function Main() {
     const options = {
       root : null,
       rootMargin : '0px',
-      threshoid : 0.1
+      threshold : 0.1
     }
 
     const observer = new IntersectionObserver(entries => {
