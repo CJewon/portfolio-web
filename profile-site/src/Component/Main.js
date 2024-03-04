@@ -35,9 +35,7 @@ export default function Main() {
  
   const [moveState, setMoveState] = useState(false);
   const [useDelta, setUseDelta] = useState(0);
-  const [index, setIndex] = useState(0) ;
-  const [clientWidth, setClientWidth] = useState(false);
-  
+  const [index, setIndex] = useState(0) ;  
   
   const sectionsRef = [mainSectionRef, introduceSectionRef, workSectionRef, contactSectionRef]
   
@@ -53,7 +51,6 @@ export default function Main() {
  
     // 500ms 후에 moveState를 false로 설정하여 다시 이벤트 핸들러가 실행될 수 있도록 함
     if (moveState) {
-      // console.log('여기');
       if (useDelta > 0) {
         setIndex(prevIndex => {
           const nextIndex = prevIndex + 1;
@@ -65,11 +62,9 @@ export default function Main() {
           return nextIndex >= 0 ? nextIndex : 0;
         });
       }     
-        // console.log(index)
-   
+
         setTimeout(() => {
-             
-          // console.log('실행되었습니다')
+
           setMoveState(false);
     
         }, 500);
