@@ -38,7 +38,9 @@ export default function Main() {
   const [index, setIndex] = useState(0) ;  
   
   const sectionsRef = [mainSectionRef, introduceSectionRef, workSectionRef, contactSectionRef]
-  
+
+
+  // OnePageScroll 작동시키기
   const handleScroll = (event) => {
       event.preventDefault();
       if (!moveState) {
@@ -78,6 +80,8 @@ export default function Main() {
     };
   },[moveState]);
 
+
+  // index의 상태가 변환될때마다 랜더링이 되면, header-position 지정 및 scrollTo 작동시키기
   useEffect(() => {
     
     for(let i = 0; i < 4; i++) {
@@ -89,6 +93,7 @@ export default function Main() {
 
   }, [index])
 
+  // 브라우저의 width가 800px보다 작아지면 onePageScroll를 작동시켜주지 않기 위해 moveState, useDelta의 상태가 변경될때마다 랜더링후 작동 !
   useEffect(() => {
     const handleResize = () => {
       const bodyWidth = document.body.getBoundingClientRect().width;
@@ -108,6 +113,7 @@ export default function Main() {
     };
   }, [moveState, useDelta]); // moveState와 useDelta 상태가 변경될 때마다 재실행
 
+  // click 했을때 header의 색상을 바꿔주기 위해 만듬 !
   useEffect(()=> {
     const headerATag = document.getElementsByClassName('header-click-tag')
     
@@ -124,7 +130,7 @@ export default function Main() {
   }, [])
 
  
-
+  // id를 기준으로 특정 id가 observer 되었을때, header-position을 알려주기 위해 classList.add or classList.remove 해주는 코드
   useEffect(() => {
     const options = {
       root : null,
