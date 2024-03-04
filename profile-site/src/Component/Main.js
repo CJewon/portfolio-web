@@ -55,10 +55,7 @@ export default function Main() {
   }
   
   useEffect(() => {
-    
-  
-       
-    
+ 
     // 500ms 후에 moveState를 false로 설정하여 다시 이벤트 핸들러가 실행될 수 있도록 함
     if (moveState) {
       // console.log('여기');
@@ -74,9 +71,7 @@ export default function Main() {
         });
       }     
         // console.log(index)
-
-       
-        
+   
         setTimeout(() => {
              
           // console.log('실행되었습니다')
@@ -235,10 +230,10 @@ export default function Main() {
     <div className='main-app' id='main' ref={onePageRef}>
         <header>
             <ul ref={headerRef}>
-              <li><a href="#idPos" className='header-position header-click-tag'>MAIN</a></li>
-              <li><a href="#introducePos" className='header-click-tag'>INTRODUCE</a></li>
-              <li><a href="#workPos" className='header-click-tag'>WORK</a></li>
-              <li><a href="#contactPos" className='header-click-tag'>CONTACT</a></li>
+              <li><a href="#idPos" className='header-position header-click-tag' onClick={()=>{setIndex(0)}}>MAIN</a></li>
+              <li><a href="#introducePos" className='header-click-tag' onClick={() => {setIndex(1)}}>INTRODUCE</a></li>
+              <li><a href="#workPos" className='header-click-tag' onClick={() => {setIndex(2)}}>WORK</a></li>
+              <li><a href="#contactPos" className='header-click-tag' onClick={() => {setIndex(3)}}>CONTACT</a></li>
             </ul>
           </header>
         
