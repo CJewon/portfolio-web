@@ -480,11 +480,6 @@ background-color: #B6B3B2;
     font-size: 12px;
   }
 
-  #nene .color-rect {
-    width: 25px;
-    height: 25px;
-  }
-
   #nene .color-name {
     display: none;
   }
@@ -498,9 +493,9 @@ background-color: #B6B3B2;
   }
 
   #nene .design-explain-container li p {
-    width: 78px;
-    padding-right: 0;
-    font-size: 12px;
+    width: 88px;
+    padding-right: 16px;
+    font-size: 16px;
   }
 
   #nene .sticky-img {
