@@ -3,18 +3,13 @@ import React, { useEffect, useRef, useState } from 'react'
 import '../css/reset.css';
 import '../css/Main.css'
 
-
-
-
 import html from '../img/html.png';
 import css from '../img/css.png';
 import js from '../img/js.png';
 import react from '../img/react.png';
 import myImg from '../img/myImg.jpg';
-import nextButton from '../img/nextButton.png'
-import previousButton from '../img/previousButton.png'
 import SlidePage from './SlidePage';
-import {SectionsContainer, Section} from 'react-fullpage'
+
 
 export default function Main() {
 
@@ -81,15 +76,8 @@ export default function Main() {
          
     }
 
-
-    
-        
-      
-      
- 
       window.addEventListener('mousewheel', handleScroll, {passive : false});
 
-  
     return () => {
       window.removeEventListener('mousewheel', handleScroll);
     };
@@ -149,17 +137,14 @@ export default function Main() {
       threshold : 0.5
     }
 
-    const observer = new IntersectionObserver(entries => {
-      // console.log(entries);
+    const observer = new IntersectionObserver(entries => {  
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-         console.log(`현재 ${entry.target.id}가 보이고있어요`)
          const id = entry.target.id;
           const headerLink = document.querySelector(`[href="#${id}"]`);
           headerLink.classList.add('header-position');
         }
         else {
-          console.log(`${entry.target.id}에서 벗어났어요`)
           const id = entry.target.id;
           const headerLink = document.querySelector(`[href="#${id}"]`);
           headerLink.classList.remove('header-position');
@@ -178,13 +163,9 @@ export default function Main() {
     }
 
   }, [])
-  
-  
 
-  
   useEffect(() => {
     
-
     //observer을 이용하여 화면에 나타날때마다 percent-bar 작동시키기
 
     const options = {
