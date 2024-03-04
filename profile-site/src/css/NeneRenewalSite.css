@@ -473,11 +473,11 @@ background-color: #B6B3B2;
   }
 
   #nene h3 {
-    font-size: 14px;
+    font-size: 20px;
   }
 
   #nene .overview-size li p {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   #nene .color-name {
@@ -503,11 +503,11 @@ background-color: #B6B3B2;
   }
 
   #nene .explain-container p, .question-container p {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   #nene .takeaway-section > .flex-container > p {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   #nene .sticky-img {
@@ -515,7 +515,7 @@ background-color: #B6B3B2;
   }
 
   #nene .language-javascript {
-    font-size: 10px;
+    font-size: 12px;
    }
 
    #nene .code-list p {
@@ -527,6 +527,11 @@ background-color: #B6B3B2;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+   }
+
+   #nene .sticky-section,
+   #nene .takeaway-section {
+    padding: 0 16px;
    }
  } 
 
