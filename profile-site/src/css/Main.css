@@ -321,6 +321,7 @@
   
   #main .summary-rect-text {
     display: flex;
+    flex-shrink: 0;
     gap: 8px;
   }
   

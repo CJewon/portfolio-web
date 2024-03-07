@@ -41,6 +41,9 @@ export default function SlidePage() {
               <div className="summary-rect">
                 <p>#리뉴얼페이지</p>
               </div>
+              <div className="summary-rect">
+                <p>#PC전용</p>
+              </div>
             </div>
           </div>
           <Link to='/portfolio-web/NeneRenewalSite' className='website-click-button'>상세보기</Link>                       
@@ -61,6 +64,9 @@ export default function SlidePage() {
               </div>
               <div className="summary-rect">
                 <p>#리뉴얼페이지</p>
+              </div>
+              <div className="summary-rect">
+                <p>#PC전용</p>
               </div>
             </div>
           </div>
