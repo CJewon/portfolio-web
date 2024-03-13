@@ -333,7 +333,7 @@ export default function Main() {
               <ul className='address-ul'>
                 <li className='email-kakaotalk'>
                   <p>이메일 : <span>donkey0103@naver.com</span></p>
-                  <p>카카오톡 : <span>kakaotalk</span></p>
+                  <p>카카오톡 : <span>https://open.kakao.com/me/Churi98</span></p>
                 </li>
                 <li className='end-p-tag'>
                   <p>여러분과 함께 미래를 위한 독특하고 혁신적인 프로젝트를 함께하며 성장하고 싶습니다. 새로운 도전과 경험을 통해 함께 발전해 나가는 여정에서 여러분과 소중한 협업을 만들어나가고 싶습니다.<br></br> 언제든지 이메일이나 카카오톡을 통해 연락주세요. 연락을 남겨주시면 1 ~ 2일내로 답신드리겠습니다. 감사합니다!</p>
